@@ -3,14 +3,16 @@
 namespace App;
 
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, HasRoles;
 
     /**
      * The database table used by the model.
@@ -32,6 +34,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile', 'user_id');
+    }
+
+    public function addProfile()
+    {
+        $this->profile()->create(['name' => $this->attributes['name'], 'email' => $this->attributes['email']]);
+    }
 
     public function setPasswordAttribute($password)
     {

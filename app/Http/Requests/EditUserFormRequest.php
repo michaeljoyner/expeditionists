@@ -13,7 +13,7 @@ class EditUserFormRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->hasRole('admin') || ($this->user()->id == $this->route('id'));
     }
 
     /**

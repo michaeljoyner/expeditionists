@@ -1,0 +1,29 @@
+.btn.exp-btn {
+  display: inline-block;
+  background: $primary_blue;
+  color: $white;
+  border-radius: 0;
+  min-width: 8em;
+
+  &.btn-pale {
+    background: $pale_green;
+    color: $primary_dark;
+  }
+
+  &.btn-red {
+    background: $primary_red;
+    color: $white;
+  }
+
+  &.btn-ghost-dark {
+    background: $white;
+    color: $primary_dark;
+    border: 1px solid $primary_dark;
+  }
+
+  &.btn-small {
+    font-size: small;
+    padding: 5px 8px;
+    min-width: 0;
+  }
+}

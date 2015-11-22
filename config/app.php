@@ -137,6 +137,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 
         /*
          * Application Service Providers...
@@ -144,6 +147,8 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class
 
     ],
 
@@ -194,6 +199,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Gate' => Illuminate\Support\Facades\Gate::class,
 
     ],
 

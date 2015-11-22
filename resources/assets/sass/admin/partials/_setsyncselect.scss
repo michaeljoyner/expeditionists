@@ -1,0 +1,34 @@
+.sync-select-area {
+
+  .sync-select-card {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+
+    .sync-select-card-image {
+      width: 100%;
+      filter: grayscale(100%);
+    }
+
+    .sync-select-card-name {
+      text-transform: uppercase;
+      color: $primary_red;
+    }
+
+    .select-checkbox {
+      display: none;
+    }
+
+    .select-checkbox:checked + .sync-select-card-image {
+      border: 5px solid $primary_blue;
+      filter: grayscale(0%);
+    }
+
+    .select-checkbox:checked + .sync-select-card-image + .sync-select-card-name:after {
+      content: '\002714';
+      color: $primary_blue;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.expeditions-index-section {
+
+  .expedition-card {
+    width: 28%;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    .expedition-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 10px 0 10px 20px;
+      width: 100%;
+      background: rgba(0,0,0,.4);
+      color: $white;
+      margin: 0;
+    }
+  }
+}

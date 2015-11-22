@@ -11,6 +11,6 @@ class PagesController extends Controller
 {
     public function dashboard()
     {
-        return 'admin dashboard';
+        return view('admin.pages.dash');
     }
 }

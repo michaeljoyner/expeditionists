@@ -1,0 +1,28 @@
+.editable-areas {
+
+  .editable-area-display {
+    clear: both;
+    position: relative;
+    max-width: 800px;
+    padding-bottom: 30px;
+    padding-top: 40px;
+    border-bottom: 4px solid $pale_green;
+
+    a.edit-content-link {
+      float: right;
+    }
+    .area-name {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $primary_blue;
+    }
+
+    .area-content {
+      font-size: 1.5em;
+      color: $primary_dark;
+      max-width: 600px;
+      padding-left: 40px;
+    }
+
+  }
+}

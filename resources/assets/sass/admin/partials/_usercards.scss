@@ -1,0 +1,39 @@
+.user-card {
+  max-width: 600px;
+  padding: 20px 10px 5px;
+  border: 2px solid $pale_green;
+  margin: 20px;
+
+  .user-card-admin-badge {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 4px 8px;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    background: lighten($primary_red, 10%);
+    box-shadow: 2px 2px 2px #e5e5e5;
+    color: $white;
+    text-transform: uppercase;
+    border-radius: 50%;
+
+    &:hover:after {
+      content: 'Is an admin user';
+      display: inline-block;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      padding: 4px 8px;
+      color: $white;
+      background: $primary_dark;
+      border-radius: 8px;
+      text-transform: none;
+      font-size: 12px;
+      width: 200px;
+      height: auto;
+      line-height: 1;
+    }
+  }
+
+}

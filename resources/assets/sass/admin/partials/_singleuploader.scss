@@ -1,0 +1,64 @@
+.single-image-uploader-box {
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border: 6px solid $pale_green;
+
+    &.processing {
+      filter: grayscale(100%);
+    }
+
+    &.large {
+      width: 300px;
+      height: 300px;
+    }
+
+    &.full {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+    }
+
+    &.round {
+      border-radius: 50%;
+    }
+  }
+
+  .single-upload-label {
+    display: block;
+  }
+
+  input[type=file] {
+    display: none;
+  }
+
+  .upload-message {
+    color: $primary_dark;
+    background: $pale_green;
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline-block;
+
+    &.error {
+      color: $white;
+      background: $primary_red;
+    }
+  }
+
+  .upload-progress-container {
+    width: 100%;
+    max-width: 250px;
+    height: 16px;
+    border: 1px solid $primary_dark;
+    position: relative;
+
+    .upload-progress-bar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: $pale_green;
+    }
+  }
+}

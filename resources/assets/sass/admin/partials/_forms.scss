@@ -1,0 +1,30 @@
+.exp-form {
+
+  &.two-column {
+    .form-group {
+      margin: 0 20px 15px 0;
+    }
+  }
+
+  &.narrow {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  label {
+    color: $primary_blue;
+    text-transform: uppercase;
+  }
+
+  input[type=text], input[type=email], input[type=password], input[type=date] {
+    border-radius: 0;
+  }
+
+  .ta-short {
+    height: 80px;
+  }
+}
+
+.delete-form {
+  display: inline-block;
+}
