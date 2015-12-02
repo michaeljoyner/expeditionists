@@ -11,3 +11,5 @@ Vue.component('dropzone', require('./components/Dropzone.vue'));
 Vue.component('publishbutton', require('./components/Publishbutton.vue'));
 
 window.Vue = Vue;
+
+

@@ -1,0 +1,51 @@
+.get-involved-cta-button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+  margin: 50px auto 10px;
+  padding: 15px 30px;
+  background: transparent;
+  color: $white;
+  font-size: 3em;
+  font-weight: 700;
+  font-family: 'Arvo', Helvetica Neue, Helvetica, Arial;
+  width: 10em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  height: auto;
+  line-height: 1.3;
+  border: 8px solid $white;
+  opacity: 0;
+  animation: slideUp 1s ease 1s 1 forwards;
+
+  @include respond-to(phone) {font-size: 2em; padding: 5px;}
+  @include respond-to(smalltablet) {font-size: 2em; padding: 5px;}
+
+  &:visited, &:focus, &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    //color: $primary_red;
+    background: rgba(255,255,255,.4);
+  }
+}
+
+.w-slide .slide-text {
+  transition: .5s;
+  opacity: 0;
+  animation: slideDown 1s ease 1s 1 forwards;
+}
+
+@keyframes slideDown {
+  0% {opacity: 0; transform: translate3d(0,-200px,0);}
+  100% {opacity: 1; transform: translate3d(0,0,0);}
+}
+
+@keyframes slideUp {
+  0% {opacity: 0; transform: translate3d(-50%,250px,0);}
+  100% {opacity: 1; transform: translate3d(-50%,0,0);}
+}

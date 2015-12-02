@@ -16,6 +16,7 @@ class PagesTest extends TestCase
      */
     public function it_shows_the_homepage()
     {
+        $this->preparePageContent();
         $this->visit('/')
             ->seePageIs('/');
     }

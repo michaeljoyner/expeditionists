@@ -6,12 +6,12 @@
     <div class="w-container about-container">
         <div class="w-row">
             <div class="w-col w-col-4 about-column">
-                <h3 class="about-heading">MISSION</h3><img src="build/images/vision.png" class="about-icon">
+                <h3 class="about-heading">MISSION</h3><img src="build/images/mission.png" class="about-icon">
                 <div class="p1 black">{{ $homePage->present()->area('Mission - short') }}</div>
                 <div id="see-mission-btn" class="w-button button red">MORE</div>
             </div>
             <div class="w-col w-col-4 about-column">
-                <h3 class="about-heading">VISION</h3><img src="build/images/mission.png" class="about-icon">
+                <h3 class="about-heading">VISION</h3><img src="build/images/vision.png" class="about-icon">
                 <div class="p1 black">{{ $homePage->present()->area('Vision - short') }}</div>
                 <div id="see-vision-btn" class="w-button button red">MORE</div>
             </div>
@@ -36,5 +36,5 @@
         <h3 class="about-heading white">OBJECTIVES</h3>
         <div class="p1 white">{{ $homePage->present()->area('Objectives - long') }}</div>
     </div>
-    <a href="#" class="w-button button-big white">READ MORE ABOUT EXPEDITIONIST.ORG</a>
+    <a href="/about" class="w-button button-big white">READ MORE ABOUT EXPEDITIONIST.ORG</a>
 </div>

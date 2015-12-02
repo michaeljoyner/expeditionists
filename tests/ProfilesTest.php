@@ -17,6 +17,7 @@ class ProfilesTest extends TestCase
      */
     public function it_creates_a_profile_for_the_user_when_the_user_is_added()
     {
+        $this->preparePageContent();
         $this->asAnAdminUser();
 
         $newUser = $this->registerNewUser();
@@ -152,6 +153,7 @@ class ProfilesTest extends TestCase
      */
     public function a_profile_has_at_least_one_gallery()
     {
+        $this->preparePageContent();
         $this->asAnAdminUser();
         $newUser = $this->registerNewUser();
 

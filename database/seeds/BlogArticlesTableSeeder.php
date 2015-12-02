@@ -11,6 +11,7 @@ class BlogArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Blog\Article::class, 20)->create();
+        $profile = \App\Profile::first();
+        factory(\App\Blog\Article::class, 20)->create(['profile_id' => $profile->id]);
     }
 }

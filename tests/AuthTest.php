@@ -42,6 +42,7 @@ class AuthTest extends TestCase {
      */
     public function it_logs_a_user_out()
     {
+        $this->preparePageContent();
         $user = factory('App\User')->create();
 
         $this->actingAs($user)

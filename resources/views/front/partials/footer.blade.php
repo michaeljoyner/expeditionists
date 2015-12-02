@@ -31,7 +31,7 @@
                     </li>
                 </ul>
             </div>
-        </div><img src="/build/images/NEW_logo_white.png" class="footer-logo">
+        </div><a href="/"><img src="/build/images/NEW_logo_white.png" class="footer-logo"></a>
     </div>
     <div class="mym">Website by <span class="mmm-link">Make Your Mark</span>
     </div>

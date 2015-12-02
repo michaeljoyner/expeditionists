@@ -12,8 +12,18 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('/profiles/{slug}', 'PagesController@profile');
-Route::get('/expeditions/{slug}', 'PagesController@expedition');
+Route::get('getinvolved', 'PagesController@getInvolved');
+Route::get('profiles/{slug}', 'PagesController@profile');
+Route::get('expeditions/{slug}', 'PagesController@expedition');
+Route::get('about', 'PagesController@about');
+Route::get('expeditions', 'PagesController@expeditions');
+Route::get('expeditionists', 'PagesController@expeditionists');
+Route::post('contact', function() {
+    return response()->json('shot bru');
+});
+
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@show');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
@@ -49,10 +59,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::get('content/editable/{id}/edit', 'EditablesController@edit');
         Route::post('content/editable/{id}', 'EditablesController@update');
-//        Route::get('content/pages/home', 'EditablesController@showHomePageContent');
-//        Route::get('content/pages/about', 'EditablesController@showAboutPageContent');
-//        Route::get('content/pages/expeditionists', 'EditablesController@showExpeditionistsPageContent');
-//        Route::get('content/pages/expeditions', 'EditablesController@showExpeditionsPageContent');
         Route::get('content/pages/{page}', 'EditablesController@showEditablePage');
 
         Route::post('uploads/profiles/{id}/profilepic', 'ProfilesController@storeProfilePic');

@@ -11,34 +11,6 @@ use App\Http\Controllers\Controller;
 
 class EditablesController extends Controller
 {
-//    public function showHomePageContent()
-//    {
-//        $page = Page::with('editableAreas')->where('name', 'home')->firstOrFail();
-//
-//        return view('admin.content.showpage')->with(compact('page'));
-//    }
-//
-//    public function showAboutPageContent()
-//    {
-//        $page = Page::with('editableAreas')->where('name', 'about')->firstOrFail();
-//
-//        return view('admin.content.showpage')->with(compact('page'));
-//    }
-//
-//    public function showExpeditionistsPageContent()
-//    {
-//        $page = Page::with('editableAreas')->where('name', 'expeditionists')->firstOrFail();
-//
-//        return view('admin.content.showpage')->with(compact('page'));
-//    }
-//
-//    public function showExpeditionsPageContent()
-//    {
-//        $page = Page::with('editableAreas')->where('name', 'expeditions')->firstOrFail();
-//
-//        return view('admin.content.showpage')->with(compact('page'));
-//    }
-
     public function showEditablePage($page)
     {
         $page = Page::with('editableAreas')->where('name', $page)->firstOrFail();

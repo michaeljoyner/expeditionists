@@ -1,0 +1,78 @@
+#rs-contact-form {
+  position: relative;
+  overflow: hidden;
+
+  .rs-form-group {
+    max-width: 500px;
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+
+    label {
+      color: $primary_dark;
+      text-transform: uppercase;
+    }
+
+    input {
+      width: 100%;
+      padding-left: 10px;
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid #e5e5e5;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      resize: none;
+      border: 1px solid #e5e5e5;
+    }
+  }
+
+  .cf-send-btn {
+    padding: 5px 10px;
+    height: 32px;
+    background: $primary_dark;
+    color: $white;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+
+    &:hover {
+      background: $primary_red;
+    }
+  }
+
+  .form-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $primary_blue;
+    transition: .75s;
+    transform: translateX(-110%);
+
+    p {
+      color: $white;
+      font-size: 120%;
+    }
+  }
+
+  &.closed .form-cover {
+    transform: translateX(0);
+
+    #cf-reset {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    #cf-thanks {
+      width: 100%;
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+}

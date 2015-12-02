@@ -1,0 +1,45 @@
+.nav-container.main-nav-box {
+  @include respond-to(phone) {width: 95%;}
+  @include respond-to(smalltablet) {width: 95%;}
+  @include respond-to(largetablet) {width: 95%;}
+
+  .w-nav-button {
+    @include respond-to(phone) {padding-left: 0; padding-right: 0; width: 100%;}
+    @include respond-to(smalltablet) {padding-left: 0; padding-right: 0; width: 100%;}
+    @include respond-to(largetablet) {padding-left: 0; padding-right: 0; width: 100%;}
+  }
+
+  .w-nav-button.w--open {
+    @include respond-to(phone) {background: $primary_dark;}
+    @include respond-to(smalltablet) {background: $primary_dark;}
+    @include respond-to(largetablet) {background: $primary_dark;}
+  }
+
+  .logo-navbar-image {
+    @include respond-to(phone) {width: 60%;}
+    @include respond-to(smalltablet) {width: 60%;}
+    @include respond-to(largetablet) {width: 60%;}
+  }
+
+  .w-icon-nav-menu {
+    @include respond-to(phone) {display: inline-block; float: right;}
+    @include respond-to(smalltablet) {display: inline-block; float: right; font-size: 2em;}
+    @include respond-to(largetablet) {display: inline-block; float: right; font-size: 3em; line-height: 67px;}
+  }
+}
+
+.w-section.logo-banner {
+  @include respond-to(phone) {display: none;}
+  @include respond-to(smalltablet) {display: none;}
+  @include respond-to(largetablet) {display: none;}
+}
+
+nav.w--nav-menu-open {
+  background: $primary_dark;
+}
+
+.w-nav-link.nav-link {
+  @include respond-to(phone) {display: block;}
+  @include respond-to(smalltablet) {display: block;}
+  @include respond-to(largetablet) {display: block;}
+}

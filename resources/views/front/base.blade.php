@@ -7,9 +7,10 @@
     <title>Expeditionist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Webflow">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/webflow.css">
-    <link rel="stylesheet" type="text/css" href="/css/expeditionist.webflow.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/normalize.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/webflow.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/expeditionist.webflow.css">--}}
+    <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
         WebFont.load({
@@ -26,6 +27,7 @@
 @yield('content')
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/webflow.js"></script>
+<script src="/js/front.js"></script>
 <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 @yield('bodyscripts')
 </body>

@@ -13,6 +13,7 @@ class UsersTest extends TestCase {
      */
     public function it_registers_a_user()
     {
+        $this->preparePageContent();
         $role = \Spatie\Permission\Models\Role::create(['name' => 'admin']);
         $currentUser = factory('App\User')->create();
         $currentUser->assignRole($role);
@@ -61,6 +62,7 @@ class UsersTest extends TestCase {
      */
     public function it_creates_default_user_without_a_role()
     {
+        $this->preparePageContent();
         $this->asAnAdminUser();
 
         $newUser = factory(User::class)->make(['password' => 'password']);
@@ -81,6 +83,7 @@ class UsersTest extends TestCase {
      */
     public function it_can_create_an_admin_user()
     {
+        $this->preparePageContent();
         $this->asAnAdminUser();
 
         $newUser = factory(User::class)->make();

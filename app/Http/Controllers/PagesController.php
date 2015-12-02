@@ -27,6 +27,14 @@ class PagesController extends Controller
         return view('front.pages.index')->with(compact('homePage', 'profiles', 'expeditions', 'sponsors', 'charities', 'articles'));
     }
 
+    public function getInvolved()
+    {
+        $page = Page::where('name', 'get involved')->with('editableAreas')->firstOrFail();
+        $sponsors = Sponsor::take(5)->get();
+        $charities = Charity::take(5)->get();
+        return view('front.pages.getinvolved')->with(compact('page', 'sponsors', 'charities'));
+    }
+
     public function profile($slug)
     {
         $profile = Profile::where('slug', $slug)->firstOrFail();
@@ -36,8 +44,29 @@ class PagesController extends Controller
 
     public function expedition($slug)
     {
-        $expedition = Expedition::where('slug', $slug)->firstOrFail();
+        $expedition = Expedition::with('expeditionists')->where('slug', $slug)->firstOrFail();
 
         return view('front.pages.expedition')->with(compact('expedition'));
+    }
+
+    public function expeditions()
+    {
+        $expeditions = Expedition::latest()->get();
+        $page = Page::where('name', 'expeditions')->firstOrFail();
+        return view('front.pages.expeditionsindex')->with(compact('expeditions', 'page'));
+    }
+
+    public function expeditionists()
+    {
+        $profiles = Profile::latest()->get();
+        $page = Page::where('name', 'expeditionists')->firstOrFail();
+
+        return view('front.pages.expeditionists')->with(compact('profiles', 'page'));
+    }
+
+    public function about()
+    {
+        $aboutPage = Page::where('name', 'about')->firstOrFail();
+        return view('front.pages.about')->with(compact('aboutPage'));
     }
 }

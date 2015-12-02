@@ -18,15 +18,28 @@ class EditableContentSeeder extends Seeder
 
         $editAbout = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $about->id,
+            'name' => 'about',
             'allows_html' => 1,
             'content' => '<h1>About Us</h1>'.
                          '<p>We, the people...</p>'
         ]);
         $editBanner = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $home->id,
-            'name' => 'Banner Text',
+            'name' => 'Banner Text 1',
             'allows_html' => 0,
-            'content' => 'Go Places. Do things'
+            'content' => 'Adventure with an Impact: Explore, Educate, Empower'
+        ]);
+        $editBanner2 = factory(\App\Content\EditableArea::class)->create([
+            'page_id' => $home->id,
+            'name' => 'Banner Text 2',
+            'allows_html' => 0,
+            'content' => 'Adventure with an Impact: Explore, Educate, Empower'
+        ]);
+        $editBanner3 = factory(\App\Content\EditableArea::class)->create([
+            'page_id' => $home->id,
+            'name' => 'Banner Text 3',
+            'allows_html' => 0,
+            'content' => 'Adventure with an Impact: Explore, Educate, Empower'
         ]);
         $editHomeAbout = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $home->id,
@@ -85,12 +98,6 @@ class EditableContentSeeder extends Seeder
         $editGetInvolvedIntro = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $home->id,
             'name' => 'Get Involved intro',
-            'allows_html' => 0,
-            'content' => 'Once installed, the simple laravel new command will create a fresh Laravel installation in the directory you specify. For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all of Laravel'
-        ]);
-        $editContactIntro = factory(\App\Content\EditableArea::class)->create([
-            'page_id' => $home->id,
-            'name' => 'Contact intro',
             'allows_html' => 0,
             'content' => 'Once installed, the simple laravel new command will create a fresh Laravel installation in the directory you specify. For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all of Laravel'
         ]);
