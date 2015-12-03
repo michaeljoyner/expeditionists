@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
         $this->call(EditableContentSeeder::class);
-        $this->call(GetInvolvedContentSeeder::class);
-        $this->call(ExpeditionsTableSeeder::class);
-        $this->call(SponsorsTableSeeder::class);
-        $this->call(BlogArticlesTableSeeder::class);
+//        $this->call(GetInvolvedContentSeeder::class);
+//        $this->call(ExpeditionsTableSeeder::class);
+//        $this->call(SponsorsTableSeeder::class);
+//        $this->call(BlogArticlesTableSeeder::class);
 
         Model::reguard();
     }
