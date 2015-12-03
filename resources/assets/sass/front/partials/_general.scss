@@ -2,3 +2,8 @@ a.red-link {
   color: $primary_red;
   text-decoration: underline;
 }
+
+.footer-list-item a,.footer-list-item a:visited,.footer-list-item a:focus,.footer-list-item a:active {
+  color: inherit;
+  text-decoration: none;
+}

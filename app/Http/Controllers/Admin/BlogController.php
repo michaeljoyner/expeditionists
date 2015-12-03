@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Blog\Article;
+use App\Http\Requests\BlogFormRequest;
+use App\Http\Requests\ImageUploadRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,9 +26,9 @@ class BlogController extends Controller
         return view('admin.blog.create')->with(compact('article'));
     }
 
-    public function store(Request $request)
+    public function store(BlogFormRequest $request)
     {
-        $article = Article::createForUser($request->user(), $request->all());
+        Article::createForUser($request->user(), $request->all());
 
         return redirect('admin/blog');
     }
@@ -38,7 +40,7 @@ class BlogController extends Controller
         return view('admin.blog.edit')->with(compact('article'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, BlogFormRequest $request)
     {
         $article = Article::findOrFail($id);
 
@@ -51,9 +53,14 @@ class BlogController extends Controller
         return redirect('admin/blog');
     }
 
-    public function togglePublished($id, Request $request)
+    public function togglePublished($id)
     {
         $article = Article::findOrFail($id);
+
+        if(Gate::denies('manage-article', $article)) {
+            return abort('403');
+        }
+
         $newState = $article->togglePublishedStatus();
 
         return response()->json(['published' => $newState]);
@@ -66,7 +73,7 @@ class BlogController extends Controller
         return view('admin.blog.setimage')->with(compact('article'));
     }
 
-    public function storeImage($id, Request $request)
+    public function storeImage($id, ImageUploadRequest $request)
     {
         $article = Article::findOrFail($id);
 

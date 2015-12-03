@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Content\EditableArea;
 use App\Content\Page;
+use App\Http\Requests\EditableContentFormRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,13 +26,9 @@ class EditablesController extends Controller
         return view('admin.content.editable')->with(compact('editable'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, EditableContentFormRequest $request)
     {
         $editable = EditableArea::findOrFail($id);
-
-        if(! $request->user()->hasRole('admin')) {
-            return abort(403);
-        }
 
         $editable->update($request->all());
 

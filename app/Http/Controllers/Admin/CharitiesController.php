@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Charity;
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\SponsorCharityFormRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -38,7 +40,7 @@ class CharitiesController extends Controller
         return view('admin.charities.edit')->with(compact('charity'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, SponsorCharityFormRequest $request)
     {
         $charity = Charity::findOrFail($id);
         $charity->update($request->all());
@@ -46,7 +48,7 @@ class CharitiesController extends Controller
         return redirect('admin/charities');
     }
 
-    public function storeImage($id, Request $request)
+    public function storeImage($id, ImageUploadRequest $request)
     {
         $charity = Charity::findOrFail($id);
 

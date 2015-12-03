@@ -22,7 +22,13 @@ class ExpeditionTest extends TestCase {
         $this->visit('/admin/expeditions/create')
             ->submitForm('Create Expedition', [
                 'name' => $expedition->name,
-                'location' => $expedition->location
+                'location' => $expedition->location,
+                'start_date' => '1982-05-20',
+                'intro' => 'intro',
+                'about' => 'about',
+                'objectives' => 'objectives',
+                'mission' => 'mission',
+                'donation_goal' => 'R1000'
             ])
             ->seeInDatabase('expeditions', [
                 'name' => $expedition->name,
@@ -131,7 +137,13 @@ class ExpeditionTest extends TestCase {
         $this->visit('/admin/expeditions/create')
             ->submitForm('Create Expedition', [
                 'name' => $expedition->name,
-                'location' => $expedition->location
+                'location' => $expedition->location,
+                'start_date' => '1982-05-20',
+                'intro' => 'intro',
+                'about' => 'about',
+                'objectives' => 'objectives',
+                'mission' => 'mission',
+                'donation_goal' => 'R1000'
             ])
             ->seeInDatabase('expeditions', [
                 'name' => $expedition->name,

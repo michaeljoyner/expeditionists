@@ -15,19 +15,16 @@
                 <h3 class="footer-heading">QUICK LINKS</h3>
                 <ul class="w-list-unstyled footer-list">
                     <li class="footer-list-item">
-                        <div>HOME</div>
+                        <a href="/"><div>HOME</div></a>
                     </li>
                     <li class="footer-list-item">
-                        <div>EXPEDITIONISTS</div>
+                        <a href="/expeditionists"><div>EXPEDITIONISTS</div></a>
                     </li>
                     <li class="footer-list-item">
-                        <div>EXPEDITIONS</div>
+                        <a href="/expeditions"><div>EXPEDITIONS</div></a>
                     </li>
                     <li class="footer-list-item">
-                        <div>CONTACT</div>
-                    </li>
-                    <li class="footer-list-item">
-                        <div>GET&nbsp;INVOLVED</div>
+                        <a href="/getinvolved"><div>GET INVOLVED / CONTACT</div></a>
                     </li>
                 </ul>
             </div>

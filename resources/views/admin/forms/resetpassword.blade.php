@@ -1,4 +1,5 @@
 {!! Form::open(['url' => '/admin/users/password/reset', 'class' => 'exp-form form-horizontal']) !!}
+@include('errors')
     <div class="form-group">
         <label for="current_password">Current_password: </label>
         {!! Form::text('current_password', null, ['class' => "form-control"]) !!}

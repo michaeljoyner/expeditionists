@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\SponsorCharityFormRequest;
 use App\Sponsor;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,7 @@ class SponsorsController extends Controller
         return view('admin.sponsors.edit')->with(compact('sponsor'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, SponsorCharityFormRequest $request)
     {
         $sponsor = Sponsor::findOrFail($id);
         $sponsor->update($request->all());
@@ -45,7 +47,7 @@ class SponsorsController extends Controller
         return redirect('admin/sponsors');
     }
 
-    public function storeImage($id, Request $request)
+    public function storeImage($id, ImageUploadRequest $request)
     {
         $sponsor = Sponsor::findOrFail($id);
         $image = $sponsor->setImage($request->file('file'));

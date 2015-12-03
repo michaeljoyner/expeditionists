@@ -86,6 +86,7 @@
 
   @include respond-to(phone) {font-size: 26px;}
   @include respond-to(smalltablet) {font-size: 26px;}
+  @include respond-to(largetablet) {font-size: 40px; line-height: 1.8}
 }
 .w-slider-arrow-right {
   @include respond-to(phone) {display: none;}
@@ -267,6 +268,7 @@
   margin-left: auto;
   @include respond-to(phone) {width: 90%; margin-top: 0;}
   @include respond-to(smalltablet) {width: 90%; margin-top: 0;}
+  @include respond-to(largetablet) {width: 90%; margin-top: 25px;}
 }
 .nav-container {
   display: block;

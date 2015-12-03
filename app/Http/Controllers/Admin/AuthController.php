@@ -25,7 +25,7 @@ class AuthController extends Controller
             return redirect()->intended('/admin');
         }
 
-        return redirect()->back();
+        return redirect()->back()->withErrors(['email' => 'Your credentials do not match our records']);
     }
 
     public function doLogout()

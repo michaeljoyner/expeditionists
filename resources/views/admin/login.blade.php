@@ -1,7 +1,8 @@
 @extends('admin.base')
 
 @section('content')
-    <h1>Login</h1>
-    @include('errors')
-    @include('admin.forms.login')
+    <div class="login-container">
+        <img src="{{ asset('images/static/NEW_logo_black.png') }}" alt="logo">
+        @include('admin.forms.login')
+    </div>
 @endsection

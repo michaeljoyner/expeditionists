@@ -1,4 +1,5 @@
 {!! Form::open() !!}
+@include('errors')
 <div class="sync-select-area">
     @foreach($profiles as $profile)
         <div class="sync-select-card">

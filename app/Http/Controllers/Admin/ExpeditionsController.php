@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Expedition;
+use App\Http\Requests\ExpeditionFormRequest;
+use App\Http\Requests\ImageUploadRequest;
 use App\Profile;
 use App\Sponsor;
 use Illuminate\Http\Request;
@@ -32,7 +34,7 @@ class ExpeditionsController extends Controller
         return view('admin.expeditions.create')->with(compact('expedition'));
     }
 
-    public function store(Request $request)
+    public function store(ExpeditionFormRequest $request)
     {
         $expedition = Expedition::create($request->all());
         $expedition->addGallery('expedition gallery');
@@ -47,12 +49,12 @@ class ExpeditionsController extends Controller
         return view('admin.expeditions.edit')->with(compact('expedition'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, ExpeditionFormRequest $request)
     {
         $expedition = Expedition::findOrFail($id);
         $expedition->update($request->all());
 
-        return redirect('admin');
+        return redirect('admin/expeditions/'.$expedition->id);
     }
 
     public function delete($id)
@@ -63,13 +65,13 @@ class ExpeditionsController extends Controller
         return redirect('admin');
     }
 
-    public function storeCoverPic($id, Request $request)
+    public function storeCoverPic($id, ImageUploadRequest $request)
     {
         $expedition = Expedition::findOrFail($id);
 
         $expedition->setCoverPic($request->file('file'));
 
-        return response('ok');
+        return response()->json('ok');
     }
 
     public function editSponsors($id)

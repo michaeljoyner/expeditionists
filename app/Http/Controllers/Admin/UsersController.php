@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\RegisterFormRequest;
 use App\Http\Requests\EditUserFormRequest;
+use App\Http\Requests\PasswordResetFormRequest;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -82,7 +83,7 @@ class UsersController extends Controller
         return view('admin.users.password');
     }
 
-    public function doPasswordReset(Request $request)
+    public function doPasswordReset(PasswordResetFormRequest $request)
     {
         if(! Hash::check($request->current_password, $request->user()->password)) {
             return redirect()->back();

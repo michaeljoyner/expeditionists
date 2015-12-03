@@ -2077,6 +2077,10 @@ textarea.w-select {
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .slide-text {
       font-size: 26px; } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
+    .slide-text {
+      font-size: 40px;
+      line-height: 1.8; } }
 
 @media only screen and (max-width: 413px) {
   .w-slider-arrow-right {
@@ -2275,6 +2279,10 @@ textarea.w-select {
     .slide-text-wrapper {
       width: 90%;
       margin-top: 0; } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
+    .slide-text-wrapper {
+      width: 90%;
+      margin-top: 25px; } }
 
 .nav-container {
   display: block;
@@ -3636,6 +3644,10 @@ a.red-link {
   color: #dc5744;
   text-decoration: underline; }
 
+.footer-list-item a, .footer-list-item a:visited, .footer-list-item a:focus, .footer-list-item a:active {
+  color: inherit;
+  text-decoration: none; }
+
 .expedition-team .expedition-team-profile-pic {
   width: 80px;
   height: 80px;
@@ -3770,7 +3782,7 @@ nav.w--nav-menu-open {
   .w-nav-link.nav-link {
     display: block; } }
 
-.get-involved-cta-button {
+a.get-involved-cta-button {
   display: block;
   position: absolute;
   left: 50%;
@@ -3792,26 +3804,26 @@ nav.w--nav-menu-open {
   line-height: 1.3;
   border: 8px solid #ffffff;
   opacity: 0;
-  -webkit-animation: slideUp 1s ease 1s 1 forwards;
-  animation: slideUp 1s ease 1s 1 forwards; }
+  -webkit-animation: slideUp .5s ease 1s 1 forwards;
+  animation: slideUp .5s ease 1s 1 forwards; }
   @media only screen and (max-width: 413px) {
-    .get-involved-cta-button {
+    a.get-involved-cta-button {
       font-size: 2em;
       padding: 5px; } }
   @media only screen and (min-width: 414px) and (max-width: 720px) {
-    .get-involved-cta-button {
+    a.get-involved-cta-button {
       font-size: 2em;
       padding: 5px; } }
-  .get-involved-cta-button:visited, .get-involved-cta-button:focus, .get-involved-cta-button:active {
+  a.get-involved-cta-button:visited, a.get-involved-cta-button:focus, a.get-involved-cta-button:active {
     text-decoration: none; }
-  .get-involved-cta-button:hover {
+  a.get-involved-cta-button:hover {
     background: rgba(255, 255, 255, 0.4); }
 
 .w-slide .slide-text {
   transition: .5s;
   opacity: 0;
-  -webkit-animation: slideDown 1s ease 1s 1 forwards;
-  animation: slideDown 1s ease 1s 1 forwards; }
+  -webkit-animation: slideDown .5s ease 1s 1 forwards;
+  animation: slideDown .5s ease 1s 1 forwards; }
 
 @-webkit-keyframes slideDown {
   0% {

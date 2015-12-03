@@ -44,7 +44,10 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
 
     public static function scopeCompleted($query)
     {
-        return $query->where('name', '!=', 'unknown')->where('intro', '!=', '');
+        return $query->where('name', '!=', 'unknown')
+            ->orWhere('name', '!=', '')
+            ->orwhere('intro', '!=', '')
+            ->whereNotNull('intro');
     }
 
     public function user()
@@ -76,6 +79,11 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
             return;
         }
         $this->addMedia($file)->preservingOriginal()->toMediaLibrary();
+    }
+
+    public function hasProfilePic()
+    {
+        return $this->getMedia()->count() > 0;
     }
 
     public function profilePic($thumb = true)

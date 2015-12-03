@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Gallery;
+use App\Http\Requests\ImageUploadRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,7 +20,7 @@ class GalleriesController extends Controller
         return response('ok');
     }
 
-    public function storeImage($id, Request $request)
+    public function storeImage($id, ImageUploadRequest $request)
     {
         $gallery = Gallery::findOrFail($id);
 
@@ -36,9 +37,7 @@ class GalleriesController extends Controller
     {
         $gallery = Gallery::findOrFail($galleryId);
 
-        $set =  $gallery->getMedia();
-
-        $next = $set->map(function($item) {
+        $set =  $gallery->getMedia()->map(function($item) {
             return [
                 'image_id' => $item->id,
                 'src' => $item->getUrl(),
@@ -46,6 +45,6 @@ class GalleriesController extends Controller
             ];
         });
 
-        return response()->json($next);
+        return response()->json($set);
     }
 }

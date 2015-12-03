@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Gallery;
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\ProfilesFormRequest;
 use App\Profile;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,7 @@ class ProfilesController extends Controller
         return view('admin.profiles.edit')->with(compact('profile'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, ProfilesFormRequest $request)
     {
         $profile = Profile::findOrFail($id);
 
@@ -36,18 +38,18 @@ class ProfilesController extends Controller
 
         $profile->update($request->all());
 
-        return redirect('admin');
+        return redirect('admin/profiles/'.$profile->id);
     }
 
-    public function storeProfilePic($id, Request $request)
+    public function storeProfilePic($id, ImageUploadRequest $request)
     {
         $profile = Profile::findOrFail($id);
         $profile->setProfilePic($request->file('file'));
 
-        return response('ok');
+        return response()->json('ok');
     }
 
-    public function delete($id, Request $request)
+    public function delete($id)
     {
         $profile = Profile::findOrFail($id);
 

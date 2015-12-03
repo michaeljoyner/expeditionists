@@ -6055,4 +6055,12 @@ button.close {
     color: #85cebf;
     border: 1px solid #85cebf; }
 
+.login-container {
+  max-width: 500px;
+  width: 95%;
+  margin: 20% auto 0; }
+  .login-container img {
+    width: 100%;
+    margin-bottom: 60px; }
+
 /*# sourceMappingURL=app.css.map */

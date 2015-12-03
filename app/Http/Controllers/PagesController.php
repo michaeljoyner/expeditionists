@@ -18,7 +18,7 @@ class PagesController extends Controller
     public function home()
     {
         $homePage = Page::where('name', 'home')->with('editableAreas')->firstOrFail();
-        $profiles = Profile::completed()->take(3)->get();
+        $profiles = $this->getCompletedProfiles();
         $expeditions = Expedition::latest()->take(4)->get();
         $sponsors = Sponsor::take(5)->get();
         $charities = Charity::take(5)->get();
@@ -58,7 +58,7 @@ class PagesController extends Controller
 
     public function expeditionists()
     {
-        $profiles = Profile::latest()->get();
+        $profiles = $this->getCompletedProfiles();
         $page = Page::where('name', 'expeditionists')->firstOrFail();
 
         return view('front.pages.expeditionists')->with(compact('profiles', 'page'));
@@ -68,5 +68,16 @@ class PagesController extends Controller
     {
         $aboutPage = Page::where('name', 'about')->firstOrFail();
         return view('front.pages.about')->with(compact('aboutPage'));
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getCompletedProfiles()
+    {
+        $profiles = Profile::completed()->get()->filter(function ($profile) {
+            return $profile->hasProfilePic();
+        });
+        return $profiles->count() > 3 ? $profiles->random(3) : $profiles;
     }
 }
