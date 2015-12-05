@@ -64,10 +64,10 @@
         </div>
         <a href="/expeditions" class="w-button button-big">SEE ALL EXPEDITIONS</a>
     </div>
-    <div class="w-section map-section">
-        <h1 class="section-heading black">INTERACTIVE MAP</h1>
-        @include('svg.worldLow')
-    </div>
+    {{--<div class="w-section map-section">--}}
+        {{--<h1 class="section-heading black">INTERACTIVE MAP</h1>--}}
+        {{--@include('svg.worldLow')--}}
+    {{--</div>--}}
     <div class="w-section blog-section">
         <h1 class="section-heading">BLOG</h1>
 
