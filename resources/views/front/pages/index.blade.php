@@ -92,7 +92,7 @@
         <h1 class="section-heading black">CHARITIES</h1>
 
         <div class="about-blurb">
-            <div class="p1 intro-black">{{ $homePage->present()->area('Get Involved intro') }}</div>
+            <div class="p1 intro-black">{{ $homePage->present()->area('Charities Intro') }}</div>
         </div>
         <div class="w-container involved-container">
             <div class="w-row sponsor-charity-box-wrapper">
