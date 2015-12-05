@@ -104,7 +104,7 @@
                     </a>
                 @endforeach
             </div>
-            <a href="/getinvolved" class="w-button button-big">HAVE A CHARITY THAT NEEDS SUPPORT?</a>
+            <a href="/getinvolved" class="w-button button-big">Learn more about charities</a>
         </div>
     </div>
     <div class="w-section sponsors-section">
