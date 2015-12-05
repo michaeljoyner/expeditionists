@@ -2038,7 +2038,7 @@ textarea.w-select {
   color: white; }
 
 .slide {
-  background-image: url("../images/africa-139343_640.jpg");
+  background-image: url("../images/banner_image2.jpg");
   background-position: 50% 56%;
   background-size: cover;
   background-repeat: repeat; }
@@ -2051,7 +2051,7 @@ textarea.w-select {
   background-size: cover; }
 
 .slide.slide-3 {
-  background-image: url("../images/penguin-657527_640.jpg"), url("../images/africa-139343_640.jpg");
+  background-image: url("../images/banner_image3.jpg"), url("../images/banner_image2.jpg");
   background-position: 0px -213px, 50% 56%;
   background-size: cover, cover;
   background-repeat: repeat, repeat; }
