@@ -53,7 +53,7 @@
             <h3 class="h4 blue">IMAGE GALLERY</h3>
             <div class="image-gallery-wrapper">
                 @foreach($profile->galleries->first()->getMedia() as $image)
-                    <a href="{{ $image->getUrl() }}">
+                    <a href="{{ $image->getUrl('web') }}">
                         <img class="gallery-thumb" src="{{ $image->getUrl('thumb') }}" alt="gallery image"/>
                     </a>
                 @endforeach

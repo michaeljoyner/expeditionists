@@ -62,7 +62,7 @@
             @if($expedition->galleries->first()->getMedia()->count() > 0)
             <h1 class="h4 blue">IMAGE GALLERY</h1>
             @foreach($expedition->galleries->first()->getMedia() as $image)
-                    <a href="{{ $image->getUrl() }}"><img class="gallery-thumb" src="{{ $image->getUrl('thumb') }}" alt="gallery image"/></a>
+                    <a href="{{ $image->getUrl('web') }}"><img class="gallery-thumb" src="{{ $image->getUrl('thumb') }}" alt="gallery image"/></a>
             @endforeach
             @endif
         </div>

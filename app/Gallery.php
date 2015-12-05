@@ -24,7 +24,11 @@ class Gallery extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-            ->setManipulations(['w' => 300, 'h' => 300])
+            ->setManipulations(['w' => 300, 'h' => 300, 'fit' => 'crop'])
+            ->performOnCollections('default');
+
+        $this->addMediaConversion('web')
+            ->setManipulations(['w' => 800, 'h' => 800])
             ->performOnCollections('default');
     }
 }
