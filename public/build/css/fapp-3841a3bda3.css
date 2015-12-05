@@ -2038,14 +2038,21 @@ textarea.w-select {
   color: white; }
 
 .slide {
+  padding-top: 70px;
+  padding-bottom: 70px;
   background-image: url("../images/banner_image2.jpg");
-  background-position: 50% 56%;
   background-size: cover;
   background-repeat: repeat; }
 
+@media only screen and (max-width: 413px) {
+  .slide.slide-2 {
+    background-position-x: 45%; } }
+
+@media only screen and (min-width: 414px) and (max-width: 720px) {
+  .slide.slide-2 {
+    background-position-x: 45%; } }
+
 .slide.slide-1 {
-  padding-top: 70px;
-  padding-bottom: 70px;
   background-image: url("../images/blue-desert45.jpg");
   background-position: 42% 86%;
   background-size: cover; }
@@ -3806,6 +3813,9 @@ a.get-involved-cta-button {
   opacity: 0;
   -webkit-animation: slideUp .5s ease 1s 1 forwards;
   animation: slideUp .5s ease 1s 1 forwards; }
+  a.get-involved-cta-button.red {
+    color: #dc5744;
+    border-color: #dc5744; }
   @media only screen and (max-width: 413px) {
     a.get-involved-cta-button {
       font-size: 2em;

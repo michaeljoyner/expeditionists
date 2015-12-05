@@ -24,7 +24,7 @@ class EditableContentFormRequest extends Request
     public function rules()
     {
         return [
-            'content' => 'required'
+//            'content' => 'required'
         ];
     }
 }

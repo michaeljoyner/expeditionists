@@ -5,7 +5,7 @@
     <div class="w-section expeditions-section">
     <div class="w-container exiditionists-hp-container">
       <h1 class="section-heading">EXPEDITIONISTS</h1>
-      <div class="p1 intro-black">This short paragraph intrudes the expeditionists.</div>
+      <div class="p1 intro-black">{{ $page->present()->area('Intro') }}</div>
         @foreach($profiles->chunk(3) as $profileRow)
             <div class="w-row expeditionists-row">
                 @foreach($profileRow as $profile)

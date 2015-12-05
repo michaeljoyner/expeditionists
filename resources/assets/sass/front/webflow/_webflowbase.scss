@@ -50,14 +50,20 @@
   color: white;
 }
 .slide {
+  padding-top: 70px;
+  padding-bottom: 70px;
   background-image: url('../images/banner_image2.jpg');
-  background-position: 50% 56%;
+  //background-position: 50% 56%;
   background-size: cover;
   background-repeat: repeat;
 }
+.slide.slide-2 {
+  @include respond-to(phone) {background-position-x: 45%;}
+  @include respond-to(smalltablet) {background-position-x: 45%;}
+
+}
 .slide.slide-1 {
-  padding-top: 70px;
-  padding-bottom: 70px;
+
   background-image: url('../images/blue-desert45.jpg');
   background-position: 42% 86%;
   background-size: cover;

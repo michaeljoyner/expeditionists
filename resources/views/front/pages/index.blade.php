@@ -14,7 +14,7 @@
                 <div class="w-slide slide slide-2">
                     <div class="slide-text-wrapper">
                         <div class="slide-text">{{ $homePage->present()->area('Banner Text 2') }}</div>
-                        <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
+                        <a href="/getinvolved" class="get-involved-cta-button red">Get Involved</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-3">

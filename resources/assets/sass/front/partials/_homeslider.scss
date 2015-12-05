@@ -21,6 +21,11 @@ a.get-involved-cta-button {
   opacity: 0;
   animation: slideUp .5s ease 1s 1 forwards;
 
+  &.red {
+    color: $primary_red;
+    border-color: $primary_red;
+  }
+
   @include respond-to(phone) {font-size: 2em; padding: 5px;}
   @include respond-to(smalltablet) {font-size: 2em; padding: 5px;}
 
