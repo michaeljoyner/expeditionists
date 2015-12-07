@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +20,7 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
         'updated_at',
         'date_of_birth'
     ];
+
 
     protected $fillable = [
         'name',
@@ -41,6 +43,11 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
         'build_from' => 'name',
         'save_to'    => 'slug',
     ];
+
+    public function dateForForm()
+    {
+        return $this->attributes['date_of_birth'];
+    }
 
     public static function scopeCompleted($query)
     {

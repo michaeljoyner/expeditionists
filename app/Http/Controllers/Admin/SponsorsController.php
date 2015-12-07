@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\ImageUploadRequest;
 use App\Http\Requests\SponsorCharityFormRequest;
 use App\Sponsor;
@@ -12,6 +13,17 @@ use App\Http\Controllers\Controller;
 
 class SponsorsController extends Controller
 {
+
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+        $this->flasher = $flasher;
+    }
+
     public function index()
     {
         $sponsors = Sponsor::all();
@@ -44,6 +56,8 @@ class SponsorsController extends Controller
         $sponsor = Sponsor::findOrFail($id);
         $sponsor->update($request->all());
 
+        $this->flasher->success('Sponsor Saved', 'The sponsor info has been saved');
+
         return redirect('admin/sponsors');
     }
 
@@ -59,6 +73,8 @@ class SponsorsController extends Controller
     {
         $sponsor = Sponsor::findOrFail($id);
         $sponsor->delete();
+
+        $this->flasher->success('Sponsor Deleted!', 'That sponsor has been deleted');
 
         return redirect('admin/sponsors');
     }

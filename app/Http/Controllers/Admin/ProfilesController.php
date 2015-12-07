@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Gallery;
+use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\ImageUploadRequest;
 use App\Http\Requests\ProfilesFormRequest;
 use App\Profile;
@@ -14,6 +15,18 @@ use Illuminate\Support\Facades\Gate;
 
 class ProfilesController extends Controller
 {
+
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+
+        $this->flasher = $flasher;
+    }
+
     public function show($id)
     {
         $profile = Profile::findOrFail($id);
@@ -38,6 +51,8 @@ class ProfilesController extends Controller
 
         $profile->update($request->all());
 
+        $this->flasher->success('Profile Updated!', 'Your changes have been saved.');
+
         return redirect('admin/profiles/'.$profile->id);
     }
 
@@ -58,6 +73,8 @@ class ProfilesController extends Controller
         }
 
         $profile->delete();
+
+        $this->flasher->success('Profile Deleted', 'The profile has been deleted.');
 
         return redirect('admin');
     }

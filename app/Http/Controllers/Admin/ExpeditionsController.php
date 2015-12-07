@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Expedition;
+use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\ExpeditionFormRequest;
 use App\Http\Requests\ImageUploadRequest;
 use App\Profile;
@@ -14,6 +15,17 @@ use App\Http\Controllers\Controller;
 
 class ExpeditionsController extends Controller
 {
+
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+        $this->flasher = $flasher;
+    }
+
     public function index()
     {
         $expeditions = Expedition::all();
@@ -39,7 +51,9 @@ class ExpeditionsController extends Controller
         $expedition = Expedition::create($request->all());
         $expedition->addGallery('expedition gallery');
 
-        return redirect('admin');
+        $this->flasher->success('Expedition created', 'May it be a roaring success');
+
+        return redirect('admin/expeditions');
     }
 
     public function edit($id)
@@ -54,6 +68,8 @@ class ExpeditionsController extends Controller
         $expedition = Expedition::findOrFail($id);
         $expedition->update($request->all());
 
+        $this->flasher->success('Expedition Saved', 'The expedition info has been updated');
+
         return redirect('admin/expeditions/'.$expedition->id);
     }
 
@@ -62,7 +78,9 @@ class ExpeditionsController extends Controller
         $expedition = Expedition::findOrFail($id);
         $expedition->delete();
 
-        return redirect('admin');
+        $this->flasher->success('Expedition Deleted', 'That expedition has been erased from memory.');
+
+        return redirect('admin/expeditions');
     }
 
     public function storeCoverPic($id, ImageUploadRequest $request)
@@ -91,6 +109,8 @@ class ExpeditionsController extends Controller
         $expedition = Expedition::findOrFail($id);
         $expedition->syncSponsorsById($sponsorIds);
 
+        $this->flasher->success('Sponsors Synced!', 'The sponsors for this expedition have been updated');
+
         return redirect('admin/expeditions/'.$expedition->id);
     }
 
@@ -110,6 +130,8 @@ class ExpeditionsController extends Controller
 
         $expedition = Expedition::findOrFail($id);
         $expedition->syncTeamByIds($teamIds);
+
+        $this->flasher->success('Team Members Set', 'The team for this expedition has been updated');
 
         return redirect('admin/expeditions/'.$expedition->id);
     }

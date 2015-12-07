@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="date_of_birth">Date of Birth: </label>
-            {!! Form::date('date_of_birth', null, ['class' => "form-control"]) !!}
+            {!! Form::date('date_of_birth', $model->dateForForm(), ['class' => "form-control"]) !!}
         </div>
         <div class="form-group">
             <label for="nationality">Nationality: </label>

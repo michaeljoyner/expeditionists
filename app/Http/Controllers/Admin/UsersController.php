@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\Admin\RegisterFormRequest;
 use App\Http\Requests\EditUserFormRequest;
 use App\Http\Requests\PasswordResetFormRequest;
@@ -15,6 +16,16 @@ use Illuminate\Support\Facades\Input;
 
 class UsersController extends Controller
 {
+
+    /**
+     * @var Flasher
+     */
+    private $flasher;
+
+    public function __construct(Flasher $flasher)
+    {
+        $this->flasher = $flasher;
+    }
 
     public function index()
     {
@@ -43,7 +54,8 @@ class UsersController extends Controller
         $user->addProfile();
         $user->profile->addGallery('my images');
 
-        return redirect()->to('/');
+        $this->flasher->success('User Added', 'A new user was added successfully');
+        return redirect()->to('admin/users');
     }
 
     public function edit($id)
@@ -58,6 +70,8 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $user->update($request->all());
 
+        $this->flasher->success('User Updated', 'Your changes have been saved');
+
         return redirect()->to('/admin/users');
     }
 
@@ -68,12 +82,15 @@ class UsersController extends Controller
         }
 
         if(User::all()->count() < 2) {
+            $this->flasher->warning('No, No, No.', 'You cannot delete the final user');
             return redirect()->back()->withErrors(['delete' => 'Can not delete final user']);
         }
         
         $user = User::findOrFail($id);
 
         $user->delete();
+
+        $this->flasher->success('User Deleted', 'That user has been removed from the system');
 
         return redirect()->to('/admin/users');
     }
@@ -92,6 +109,8 @@ class UsersController extends Controller
         $user = User::findOrFail($request->user()->id);
         $user->password = $request->password;
         $user->save();
+
+        $this->flasher->success('Password Reset', 'Your password has been reset');
 
         return redirect('admin');
     }

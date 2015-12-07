@@ -12,4 +12,5 @@ Vue.component('publishbutton', require('./components/Publishbutton.vue'));
 
 window.Vue = Vue;
 
+window.swal = require('sweetalert');
 
