@@ -6,11 +6,13 @@ use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\Admin\RegisterFormRequest;
 use App\Http\Requests\EditUserFormRequest;
 use App\Http\Requests\PasswordResetFormRequest;
+use App\Mailing\AdminMailer;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 
@@ -39,7 +41,7 @@ class UsersController extends Controller
         return view('admin.users.register');
     }
 
-    public function postRegistration(RegisterFormRequest $request)
+    public function postRegistration(RegisterFormRequest $request, AdminMailer $mailer)
     {
         if(! $request->user()->hasRole('admin')) {
             return abort(403, 'You do not have permission to perform that action');
@@ -53,6 +55,15 @@ class UsersController extends Controller
 
         $user->addProfile();
         $user->profile->addGallery('my images');
+
+        $data = [
+            'new_user_name' => $user->name,
+            'new_user_email' => $user->email,
+            'creator_name' => Auth::user()->name,
+            'creator_email' => Auth::user()->email
+        ];
+
+        $mailer->notifyNewUser($data);
 
         $this->flasher->success('User Added', 'A new user was added successfully');
         return redirect()->to('admin/users');

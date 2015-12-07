@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.1",
         "spatie/laravel-permission": "^1.2",
         "spatie/laravel-medialibrary": "^3.8",
-        "cviebrock/eloquent-sluggable": "^3.1"
+        "cviebrock/eloquent-sluggable": "^3.1",
+        "guzzlehttp/guzzle": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

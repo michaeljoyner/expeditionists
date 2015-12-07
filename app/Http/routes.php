@@ -18,9 +18,7 @@ Route::get('expeditions/{slug}', 'PagesController@expedition');
 Route::get('about', 'PagesController@about');
 Route::get('expeditions', 'PagesController@expeditions');
 Route::get('expeditionists', 'PagesController@expeditionists');
-Route::post('contact', function() {
-    return response()->json('shot bru');
-});
+Route::post('contact', 'ContactController@postMessage');
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@show');

@@ -140,7 +140,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         ]);
         $editGetInvolvedIntro = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $home->id,
-            'name' => 'Get Involved intro',
+            'name' => 'Charities Intro',
             'allows_html' => 0,
             'content' => 'Once installed, the simple laravel new command will create a fresh Laravel installation in the directory you specify. For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all of Laravel'
         ]);
