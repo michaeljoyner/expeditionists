@@ -4004,7 +4004,13 @@ a.get-involved-cta-button {
 .about-page-body p {
   text-align: left;
   font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #2e2e34; }
+  color: #2e2e34;
+  font-size: 120%;
+  line-height: 1.4;
+  font-weight: 300;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .about-page-body a {
   color: #dc5744;
