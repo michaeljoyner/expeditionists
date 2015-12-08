@@ -1,0 +1,19 @@
+.about-page-body {
+
+  p {
+    text-align: left;
+    font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: $primary_dark;
+  }
+  
+  a {
+    color: $primary_red;
+    text-decoration: underline;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: $primary_red;
+    font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+}

@@ -6,7 +6,7 @@
     <h1 class="section-heading">ABOUT EXPEDITIONISTS.ORG</h1>
 
     <div class="w-container about-page-container">
-      <article class="about-page-body p1 black">
+      <article class="about-page-body">
           {!! $aboutPage->present()->area('about')!!}
       </article>
     </div>

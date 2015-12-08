@@ -4001,4 +4001,18 @@ a.get-involved-cta-button {
   display: block;
   margin: 0 auto; }
 
+.about-page-body p {
+  text-align: left;
+  font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #2e2e34; }
+
+.about-page-body a {
+  color: #dc5744;
+  text-decoration: underline; }
+
+.about-page-body h1, .about-page-body h2, .about-page-body h3, .about-page-body h4, .about-page-body h5, .about-page-body h6 {
+  text-align: center;
+  color: #dc5744;
+  font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif; }
+
 /*# sourceMappingURL=fapp.css.map */
