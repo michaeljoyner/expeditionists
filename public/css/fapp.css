@@ -2059,7 +2059,7 @@ textarea.w-select {
 
 .slide.slide-3 {
   background-image: url("../images/banner_image3.jpg"), url("../images/banner_image2.jpg");
-  background-position: 0px -213px, 50% 56%;
+  background-position: 50% 40%;
   background-size: cover, cover;
   background-repeat: repeat, repeat; }
 
@@ -2165,6 +2165,9 @@ textarea.w-select {
 
 .p1.white.bio {
   width: 100%; }
+
+.p1.white.left-aligned, .p1.black.left-aligned {
+  text-align: left; }
 
 .p1.black {
   border-bottom: 1px none black;

@@ -47,7 +47,7 @@
         </div>
         <h3 class="h4 blue">BIO</h3>
         <div class="w-container bio-container">
-            <div class="p1 white bio">{!! nl2br($profile->biography) !!}</div>
+            <div class="p1 left-aligned white bio">{!! nl2br($profile->biography) !!}</div>
         </div>
         @if($profile->galleries->count() > 0)
             <h3 class="h4 blue">IMAGE GALLERY</h3>

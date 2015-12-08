@@ -52,11 +52,11 @@
         </div>
         <div class="w-container bio-container">
             <h1 class="h4 blue">MISSION</h1>
-            <p class="p1 white bio">{{ $expedition->mission }}</p>
+            <p class="p1 white left-aligned bio">{{ $expedition->mission }}</p>
             <h1 class="h4 blue">OBJECTIVES</h1><
-            <p class="p1 white bio">{{ $expedition->objectives }}</p>
+            <p class="p1 white left-aligned bio">{{ $expedition->objectives }}</p>
             <h1 class="h4 blue">ABOUT</h1>
-            <div class="p1 white bio">{!! nl2br($expedition->about) !!}</div>
+            <div class="p1 white left-aligned bio">{!! nl2br($expedition->about) !!}</div>
         </div>
         <div class="image-gallery-wrapper">
             @if($expedition->galleries->first()->getMedia()->count() > 0)
