@@ -17,7 +17,6 @@
     <div class="row">
         <div class="col-md-7 expedition-profile-stats-area expedition-detail">
             <p><strong class="stat-label">Location: </strong>{{ $expedition->location }}</p>
-            <p><strong class="stat-label">Intro: </strong>{{ $expedition->intro }}</p>
             <p><strong class="stat-label">Start Date: </strong>{{ $expedition->start_date->toFormattedDateString() }}</p>
             <p><strong class="stat-label">About: </strong>{!! nl2br($expedition->about) !!}</p>
             <p><strong class="stat-label">Mission: </strong>{!! nl2br($expedition->mission) !!}</p>
