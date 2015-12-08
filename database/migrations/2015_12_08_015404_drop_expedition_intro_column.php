@@ -25,7 +25,7 @@ class DropExpeditionIntroColumn extends Migration
     public function down()
     {
         Schema::table('expeditions', function (Blueprint $table) {
-            $table->text('intro');
+            $table->text('intro')->nullable();
         });
     }
 }

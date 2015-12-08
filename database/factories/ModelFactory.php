@@ -43,7 +43,6 @@ $factory->define(App\Profile::class, function (Faker\Generator $faker) {
 $factory->define(App\Expedition::class, function (Faker\Generator $faker) {
     return [
         'name'          => $faker->city,
-        'intro'         => $faker->paragraph(),
         'location'      => $faker->country,
         'about'         => $faker->paragraphs(3, true),
         'mission'       => $faker->paragraph(),
