@@ -39,7 +39,7 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-            ->setManipulations(['w' => 300, 'h' => 300, 'fit' => 'crop'])
+            ->setManipulations(['w' => 400, 'h' => 300, 'fit' => 'crop'])
             ->performOnCollections('default');
 
         $this->addMediaConversion('web')
