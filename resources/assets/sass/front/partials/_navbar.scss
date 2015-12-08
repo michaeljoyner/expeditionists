@@ -43,3 +43,22 @@ nav.w--nav-menu-open {
   @include respond-to(smalltablet) {display: block;}
   @include respond-to(largetablet) {display: block;}
 }
+
+.logo-banner-image {
+  transition: .5s;
+}
+
+.logo-banner-image:hover {
+  animation: flipOut 1s linear ;
+}
+
+@keyframes flipOut {
+  0% {transform: translate3d(0,0,0);}
+  13% {transform: translate3d(5px,0,0);}
+  26% {transform: translate3d(-5px,0,0);}
+  39% {transform: translate3d(10px,0,0);}
+  52% {transform: translate3d(-10px,0,0);}
+  65% {transform: translate3d(5px,0,0);}
+  78% {transform: translate3d(-5px,0,0);}
+  100% {transform: translate3d(0,0,0);}
+}

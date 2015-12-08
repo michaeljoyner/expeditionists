@@ -25,7 +25,6 @@ class ExpeditionFormRequest extends Request
     {
         return [
             'name' => 'required|max:254',
-            'intro' => 'required',
             'location' => 'required',
             'about' => 'required',
             'mission' => 'required',

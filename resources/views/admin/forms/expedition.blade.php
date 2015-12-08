@@ -22,10 +22,7 @@
         </div>
     </div>
 </div>
-<div class="form-group">
-    <label for="intro">Intro: </label>
-    {!! Form::textarea('intro', null, ['class' => 'form-control ta-short']) !!}
-</div>
+
 
 <div class="form-group">
     <label for="about">About: </label>

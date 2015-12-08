@@ -16,7 +16,6 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
 
     protected $fillable = [
         'name',
-        'intro',
         'location',
         'about',
         'mission',
