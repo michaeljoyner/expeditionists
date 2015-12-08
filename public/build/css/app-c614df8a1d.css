@@ -6837,6 +6837,10 @@ body.stop-scrolling {
     .galleries .gallery-container .gallery-item img {
       max-width: 100%; }
 
+.single-image-uploader-box .upload-instruction {
+  color: #85cebf;
+  font-size: 120%; }
+
 .single-image-uploader-box .profile-image {
   width: 200px;
   height: 200px;
