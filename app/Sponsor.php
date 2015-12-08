@@ -20,7 +20,7 @@ class Sponsor extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-            ->setManipulations(['w' => 200, 'h' => 200, 'fit' => 'crop'])
+            ->setManipulations(['w' => 200, 'h' => 200, 'fit' => 'crop', 'fm' => 'png'])
             ->performOnCollections('default');
     }
 
