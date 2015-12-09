@@ -12992,6 +12992,55 @@ if (module.hot) {(function () {  module.hot.accept()
 },{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],92:[function(require,module,exports){
 'use strict';
 
+module.exports = {
+
+    formEL: null,
+    dateEls: null,
+
+    init: function init(formEl, dateEls) {
+        formDateValidator.formEl = formEl;
+        formDateValidator.dateEls = dateEls;
+
+        formDateValidator.formEl.addEventListener('submit', formDateValidator.validate, false);
+    },
+
+    isDateTypeSupported: function isDateTypeSupported() {
+        var el = document.createElement('input');
+        el.setAttribute('type', 'date');
+        return el.type === 'date';
+    },
+
+    validate: function validate(ev) {
+        var i = 0,
+            l = formDateValidator.dateEls.length;
+        var els = formDateValidator.dateEls;
+        var hasDateFormatError = false;
+
+        if (formDateValidator.isDateTypeSupported()) {
+            return true;
+        }
+
+        for (i; i < l; i++) {
+            if (els[i].value.search(/(\d{4}-\d{2}-\d{2})/) === -1) {
+                hasDateFormatError = true;
+            }
+        }
+
+        if (hasDateFormatError) {
+            swal({
+                type: "warning",
+                title: "Incorrect date format",
+                text: "Please enter dates as YYYY-mm-dd",
+                showConfirmButton: true
+            });
+            ev.preventDefault();
+        }
+    }
+};
+
+},{}],93:[function(require,module,exports){
+'use strict';
+
 var Vue = require('vue');
 Vue.use(require('vue-resource'));
 
@@ -13007,5 +13056,6 @@ Vue.component('publishbutton', require('./components/Publishbutton.vue'));
 window.Vue = Vue;
 
 window.swal = require('sweetalert');
+window.formDateValidator = require('./libs/formdatevalidator.js');
 
-},{"./components/Dropzone.vue":88,"./components/Galleryshow.vue":89,"./components/Publishbutton.vue":90,"./components/Singleupload.vue":91,"sweetalert":10,"vue":85,"vue-resource":13}]},{},[92]);
+},{"./components/Dropzone.vue":88,"./components/Galleryshow.vue":89,"./components/Publishbutton.vue":90,"./components/Singleupload.vue":91,"./libs/formdatevalidator.js":92,"sweetalert":10,"vue":85,"vue-resource":13}]},{},[93]);

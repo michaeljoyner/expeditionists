@@ -8,3 +8,9 @@
         'buttonText' => 'Save Changes'
     ])
 @endsection
+
+@section('bodyscripts')
+    <script>
+        formDateValidator.init(document.querySelector('#profile-form'), document.querySelectorAll('.date-input'));
+    </script>
+@endsection

@@ -1,4 +1,4 @@
-{!! Form::model($model, ['url' => $formAction, 'class' => 'exp-form form-horizontal two-column']) !!}
+{!! Form::model($model, ['url' => $formAction, 'class' => 'exp-form form-horizontal two-column', 'id' => 'profile-form']) !!}
     @include('errors')
 <div class="row">
     <div class="col-md-6">
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="date_of_birth">Date of Birth: </label>
-            {!! Form::date('date_of_birth', $model->dateForForm(), ['class' => "form-control"]) !!}
+            {!! Form::date('date_of_birth', $model->dateForForm(), ['class' => "form-control date-input", 'placeholder' => "YYYY-MM-DD"]) !!}
         </div>
         <div class="form-group">
             <label for="nationality">Nationality: </label>

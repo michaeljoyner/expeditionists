@@ -8,3 +8,9 @@
         'buttonText' => 'Create Expedition'
     ])
 @endsection
+
+@section('bodyscripts')
+    <script>
+        formDateValidator.init(document.querySelector('#expedition-form'), document.querySelectorAll('.date-input'));
+    </script>
+@endsection

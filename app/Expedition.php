@@ -35,6 +35,15 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
         'save_to'    => 'slug',
     ];
 
+    public function dateForForm()
+    {
+        if(array_key_exists('start_date', $this->attributes)) {
+            return $this->attributes['start_date'];
+        }
+
+        return null;
+    }
+
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')

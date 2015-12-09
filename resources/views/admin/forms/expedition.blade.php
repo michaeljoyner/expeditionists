@@ -1,4 +1,4 @@
-{!! Form::model($model, ['url' => $formAction, 'class' => 'exp-form form-horizontal two-column']) !!}
+{!! Form::model($model, ['url' => $formAction, 'class' => 'exp-form form-horizontal two-column', 'id' => 'expedition-form']) !!}
     @include('errors')
 <div class="row">
     <div class="col-md-6">
@@ -14,7 +14,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="start_date">Start Date: </label>
-            {!! Form::date('start_date', null, ['class' => "form-control"]) !!}
+            {!! Form::date('start_date', $model->dateForForm(), ['class' => "form-control date-input", 'placeholder' => 'YYYY-MM-DD']) !!}
         </div>
         <div class="form-group">
             <label for="donation_goal">Donation goal: </label>

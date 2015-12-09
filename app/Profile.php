@@ -46,7 +46,11 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
 
     public function dateForForm()
     {
-        return $this->attributes['date_of_birth'];
+        if(array_key_exists('date_of_birth', $this->attributes)) {
+            return $this->attributes['date_of_birth'];
+        }
+
+        return null;
     }
 
     public static function scopeCompleted($query)
