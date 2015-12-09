@@ -58,14 +58,14 @@
             <h1 class="h4 blue">ABOUT</h1>
             <div class="p1 white left-aligned bio">{!! nl2br($expedition->about) !!}</div>
         </div>
+        @if($expedition->galleries->first()->getMedia()->count() > 0)
         <div class="image-gallery-wrapper">
-            @if($expedition->galleries->first()->getMedia()->count() > 0)
             <h1 class="h4 blue">IMAGE GALLERY</h1>
             @foreach($expedition->galleries->first()->getMedia() as $image)
                     <a href="{{ $image->getUrl('web') }}"><img class="gallery-thumb" src="{{ $image->getUrl('thumb') }}" alt="gallery image"/></a>
             @endforeach
-            @endif
         </div>
+        @endif
         <div class="w-container sponsors-container">
             <h1 class="h4 blue">SPONSORS</h1>
 
