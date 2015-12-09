@@ -384,6 +384,7 @@
   padding: 40px;
   @include respond-to(phone) {padding: 0;}
   @include respond-to(smalltablet) {padding: 0;}
+  @include respond-to(largetablet) {padding: 5px;}
 }
 .expeditions-image {
   display: block;
@@ -430,6 +431,7 @@
 
   @include respond-to(phone) {font-size: 32px;}
   @include respond-to(smalltablet) {font-size: 32px;}
+  @include respond-to(largetablet) {font-size: 32px;}
 
 }
 .button-big {

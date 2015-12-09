@@ -2411,6 +2411,9 @@ textarea.w-select {
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .expeditions-column {
       padding: 0; } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
+    .expeditions-column {
+      padding: 5px; } }
 
 .expeditions-image {
   display: block;
@@ -2460,6 +2463,9 @@ textarea.w-select {
     .expeditions-image-text {
       font-size: 32px; } }
   @media only screen and (min-width: 414px) and (max-width: 720px) {
+    .expeditions-image-text {
+      font-size: 32px; } }
+  @media only screen and (min-width: 721px) and (max-width: 969px) {
     .expeditions-image-text {
       font-size: 32px; } }
 

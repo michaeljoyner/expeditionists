@@ -30,7 +30,7 @@ class ExpeditionFormRequest extends Request
             'mission' => 'required',
             'objectives' => 'required',
             'donation_goal' => 'required',
-            'start_date' => 'required'
+            'start_date' => 'required|date'
         ];
     }
 }
