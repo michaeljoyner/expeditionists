@@ -74,7 +74,7 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-            ->setManipulations(['w' => 200, 'h' => 200, 'fit' => 'crop'])
+            ->setManipulations(['w' => 200, 'h' => 200, 'fit' => 'crop', 'crop-mode' => 'top'])
             ->performOnCollections('default');
 
         $this->addMediaConversion('web')

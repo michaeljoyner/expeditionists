@@ -52,6 +52,8 @@
                               size="large"
                 ></singleupload>
             </div>
+            <p>The best size cover image for an expedition is a 4:3 (width to height) ratio, and an image at least 500px across.</p>
+            <p>Note: The initial preview does not always show a true representation of the final outcome.</p>
         </div>
     </div>
     <section class="galleries">

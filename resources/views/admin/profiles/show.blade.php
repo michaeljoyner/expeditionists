@@ -36,6 +36,7 @@
                               size="small"
                 ></singleupload>
             </div>
+            <p>The best size for a profile pic is a 2:3 (width to height) ratio, with your face bisected by the upper third line.</p><p>Note: The initial preview does not always represent the final outcome.</p>
         </div>
     </div>
     <section class="galleries">

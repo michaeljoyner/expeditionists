@@ -31,6 +31,8 @@
                               size="small"
                 ></singleupload>
             </div>
+            <p>Charity images are mostly shown in thumbnail size, which are cropped to squares. For that reason it is recommended to upload a square image for best results.</p>
+            <p>Note: The initial preview does not always show a true representation of the final outcome.</p>
         </div>
     </section>
     @include('admin.partials.deletemodal')
