@@ -30,6 +30,6 @@
             </div>
         </div><a href="/"><img src="/build/images/NEW_logo_white.png" class="footer-logo"></a>
     </div>
-    <div class="mym">Website by <span class="mmm-link">Make Your Mark</span>
+    <div class="mym">Website by <a href="http://mymsolutions.co.za" target="_blank" class="mmm-link">Make Your Mark</a>
     </div>
 </div>
