@@ -46,7 +46,7 @@
             </div>
         </div>
         <h3 class="h4 blue">BIO</h3>
-        <div class="w-container bio-container">
+        <div class="w-container bio-container side-padded">
             <div class="p1 left-aligned white bio">{!! nl2br($profile->biography) !!}</div>
         </div>
         @if($profile->galleries->first()->getMedia()->count() > 0)

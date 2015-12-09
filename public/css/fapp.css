@@ -2123,10 +2123,20 @@ textarea.w-select {
   text-transform: uppercase; }
   @media only screen and (max-width: 413px) {
     .section-heading {
-      font-size: 32px; } }
+      font-size: 28px;
+      line-height: 1.3; } }
   @media only screen and (min-width: 414px) and (max-width: 720px) {
     .section-heading {
-      font-size: 32px; } }
+      font-size: 32px;
+      line-height: 1.3; } }
+
+@media only screen and (max-width: 413px) {
+  .h4.get-involved-heading {
+    font-size: 28px; } }
+
+@media only screen and (min-width: 414px) and (max-width: 720px) {
+  .h4.get-involved-heading {
+    font-size: 30px; } }
 
 .section-heading.profiles-page-title {
   font-size: 16px;
@@ -3663,6 +3673,10 @@ a.red-link {
 .footer-list-item a, .footer-list-item a:visited, .footer-list-item a:focus, .footer-list-item a:active {
   color: inherit;
   text-decoration: none; }
+
+.side-padded {
+  padding-left: 8px;
+  padding-right: 8px; }
 
 .expedition-team .expedition-team-profile-pic {
   width: 80px;

@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-container bio-container">
+        <div class="w-container bio-container side-padded">
             <h1 class="h4 blue">MISSION</h1>
             <p class="p1 white left-aligned bio">{{ $expedition->mission }}</p>
             <h1 class="h4 blue">OBJECTIVES</h1><
