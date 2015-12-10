@@ -23,6 +23,9 @@
   .ta-short {
     height: 80px;
   }
+  textarea.ta-short {
+    resize: none;
+  }
 }
 
 .delete-form {

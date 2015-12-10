@@ -18,7 +18,10 @@
     <script src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
     <script>
         tinymce.init({
-            selector: "#body-area"
+            selector: "#body-area",
+            plugins: "fullscreen",
+            toolbar: 'undo redo | styleselect | bold italic |',
+            height: 700
         });
     </script>
 @endsection

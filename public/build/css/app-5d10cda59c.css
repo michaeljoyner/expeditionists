@@ -6727,6 +6727,9 @@ body.stop-scrolling {
 .exp-form .ta-short {
   height: 80px; }
 
+.exp-form textarea.ta-short {
+  resize: none; }
+
 .delete-form {
   display: inline-block; }
 

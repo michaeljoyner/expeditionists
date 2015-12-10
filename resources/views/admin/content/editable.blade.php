@@ -25,7 +25,8 @@
         <script src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
         <script>
             tinymce.init({
-                selector: "#content-area"
+                selector: "#content-area",
+                toolbar: 'undo redo | styleselect | bold italic |'
             });
         </script>
     @endif
