@@ -1136,7 +1136,7 @@ textarea.w-select {
   user-select: none;
   display: inline-block;
   cursor: pointer;
-  padding-right: 40px;
+  //padding-right: 40px;
 }
 .w-dropdown-toggle:focus {
   outline: 0;
@@ -1163,7 +1163,12 @@ textarea.w-select {
 .w-dropdown-link {
   padding: 10px 20px;
   display: block;
-  color: #222222;
+  background: $primary_red;
+  color: $primary_light;
+}
+.w-dropdown-link:hover {
+  background: $primary_light;
+  color: $primary_red;
 }
 .w-dropdown-link.w--current {
   color: #0082f3;
