@@ -8,6 +8,7 @@ use App\Content\Page;
 use App\Expedition;
 use App\Profile;
 use App\Sponsor;
+use App\TeamMember;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -67,7 +68,8 @@ class PagesController extends Controller
     public function about()
     {
         $aboutPage = Page::where('name', 'about')->firstOrFail();
-        return view('front.pages.about')->with(compact('aboutPage'));
+        $members = TeamMember::all();
+        return view('front.pages.about')->with(compact('aboutPage', 'members'));
     }
 
     /**

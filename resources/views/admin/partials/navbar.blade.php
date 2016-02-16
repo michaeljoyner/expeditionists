@@ -45,6 +45,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 @role('admin')
+                    <li><a href="/admin/team">Team</a></li>
                     <li><a href="/admin/users">Users</a></li>
                 @endif
                 <li class="dropdown">

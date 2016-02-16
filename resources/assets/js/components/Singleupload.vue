@@ -4,9 +4,9 @@
 
 <template>
     <p class="upload-instruction">Click below to upload an image.</p>
-    <label for="profile-upload"  class="single-upload-label">
+    <label for="{{ 'profile-upload' + uniqueid}}"  class="single-upload-label">
         <img :src="imageSrc"  alt="" class="profile-image" v-bind:class="{'processing' : uploading, 'large': size === 'large', 'round': shape === 'round', 'full': size === 'full' }"/>
-        <input v-on:change="processFile" type="file" id="profile-upload"/>
+        <input v-on:change="processFile" type="file" id="{{ 'profile-upload' + uniqueid}}"/>
     </label>
     <div class="upload-progress-container" v-show="uploading">
         <span class="upload-progress-bar"
@@ -20,7 +20,7 @@
 
 <script>
     module.exports = {
-        props: ['default', 'url', 'shape', 'size'],
+        props: ['default', 'url', 'shape', 'size', 'uniqueid'],
 
         data: function() {
             return {

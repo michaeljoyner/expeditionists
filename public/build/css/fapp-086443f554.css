@@ -1368,9 +1368,6 @@ textarea.w-select {
   background: #f2eee7;
   color: #dc5744; }
 
-.w-dropdown-link.w--current {
-  color: #0082f3; }
-
 .w-nav[data-collapse="all"] .w-dropdown,
 .w-nav[data-collapse="all"] .w-dropdown-toggle {
   display: block; }
@@ -3827,6 +3824,9 @@ nav.w--nav-menu-open {
   -webkit-animation: flipOut 1s linear;
   animation: flipOut 1s linear; }
 
+.w-dropdown-list .sublink {
+  font-size: 70%; }
+
 @-webkit-keyframes flipOut {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -4048,5 +4048,27 @@ a.get-involved-cta-button {
   text-align: center;
   color: #dc5744;
   font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif; }
+
+.about-page-container {
+  padding-bottom: 50px; }
+
+.team-member-card {
+  width: 33%;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top; }
+  .team-member-card .profile-pic {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    max-width: 100%; }
+  .team-member-card .member-name, .team-member-card .member-title {
+    text-align: center; }
+  .team-member-card .member-title {
+    font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial;
+    color: #2e2e34;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: -10px; }
 
 /*# sourceMappingURL=fapp.css.map */

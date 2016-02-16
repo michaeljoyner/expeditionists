@@ -11,7 +11,7 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Profile extends Model implements HasMediaConversions, SluggableInterface
 {
-    use HasMediaTrait, SluggableTrait;
+    use HasMediaTrait, SluggableTrait, HasProfilePicTrait;
 
     protected $table = 'profiles';
 
@@ -71,39 +71,7 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
         return $this->belongsToMany('App\Expedition');
     }
 
-    public function registerMediaConversions()
-    {
-        $this->addMediaConversion('thumb')
-            ->setManipulations(['w' => 200, 'h' => 200, 'fit' => 'crop', 'crop-mode' => 'top'])
-            ->performOnCollections('default');
 
-        $this->addMediaConversion('web')
-            ->setManipulations(['w' => 400, 'h' => 600])
-            ->performOnCollections('default');
-    }
-
-    public function setProfilePic($file, $name = false)
-    {
-        $this->clearMediaCollection();
-        if($name) {
-            $this->addMedia($file)->preservingOriginal()->usingFileName($name)->toMediaLibrary();
-            return;
-        }
-        $this->addMedia($file)->preservingOriginal()->toMediaLibrary();
-    }
-
-    public function hasProfilePic()
-    {
-        return $this->getMedia()->count() > 0;
-    }
-
-    public function profilePic($thumb = true)
-    {
-
-        $pic =  $this->getFirstMediaUrl('default', $thumb ? 'thumb' : 'web');
-
-        return $pic ? $pic : '/images/assets/user.png';
-    }
 
     public function galleries()
     {

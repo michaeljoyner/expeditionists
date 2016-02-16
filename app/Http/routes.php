@@ -93,6 +93,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('blog/{id}', 'BlogController@update');
         Route::delete('blog/{id}', 'BlogController@delete');
 
+        Route::get('team', 'TeamMembersController@index');
+        Route::get('team/members/create', 'TeamMembersController@create');
+        Route::get('team/members/{id}/edit', 'TeamMembersController@edit');
+        Route::post('team/members', 'TeamMembersController@store');
+        Route::post('team/members/{id}', 'TeamMembersController@update');
+        Route::delete('team/members/{id}', 'TeamMembersController@delete');
+        Route::post('uploads/team/members/{id}/profilepic', 'TeamMembersController@setProfilePic');
 
     });
 

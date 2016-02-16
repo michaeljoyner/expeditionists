@@ -12897,7 +12897,7 @@ var __vueify_style__ = require("vueify-insert-css").insert("\n\n")
 'use strict';
 
 module.exports = {
-    props: ['default', 'url', 'shape', 'size'],
+    props: ['default', 'url', 'shape', 'size', 'uniqueid'],
 
     data: function data() {
         return {
@@ -12973,7 +12973,7 @@ module.exports = {
     }
 
 };
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n    <p class=\"upload-instruction\">Click below to upload an image.</p>\n    <label for=\"profile-upload\" class=\"single-upload-label\">\n        <img :src=\"imageSrc\" alt=\"\" class=\"profile-image\" v-bind:class=\"{'processing' : uploading, 'large': size === 'large', 'round': shape === 'round', 'full': size === 'full' }\">\n        <input v-on:change=\"processFile\" type=\"file\" id=\"profile-upload\">\n    </label>\n    <div class=\"upload-progress-container\" v-show=\"uploading\">\n        <span class=\"upload-progress-bar\" v-bind:style=\"{width: uploadPercentage + '%'}\"></span>\n    </div>\n    <p class=\"upload-message\" v-bind:class=\"{'error': uploadStatus === 'error', 'success': uploadStatus === 'success'}\" v-show=\"uploadMsg !== ''\">{{ uploadMsg }}\n    </p>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n    <p class=\"upload-instruction\">Click below to upload an image.</p>\n    <label for=\"{{ 'profile-upload' + uniqueid}}\" class=\"single-upload-label\">\n        <img :src=\"imageSrc\" alt=\"\" class=\"profile-image\" v-bind:class=\"{'processing' : uploading, 'large': size === 'large', 'round': shape === 'round', 'full': size === 'full' }\">\n        <input v-on:change=\"processFile\" type=\"file\" id=\"{{ 'profile-upload' + uniqueid}}\">\n    </label>\n    <div class=\"upload-progress-container\" v-show=\"uploading\">\n        <span class=\"upload-progress-bar\" v-bind:style=\"{width: uploadPercentage + '%'}\"></span>\n    </div>\n    <p class=\"upload-message\" v-bind:class=\"{'error': uploadStatus === 'error', 'success': uploadStatus === 'success'}\" v-show=\"uploadMsg !== ''\">{{ uploadMsg }}\n    </p>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

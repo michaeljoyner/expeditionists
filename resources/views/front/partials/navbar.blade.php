@@ -18,9 +18,9 @@
                         {{--<div class="w-icon-dropdown-toggle"></div>--}}
                     </div>
                     <nav class="w-dropdown-list">
-                        <a href="#" class="w-dropdown-link">ABOUT US</a>
-                        <a href="#" class="w-dropdown-link">HOW IT WORKS</a>
-                        <a href="#" class="w-dropdown-link">TEAM</a>
+                        <a href="/about#about" class="w-dropdown-link sublink">ABOUT US</a>
+                        <a href="/about#howitworks" class="w-dropdown-link sublink">HOW IT WORKS</a>
+                        <a href="/about#team" class="w-dropdown-link sublink">TEAM</a>
                     </nav>
                 </div>
                 <a href="/expeditionists"
@@ -38,10 +38,10 @@
                         {{--<div class="w-icon-dropdown-toggle"></div>--}}
                     </div>
                     <nav class="w-dropdown-list">
-                        <a href="#" class="w-dropdown-link">DONATE</a>
-                        <a href="#" class="w-dropdown-link">SPONSOR</a>
-                        <a href="#" class="w-dropdown-link">BE AN EXPEDITIONIST</a>
-                        <a href="#" class="w-dropdown-link">VOLUNTEER</a>
+                        <a href="#" class="w-dropdown-link sublink">DONATE</a>
+                        <a href="#" class="w-dropdown-link sublink">SPONSOR</a>
+                        <a href="#" class="w-dropdown-link sublink">BE AN EXPEDITIONIST</a>
+                        <a href="#" class="w-dropdown-link sublink">VOLUNTEER</a>
                     </nav>
                 </div>
                 <a href="/blog"

@@ -101,3 +101,11 @@ $factory->define(App\Blog\Article::class, function (Faker\Generator $faker) {
         'published'    => 0
     ];
 });
+
+$factory->define(App\TeamMember::class, function (Faker\Generator $faker) {
+    return [
+        'name'      => $faker->name,
+        'title' => $faker->words(3, true),
+        'intro' => $faker->paragraph()
+    ];
+});

@@ -18,10 +18,16 @@ class EditableContentSeeder extends Seeder
 
         $editAbout = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $about->id,
-            'name' => 'about',
+            'name' => 'about us',
             'allows_html' => 1,
             'content' => '<h1>About Us</h1>'.
                          '<p>We, the people...</p>'
+        ]);
+        $editAbout = factory(\App\Content\EditableArea::class)->create([
+            'page_id' => $about->id,
+            'name' => 'how it works',
+            'allows_html' => 1,
+            'content' => '<p>I would be surprised if it ever does</p>'
         ]);
         $editBanner = factory(\App\Content\EditableArea::class)->create([
             'page_id' => $home->id,
