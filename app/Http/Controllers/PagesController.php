@@ -68,7 +68,7 @@ class PagesController extends Controller
     public function about()
     {
         $aboutPage = Page::where('name', 'about')->firstOrFail();
-        $members = TeamMember::all();
+        $members = TeamMember::ordered()->get();
         return view('front.pages.about')->with(compact('aboutPage', 'members'));
     }
 

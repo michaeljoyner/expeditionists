@@ -139,7 +139,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Spatie\EloquentSortable\SortableServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -6995,4 +6995,8 @@ body.stop-scrolling {
     width: 100%;
     margin-bottom: 60px; }
 
+.team-sorting-list li {
+  cursor: move;
+  cursor: -webkit-grab; }
+
 /*# sourceMappingURL=app.css.map */

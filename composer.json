@@ -12,7 +12,8 @@
         "spatie/laravel-medialibrary": "^3.8",
         "cviebrock/eloquent-sluggable": "^3.1",
         "guzzlehttp/guzzle": "^6.1",
-        "doctrine/dbal": "~2.3"
+        "doctrine/dbal": "~2.3",
+        "spatie/eloquent-sortable": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -17,6 +17,7 @@ class CreateTeamMembersTable extends Migration
             $table->string('name');
             $table->string('title');
             $table->text('intro');
+            $table->unsignedInteger('order_column')->nullable();
             $table->timestamps();
         });
     }

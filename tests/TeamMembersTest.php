@@ -86,4 +86,27 @@ class TeamMembersTest extends TestCase
 
         $this->assertTrue($member->hasProfilePic());
     }
+
+    /**
+     *@test
+     */
+    public function the_ordering_of_the_team_members_can_be_set_by_posting_array_of_ids_in_req_order()
+    {
+        $members = factory(TeamMember::class, 5)->create();
+
+        $this->withoutMiddleware();
+        $this->asAnAdminUser();
+
+        $response = $this->call('POST', '/admin/team/order', [
+            'order' => [3,2,5,1,4]
+        ]);
+
+        $this->assertEquals(200, $response->status());
+
+        $members = TeamMember::ordered()->get();
+        $this->assertEquals(3, $members->first()->id);
+        $this->assertEquals(4, $members->last()->id);
+        $this->assertEquals(2, $members[1]->id);
+        $this->assertEquals(5, $members[2]->id);
+    }
 }

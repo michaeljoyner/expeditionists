@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bb4e169db40bc892f15a53b17823ce1e",
-    "content-hash": "f1000f4e8df878e4f5781f16e93b5a3b",
+    "hash": "1eeab2d7666094b3291dc1cb01ba0484",
+    "content-hash": "be52551e1a4dccc51ae795a946f1b06b",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1968,6 +1968,57 @@
                 "shell"
             ],
             "time": "2015-11-12 16:18:56"
+        },
+        {
+            "name": "spatie/eloquent-sortable",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/eloquent-sortable.git",
+                "reference": "17ce4b250c740f5813c5905bf391823fbeceb960"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/17ce4b250c740f5813c5905bf391823fbeceb960",
+                "reference": "17ce4b250c740f5813c5905bf391823fbeceb960",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.2|5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\EloquentSortable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be"
+                }
+            ],
+            "description": "Sortable behaviour for eloquent models",
+            "homepage": "https://github.com/spatie/eloquent-sortable",
+            "keywords": [
+                "behaviour",
+                "eloquent",
+                "laravel",
+                "model",
+                "sort",
+                "sortable"
+            ],
+            "time": "2015-08-10 14:36:58"
         },
         {
             "name": "spatie/laravel-glide",

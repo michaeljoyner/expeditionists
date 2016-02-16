@@ -24,7 +24,7 @@ class TeamMembersController extends Controller
 
     public function index()
     {
-        $members = TeamMember::all();
+        $members = TeamMember::ordered()->get();
 
         return view('admin.teammates.index')->with(compact('members'));
     }
@@ -98,6 +98,19 @@ class TeamMembersController extends Controller
 
         $member = TeamMember::findOrFail($id);
         $member->setProfilePic($request->file('file'));
+
+        return response()->json('ok');
+    }
+
+    public function setTeamOrder(Request $request)
+    {
+        if(! $request->user()->hasRole('admin')) {
+            return abort(403, 'You do not have permission to perform that action');
+        }
+
+        $this->validate($request, ['order' => 'required|array']);
+
+        TeamMember::setNewOrder($request->order);
 
         return response()->json('ok');
     }

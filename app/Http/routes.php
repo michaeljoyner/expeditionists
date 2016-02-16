@@ -94,6 +94,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('blog/{id}', 'BlogController@delete');
 
         Route::get('team', 'TeamMembersController@index');
+        Route::post('team/order', 'TeamMembersController@setTeamOrder');
         Route::get('team/members/create', 'TeamMembersController@create');
         Route::get('team/members/{id}/edit', 'TeamMembersController@edit');
         Route::post('team/members', 'TeamMembersController@store');
