@@ -18,13 +18,25 @@
                         <a href="/"><div>HOME</div></a>
                     </li>
                     <li class="footer-list-item">
+                        <a href="/about"><div>ABOUT US</div></a>
+                    </li>
+                    <li class="footer-list-item">
                         <a href="/expeditionists"><div>EXPEDITIONISTS</div></a>
                     </li>
                     <li class="footer-list-item">
                         <a href="/expeditions"><div>EXPEDITIONS</div></a>
                     </li>
                     <li class="footer-list-item">
-                        <a href="/getinvolved"><div>GET INVOLVED / CONTACT</div></a>
+                        <a href="/gallery"><div>GALLERY</div></a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="/getinvolved"><div>GET INVOLVED</div></a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="/blog"><div>BLOG</div></a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="/contact"><div>CONTACT</div></a>
                     </li>
                 </ul>
             </div>

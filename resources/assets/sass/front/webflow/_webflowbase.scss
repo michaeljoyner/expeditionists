@@ -30,11 +30,17 @@
   display: inline-block;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: #f2eee7;
-  font-size: 19px;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-weight: 800;
   text-align: center;
   letter-spacing: 1.1px;
   text-transform: uppercase;
+}
+.nav-link .nav-link {
+  padding-right: 0;
+  padding-left: 0;
 }
 .nav-link.w-nav-link.w--current, .nav-link.w--current {
   color: $primary_red;
@@ -415,28 +421,11 @@
   width: 100%;
   /*z-index: -10;*/
 }
-.expeditions-wrapper:hover .expeditions-image-text {
-  transform: translate3d(0,-15px,0);
+.expeditions-wrapper:hover  {
+  opacity: .7;
 }
-.expeditions-image-text {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  display: block;
-  font-family:'Permanent Marker', sans-serif;
-  text-shadow: 2px 2px 2px #333;
-  color: #f2eee7;
-  font-size: 48px;
-  line-height: 1.3;
-  text-align: center;
-  transition: .5s;
-  transform: translate3d(0,0,0);
-
-  @include respond-to(phone) {font-size: 32px;}
-  @include respond-to(smalltablet) {font-size: 32px;}
-  @include respond-to(largetablet) {font-size: 32px;}
-
+.expeditions-column .expeditions-image-text .expedition-name {
+  color: $primary_blue;
 }
 .button-big {
   display: block;

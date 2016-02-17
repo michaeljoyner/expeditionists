@@ -18,6 +18,7 @@ Route::get('expeditions/{slug}', 'PagesController@expedition');
 Route::get('about', 'PagesController@about');
 Route::get('expeditions', 'PagesController@expeditions');
 Route::get('expeditionists', 'PagesController@expeditionists');
+Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@postMessage');
 
 Route::get('blog', 'BlogController@index');

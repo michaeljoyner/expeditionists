@@ -6,10 +6,10 @@
     @media only screen and (min-width: 414px) and (max-width: 720px) {@content;}
   }
   @else if $media == largetablet {
-    @media only screen and (min-width: 721px) and (max-width: 969px) {@content;}
+    @media only screen and (min-width: 721px) and (max-width: 989px) {@content;}
   }
   @else if $media == desktop {
-    @media only screen and (min-width: 970px) and (max-width: 1199px) {@content;}
+    @media only screen and (min-width: 990px) and (max-width: 1199px) {@content;}
   }
   @else if $media == widedesktop {
     @media only screen and (min-width: 1200px) and (max-width: 1399px) {@content;}

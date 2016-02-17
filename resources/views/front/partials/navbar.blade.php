@@ -29,6 +29,9 @@
                 <a href="/expeditions"
                    class="w-nav-link nav-link @if(! (Request::path() == 'expeditions')) w-active @endif"
                 >EXPEDITIONS</a>
+                <a href="/gallery"
+                   class="w-nav-link nav-link @if(! (Request::path() == 'gallery')) w-active @endif"
+                >GALLERY</a>
                 {{--<a href="/getinvolved"--}}
                    {{--class="w-nav-link nav-link @if(! starts_with(Request::path(), 'getinvolved')) w-active @endif"--}}
                 {{-->GET INVOLVED</a>--}}
@@ -38,15 +41,19 @@
                         {{--<div class="w-icon-dropdown-toggle"></div>--}}
                     </div>
                     <nav class="w-dropdown-list">
-                        <a href="#" class="w-dropdown-link sublink">DONATE</a>
-                        <a href="#" class="w-dropdown-link sublink">SPONSOR</a>
-                        <a href="#" class="w-dropdown-link sublink">BE AN EXPEDITIONIST</a>
-                        <a href="#" class="w-dropdown-link sublink">VOLUNTEER</a>
+                        <a href="/getinvolved#donate" class="w-dropdown-link sublink">DONATE</a>
+                        <a href="/getinvolved#sponsors" class="w-dropdown-link sublink">SPONSOR</a>
+                        <a href="/getinvolved#expeditionist" class="w-dropdown-link sublink">BE AN EXPEDITIONIST</a>
+                        <a href="/getinvolved#volunteer" class="w-dropdown-link sublink">VOLUNTEER</a>
+                        <a href="/getinvolved#charities" class="w-dropdown-link sublink">CHARITIES</a>
                     </nav>
                 </div>
                 <a href="/blog"
                    class="w-nav-link nav-link @if(! starts_with(Request::path(), 'blog')) w-active @endif"
                 >BLOG</a>
+                <a href="/contact"
+                   class="w-nav-link nav-link @if(! (Request::path() == 'contact')) w-active @endif"
+                >CONTACT</a>
             </nav>
             <div class="w-nav-button">
                 <a href="/"><img src="/build/images/NEW_logo_white.png" class="logo-navbar-image"></a>

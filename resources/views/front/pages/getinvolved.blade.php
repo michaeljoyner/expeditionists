@@ -6,15 +6,18 @@
         <h1 class="section-heading black">Get involved</h1>
 
         <div class="w-container involved-container">
+            {{--top intro--}}
             <section>
                 <div class="p1 intro-black side-padded">{{ $page->present()->area('intro') }}</div>
             </section>
-            <section>
-                <h1 class="h4 involved side-padded get-involved-heading">becoming an expeditionist</h1>
-                <img src="/build/images/flying.jpg" class="involved-image">
-                <div class="p1 black side-padded">{{ $page->present()->area('expeditionists') }}</div>
+            {{--donate section--}}
+            <section id="donate">
+                <h1 class="h4 involved side-padded get-involved-heading">donate</h1>
+                <div class="p1 black side-padded">{{ $page->present()->area('donate') }}</div>
+                <button>Donate via Paypal</button>
             </section>
-            <section class="side-padded">
+            {{--sponsors--}}
+            <section id="sponsors" class="side-padded">
                 <h1 class="h4 involved get-involved-heading">becoming A sponsor</h1>
                 <div class="w-row sponsor-charity-box-wrapper">
                     @foreach($sponsors as $sponsor)
@@ -27,7 +30,18 @@
                 </div>
                 <p class="p1 black">{{ $page->present()->area('sponsors') }}</p>
             </section>
-            <section class="side-padded">
+            {{--be an expeditionist -- needs a form--}}
+            <section id="expeditionist" class="side-padded">
+                <h1 class="h4 involved get-involved-heading">Be an expeditionist</h1>
+                <p class="p1 black">{{ $page->present()->area('become an expeditionist') }}</p>
+            </section>
+            {{--be a volunteer -- needs a form--}}
+            <section id="volunteer" class="side-padded">
+                <h1 class="h4 involved get-involved-heading">Become a volunteer</h1>
+                <p class="p1 black">{{ $page->present()->area('become an expeditionist') }}</p>
+            </section>
+            {{--charities--}}
+            <section id="charities" class="side-padded">
                 <h1 class="h4 involved get-involved-heading">ASSOCIATED CHARITIES</h1>
                 <div class="w-row sponsor-charity-box-wrapper">
                     @foreach($charities as $charity)
@@ -40,13 +54,7 @@
                 </div>
                 <p class="p1 black">{{ $page->present()->area('charities') }}</p>
             </section>
-            <section class="side-padded">
-                <h1 class="h4 involved get-involved-heading">GET IN TOUCH</h1>
-                <p class="p1 intro-black">{{ $page->present()->area('contact') }}</p>
-                <div class="contact-wrapper">
-                    @include('front.partials.contactform')
-                </div>
-            </section>
+
         </div>
     </div>
     @include('front.partials.footer')

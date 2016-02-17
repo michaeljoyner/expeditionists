@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Content\Page;
 use App\Http\Requests\ContactFormRequest;
 use App\Mailing\AdminMailer;
 use Illuminate\Http\Request;
@@ -20,6 +21,12 @@ class ContactController extends Controller
     public function __construct(AdminMailer $mailer)
     {
         $this->mailer = $mailer;
+    }
+
+    public function show()
+    {
+        $page = Page::where('name', 'contact us')->firstOrFail();
+        return view('front.pages.contact')->with(compact('page'));
     }
 
     public function postMessage(ContactFormRequest $request)
