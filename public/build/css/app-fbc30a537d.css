@@ -6999,4 +6999,23 @@ body.stop-scrolling {
   cursor: move;
   cursor: -webkit-grab; }
 
+.ordering-image-list {
+  list-style-type: none; }
+  .ordering-image-list li {
+    display: inline-block; }
+    .ordering-image-list li img {
+      margin: 20px;
+      width: 100px; }
+
+.sync-indicator {
+  padding: 6px 20px;
+  background: #85cebf;
+  margin-left: 60px;
+  color: #ffffff; }
+  .sync-indicator.syncing {
+    background: #dc5744; }
+
+.sync-indicator[v-cloak] {
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */

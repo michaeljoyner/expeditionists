@@ -1,0 +1,26 @@
+.ordering-image-list {
+  list-style-type: none;
+  li {
+    display: inline-block;
+
+    img {
+      margin: 20px;
+      width: 100px;
+    }
+  }
+}
+
+.sync-indicator {
+  padding: 6px 20px;
+  background: $primary_blue;
+  margin-left: 60px;
+  color: $white;
+
+  &.syncing {
+    background: $primary_red;
+  }
+}
+
+.sync-indicator[v-cloak] {
+  display: none;
+}

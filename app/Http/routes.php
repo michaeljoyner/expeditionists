@@ -103,6 +103,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('team/members/{id}', 'TeamMembersController@delete');
         Route::post('uploads/team/members/{id}/profilepic', 'TeamMembersController@setProfilePic');
 
+        Route::get('galleries/{id}/order', 'GalleriesController@showOrder');
+        Route::post('galleries/{id}/order', 'GalleriesController@postOrder');
+
     });
 
     Route::group(['middleware' => 'guest'], function() {

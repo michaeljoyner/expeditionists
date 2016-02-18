@@ -55,4 +55,33 @@ class GalleriesTest extends TestCase {
         $gallery->clearMediaCollection();
     }
 
+    /**
+     *@test
+     */
+    public function a_galleries_images_can_be_ordered_by_passing_an_array_of_ids_in_the_req_order()
+    {
+        $this->withoutMiddleware();
+        $this->asAnAdminUser();
+        $profile = factory(\App\Profile::class)->create();
+        $gallery = factory(\App\Gallery::class)->create(['galleryable_id' => $profile->id]);
+
+        $image1 = $gallery->addImage(realpath('tests/testpic1.png'));
+        $image2 = $gallery->addImage(realpath('tests/testpic2.png'));
+        $image3 = $gallery->addImage(realpath('tests/testpic1.png'));
+
+        $order = [$image2->id, $image3->id, $image1->id];
+
+        $gallery->setOrder($order);
+        dd($gallery->getMedia()->toArray(), $order);
+
+        $media = $gallery->getOrdered();
+        dd($media);
+
+        $this->assertEquals($image2->id, $media->first()->id);
+        $this->assertEquals($image1->id, $media->last()->id);
+        $this->assertEquals($image3->id, $media[2]->id);
+
+        $gallery->clearMediaCollection();
+    }
+
 }

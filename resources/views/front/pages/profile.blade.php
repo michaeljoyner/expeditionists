@@ -52,7 +52,7 @@
         @if($profile->galleries->first()->getMedia()->count() > 0)
             <h3 class="h4 blue">IMAGE GALLERY</h3>
             <div class="image-gallery-wrapper">
-                @foreach($profile->galleries->first()->getMedia() as $image)
+                @foreach($profile->galleries->first()->getOrdered() as $image)
                     <a href="{{ $image->getUrl('web') }}">
                         <img class="gallery-thumb" src="{{ $image->getUrl('thumb') }}" alt="gallery image"/>
                     </a>

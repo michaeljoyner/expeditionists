@@ -42,6 +42,9 @@
     <section class="galleries">
         @foreach($profile->galleries as $gallery)
             <h2>{{ $gallery->name }}</h2>
+            <a href="/admin/galleries/{{ $gallery->id }}/order">
+                <div class="btn exp-btn">Arrange order</div>
+            </a>
             <div id="gallery-app">
                 <dropzone
                     url="/admin/uploads/galleries/{{ $gallery->id }}/images"
