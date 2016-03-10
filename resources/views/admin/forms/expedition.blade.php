@@ -10,11 +10,23 @@
             <label for="location">Location: </label>
             {!! Form::text('location', null, ['class' => "form-control"]) !!}
         </div>
+        <div class="form-group">
+            <label for="distance_to_date">Distance to date: </label>
+            {!! Form::text('distance_to_date', null, ['class' => "form-control"]) !!}
+        </div>
+        <div class="form-group">
+            <label for="distance">Distance (total): </label>
+            {!! Form::text('distance', null, ['class' => "form-control"]) !!}
+        </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="start_date">Start Date: </label>
             {!! Form::date('start_date', $model->dateForForm(), ['class' => "form-control date-input", 'placeholder' => 'YYYY-MM-DD']) !!}
+        </div>
+        <div class="form-group">
+            <label for="donations_to_date">Donations to date: </label>
+            {!! Form::text('donations_to_date', null, ['class' => "form-control"]) !!}
         </div>
         <div class="form-group">
             <label for="donation_goal">Donation goal: </label>

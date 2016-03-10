@@ -8,7 +8,7 @@
 
 trait TestsImageUploads {
 
-    protected function prepareFileUpload($path)
+    protected function prepareFileUpload($path, $filename = null)
     {
         $this->assertFileExists($path);
 
@@ -16,7 +16,9 @@ trait TestsImageUploads {
 
         $mime = finfo_file($finfo, $path);
 
-        return new \Symfony\Component\HttpFoundation\File\UploadedFile ($path, 'test-upload.png', $mime, 15004, null, true);
+        $name = $filename ? $filename : 'test-upload.png';
+
+        return new \Symfony\Component\HttpFoundation\File\UploadedFile ($path, $name, $mime, 15004, null, true);
     }
 
 }

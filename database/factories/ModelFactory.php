@@ -42,13 +42,16 @@ $factory->define(App\Profile::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Expedition::class, function (Faker\Generator $faker) {
     return [
-        'name'          => $faker->city,
-        'location'      => $faker->country,
-        'about'         => $faker->paragraphs(3, true),
-        'mission'       => $faker->paragraph(),
-        'objectives'    => $faker->paragraph(),
-        'donation_goal' => $faker->numberBetween(999, 9999999),
-        'start_date'    => $faker->date()
+        'name'              => $faker->city,
+        'location'          => $faker->country,
+        'about'             => $faker->paragraphs(3, true),
+        'mission'           => $faker->paragraph(),
+        'objectives'        => $faker->paragraph(),
+        'donation_goal'     => $faker->numberBetween(999, 9999999),
+        'donations_to_date' => $faker->numberBetween(2, 7),
+        'distance'          => 10000,
+        'distance_to_date'  => $faker->numberBetween(100, 5000),
+        'start_date'        => $faker->date()
     ];
 });
 
@@ -104,8 +107,26 @@ $factory->define(App\Blog\Article::class, function (Faker\Generator $faker) {
 
 $factory->define(App\TeamMember::class, function (Faker\Generator $faker) {
     return [
-        'name'      => $faker->name,
+        'name'  => $faker->name,
         'title' => $faker->words(3, true),
         'intro' => $faker->paragraph()
+    ];
+});
+
+$factory->define(\App\MapLocation::class, function (Faker\Generator $faker, $overrides) {
+    $exp = isset($overrides['expedition_id']) ? $overrides['expedition_id'] : factory(\App\Expedition::class)->create()->id;
+
+    return [
+        'expedition_id' => $exp,
+        'longitude'     => $faker->numberBetween(-180, 180),
+        'latitude'      => $faker->numberBetween(-180, 180),
+        'title'         => $faker->words(3, true)
+    ];
+});
+
+$factory->define(\App\FileResource::class, function (Faker\Generator $faker) {
+    return [
+        'name'        => $faker->sentence,
+        'description' => $faker->paragraph,
     ];
 });

@@ -21,6 +21,9 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
         'mission',
         'objectives',
         'donation_goal',
+        'donations_to_date',
+        'distance',
+        'distance_to_date',
         'start_date'
     ];
 
@@ -60,12 +63,33 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
         return $this->belongsToMany('App\Profile');
     }
 
-    public function hasTeamMember(Profile $profile)
+    public function hasTeamMember($profile)
     {
-        return $this->expeditionists->contains($profile);
+        if($profile instanceof Profile) {
+            return $this->expeditionists->contains($profile);
+        }
+
+        return $this->teamMembers->contains($profile);
     }
 
-    public function syncTeamByIds(array $ids)
+    public function teamMembers()
+    {
+        return $this->belongsToMany(TeamMember::class);
+    }
+
+    public function addTeamMember($teamMember)
+    {
+        $id = $teamMember instanceof TeamMember ? $teamMember->id : $teamMember;
+
+        return $this->teamMembers()->attach($id);
+    }
+
+    public function syncTeamMembers($ids)
+    {
+        return $this->teamMembers()->sync($ids);
+    }
+
+    public function syncExpeditionistTeamByIds(array $ids)
     {
         return $this->expeditionists()->sync($ids);
     }
@@ -116,5 +140,15 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
     public function addGallery($name)
     {
         $this->galleries()->create(['name' => $name]);
+    }
+
+    public function locations()
+    {
+        return $this->hasMany(MapLocation::class, 'expedition_id');
+    }
+
+    public function addLocation($attributes)
+    {
+        return $this->locations()->create($attributes);
     }
 }

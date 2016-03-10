@@ -1,0 +1,126 @@
+pages:
+
+  home page:
+      description: The home page of your site
+      textblocks:
+          hero text 1:
+              description: The text to be shown on the first hero image
+              allows_html: false
+          hero text 2:
+              description: The text to be shown on the second hero image
+              allows_html: false
+          hero text 3:
+              description: The text to be shown on the third hero image
+              allows_html: false
+          about intro:
+              description: The introduction for the about section on the home page
+              allows_html: false
+          mission intro:
+              description: Very brief outline of your mission
+              allows_html: false
+          mission text:
+              description: Your mission, brief yet detailed
+              allows_html: false
+          vision intro:
+              description: Very brief outline of your vision
+              allows_html: false
+          vision text:
+              description: Your vision, brief yet detailed
+              allows_html: false
+          objectives intro:
+              description: Very brief outline of your objectives
+              allows_html: false
+          objectives text:
+              description: Your objectives, brief yet detailed
+              allows_html: false
+          expeditionists intro:
+              description: The introduction to the expeditionists section of the homepage
+              allows_html: false
+          expeditions intro:
+              description: The introduction to the expeditions section of the homepage
+              allows_html: false
+          sponsors intro:
+              description: The introduction to the sponsors section of the homepage
+              allows_html: false
+          charities intro:
+              description: The introduction to the charities section of the homepage
+              allows_html: false
+      galleries:
+          hero slider:
+              description: The slider images for the homepage. Please ensure the images you include are large enough (around 1200px) and have an aspect ratio of around 3:1. ONLY USE 3 IMAGES
+              is_single: false
+
+#########################################
+  gallery:
+        description: The gallery page
+        textblocks:
+            gallery intro:
+                description: The introduction shown to the viewer on the gallery page
+                allows_html: false
+        galleries:
+            gallery:
+                description: Main gallery for site
+                is_single: false
+
+########################################
+
+  about us:
+        description: The about us page
+        textblocks:
+            about us:
+                description: The text for the about us section of the about us page
+                allows_html: true
+            how it works:
+                description: A write up explaining to your readers how Expeditionist works
+                allows_html: true
+
+######################################
+
+  expeditionists:
+        description: The expeditionists page - holds all the profiles of the expeditionists that have a completed profile
+        textblocks:
+            page intro:
+                description: The introduction for the expeditionists page
+                allows_html: false
+
+######################################
+
+  expeditions:
+        description: The expeditions page - shows the expeditions that have been created on the site
+        textblocks:
+            page intro:
+                description: The introduction for the expeditions page
+                allows_html: false
+
+######################################
+
+  contact us:
+        description: The contact us page
+        textblocks:
+            page intro:
+                description: The introduction for the contact page
+                allows_html: false
+
+#####################################
+
+  get involved:
+        description: The get involved page - how people can help and be helped
+        textblocks:
+            page intro:
+                description: The main introduction to the Get Involved page
+                allows_html: false
+            donate:
+                description: A paragraph explaining or asking readers to donate by clicking on the donate button below
+                allows_html: false
+            expeditionists:
+                description: An explanation or write up of how to apply to become an expeditionist. This section includes the download link for the PDF
+                allows_html: false
+            volunteers:
+                description: An explanation or write up of how to apply to become a volunteer. This section includes the download link for the PDF
+                allows_html: false
+            charities:
+                description: Write up of how Expeditionist approaches charities and how to become a receiving charity
+                allows_html: false
+            sponsors:
+                description: Write up of how Expeditionist approaches sponsors and how to become a sponsor
+                allows_html: false

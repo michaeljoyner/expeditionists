@@ -72,10 +72,8 @@ class GalleriesTest extends TestCase {
         $order = [$image2->id, $image3->id, $image1->id];
 
         $gallery->setOrder($order);
-        dd($gallery->getMedia()->toArray(), $order);
 
         $media = $gallery->getOrdered();
-        dd($media);
 
         $this->assertEquals($image2->id, $media->first()->id);
         $this->assertEquals($image1->id, $media->last()->id);

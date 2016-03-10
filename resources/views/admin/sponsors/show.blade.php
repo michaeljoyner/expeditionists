@@ -22,6 +22,8 @@
         <div class="col-md-7">
             <p><strong>Name: </strong>{{ $sponsor->name }}</p>
             <p><strong>Link: </strong>{{ $sponsor->site_link }}</p>
+            <p><strong>Description:</strong></p>
+            <p>{!! nl2br($sponsor->description) !!}</p>
         </div>
         <div class="col-md-5 single-image-uploader-box">
             <div id="sponsor-uploader" class="sponsor-image-box">

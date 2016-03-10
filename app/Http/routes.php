@@ -16,6 +16,7 @@ Route::get('getinvolved', 'PagesController@getInvolved');
 Route::get('profiles/{slug}', 'PagesController@profile');
 Route::get('expeditions/{slug}', 'PagesController@expedition');
 Route::get('about', 'PagesController@about');
+Route::get('gallery', 'PagesController@gallery');
 Route::get('expeditions', 'PagesController@expeditions');
 Route::get('expeditionists', 'PagesController@expeditionists');
 Route::get('contact', 'ContactController@show');
@@ -23,6 +24,10 @@ Route::post('contact', 'ContactController@postMessage');
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@show');
+
+Route::post('applications/signup', 'VolunteerApplicationsController@handleApplication');
+
+Route::post('newsletter/subscribe', 'NewsletterController@subscribe');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
@@ -56,6 +61,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::get('expeditions/{id}/team', 'ExpeditionsController@editTeam');
         Route::post('expeditions/{id}/team', 'ExpeditionsController@setTeam');
 
+        Route::get('expeditions/{expeditionId}/locations', 'MapLocationsController@index');
+        Route::post('expeditions/{expeditionId}/locations', 'MapLocationsController@store');
+        Route::get('expeditions/{expeditionId}/locations/{locationId}/edit', 'MapLocationsController@edit');
+        Route::post('locations/{locationId}', 'MapLocationsController@update');
+        Route::delete('locations/{locationId}', 'MapLocationsController@delete');
+
+        Route::get('expeditions/{id}/teammembers/edit', 'ExpeditionTeamMembersController@edit');
+        Route::post('expeditions/{id}/teammembers', 'ExpeditionTeamMembersController@setTeam');
+
         Route::get('content/editable/{id}/edit', 'EditablesController@edit');
         Route::post('content/editable/{id}', 'EditablesController@update');
         Route::get('content/pages/{page}', 'EditablesController@showEditablePage');
@@ -65,6 +79,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('uploads/sponsors/{id}/image', 'SponsorsController@storeImage');
         Route::post('uploads/charities/{id}/image', 'CharitiesController@storeImage');
         Route::post('uploads/blog/{id}/image', 'BlogController@storeImage');
+
+        Route::get('file-resources', 'FileResourcesController@index');
+        Route::post('file-resources/{resourceId}/uploads', 'FileResourcesController@storeFile');
 
 
         Route::get('uploads/galleries/{galleryId}/images', 'GalleriesController@getGalleryImages');

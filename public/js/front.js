@@ -1290,6 +1290,115 @@
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var AjaxForm = function AjaxForm(formEl, successCallback) {
+    this.formEl = formEl;
+    this.successCallback = successCallback || function () {};
+    this.init();
+};
+
+AjaxForm.prototype.init = function () {
+    this.formEl.addEventListener('submit', this.handleSubmit.bind(this), false);
+};
+
+AjaxForm.prototype.handleSubmit = function (ev) {
+    ev.preventDefault();
+    var fd = new window.FormData(this.formEl);
+    var req = new window.XMLHttpRequest();
+    var self = this;
+    req.open('POST', this.formEl.getAttribute('action'), true);
+    req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    req.onreadystatechange = function (ev) {
+        if (req.readyState == 4) {
+            if (req.status == 200) {
+                self.successCallback();
+            } else {
+                console.log('error', ev);
+            }
+        }
+    };
+    req.send(fd);
+    return false;
+};
+
+module.exports = AjaxForm;
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+var NewsLetterSubscriber = function NewsLetterSubscriber() {
+    this.input = document.querySelector('#newsletter-input');
+    this.submitBtn = document.querySelector('#newsletter-submit');
+    this.containerEl = document.querySelector('.newsletter-input-group');
+    this.alertEl = document.querySelector('#newsletter-alert');
+};
+
+NewsLetterSubscriber.prototype.init = function () {
+    this.input.addEventListener('keypress', this.handleEnterPress.bind(this), false);
+    this.submitBtn.addEventListener('click', this.handleSubmit.bind(this), false);
+};
+
+NewsLetterSubscriber.prototype.handleEnterPress = function (ev) {
+    if (ev.keyCode !== 13) {
+        return;
+    }
+
+    if (this.validates()) {
+        this.subscribe();
+    }
+};
+
+NewsLetterSubscriber.prototype.handleSubmit = function (ev) {
+    if (this.validates()) {
+        this.subscribe();
+    }
+};
+
+NewsLetterSubscriber.prototype.validates = function () {
+    return true;
+};
+
+NewsLetterSubscriber.prototype.subscribe = function () {
+    var self = this;
+    var req = new window.XMLHttpRequest();
+    var fd = new FormData();
+    var token = document.querySelector('#x-token').getAttribute('content');
+
+    this.submitBtn.innerHTML = '...';
+
+    fd.append('_token', token);
+    fd.append('email', this.input.value);
+
+    req.open('POST', '/newsletter/subscribe', true);
+    req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    req.onreadystatechange = function (ev) {
+        if (req.readyState == 4) {
+            if (req.status == 200) {
+                self.success(ev.target.response);
+            } else {
+                self.error(ev.target.response);
+            }
+        }
+    };
+    req.send(fd);
+};
+
+NewsLetterSubscriber.prototype.success = function (res) {
+    var result = JSON.parse(res);
+    this.alertEl.innerHTML = result.message;
+    this.containerEl.classList.add('spent');
+};
+
+NewsLetterSubscriber.prototype.error = function (res) {
+    console.log('error', res);
+    this.alertEl.innerHTML = 'Ooops! An error occurred';
+    this.containerEl.classList.add('spent');
+};
+
+module.exports = NewsLetterSubscriber;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
 var AjaxContactForm = function AjaxContactForm(formEl) {
     this.formEl = formEl;
     this.errorBox = null;
@@ -1371,7 +1480,7 @@ AjaxContactForm.prototype = {
 
 module.exports = AjaxContactForm;
 
-},{}],3:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 var ContactForm = require('./contactform.js');
@@ -1382,4 +1491,10 @@ if (document.querySelector('#rs-contact-form')) {
     contactForm.init();
 }
 
-},{"./contactform.js":2,"lightgallery":1}]},{},[3]);
+window.AjaxForm = require('./components/ajaxform.js');
+
+var NewsletterSubscriber = require('./components/newslettersubscriber.js');
+var subscriber = new NewsletterSubscriber();
+subscriber.init();
+
+},{"./components/ajaxform.js":2,"./components/newslettersubscriber.js":3,"./contactform.js":4,"lightgallery":1}]},{},[5]);

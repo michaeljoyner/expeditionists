@@ -22,6 +22,8 @@
         <div class="col-md-7">
             <p><strong>Name: </strong>{{ $charity->name }}</p>
             <p><strong>Link: </strong>{{ $charity->site_link }}</p>
+            <p><strong>Description:</strong></p>
+            <p>{!! nl2br($charity->description) !!}</p>
         </div>
         <div class="col-md-5 single-image-uploader-box">
             <div id="charity-uploader" class="sponsor-image-box">

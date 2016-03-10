@@ -13,7 +13,7 @@
         <textarea name="enquiry" cols="30" rows="8"></textarea>
     </div>
     <div class="rs-form-group">
-        <button class="cf-send-btn" type="submit">Send</button>
+        <button class="cf-send-btn w-button exp-button" type="submit">Send</button>
     </div>
     <div class="form-cover">
         <p id="cf-thanks">

@@ -42,10 +42,10 @@
                     </div>
                     <nav class="w-dropdown-list">
                         <a href="/getinvolved#donate" class="w-dropdown-link sublink">DONATE</a>
-                        <a href="/getinvolved#sponsors" class="w-dropdown-link sublink">SPONSOR</a>
                         <a href="/getinvolved#expeditionist" class="w-dropdown-link sublink">BE AN EXPEDITIONIST</a>
                         <a href="/getinvolved#volunteer" class="w-dropdown-link sublink">VOLUNTEER</a>
                         <a href="/getinvolved#charities" class="w-dropdown-link sublink">CHARITIES</a>
+                        <a href="/getinvolved#sponsors" class="w-dropdown-link sublink">SPONSOR</a>
                     </nav>
                 </div>
                 <a href="/blog"

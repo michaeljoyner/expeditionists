@@ -19,6 +19,7 @@
             }
         });
     </script>
+    <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
     <script type="text/javascript" src="/js/modernizr.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
     <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">

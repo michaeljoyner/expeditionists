@@ -15,7 +15,7 @@
 @endsection
 
 @section('bodyscripts')
-    <script src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
     <script>
         tinymce.init({
             selector: "#body-area"

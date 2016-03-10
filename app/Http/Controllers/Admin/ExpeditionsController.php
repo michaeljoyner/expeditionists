@@ -129,7 +129,7 @@ class ExpeditionsController extends Controller
         })->toArray();
 
         $expedition = Expedition::findOrFail($id);
-        $expedition->syncTeamByIds($teamIds);
+        $expedition->syncExpeditionistTeamByIds($teamIds);
 
         $this->flasher->success('Team Members Set', 'The team for this expedition has been updated');
 

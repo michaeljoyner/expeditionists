@@ -32,4 +32,14 @@ class AdminMailer extends AbstractMailer
         $this->sendTo($to, $from, $subject, $view, $data);
     }
 
+    public function notifyOfApplicationFormSubmission($applicationData)
+    {
+        $from = [$applicationData->email => $applicationData->name];
+        $subject = $applicationData->application_type . ' application';
+        $view = 'emails.application';
+        $data = ['applicant' => $applicationData];
+
+        $this->sendTo($this->to, $from, $subject, $view, $data);
+    }
+
 }

@@ -24,4 +24,9 @@ class TeamMember extends Model implements HasMediaConversions, Sortable
         'order_column_name' => 'order_column',
         'sort_when_creating' => true,
     ];
+
+    public function expeditions()
+    {
+        return $this->hasMany(Expedition::class);
+    }
 }

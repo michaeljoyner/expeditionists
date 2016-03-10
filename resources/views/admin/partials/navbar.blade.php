@@ -19,26 +19,25 @@
                 <li><a href="/admin/profiles/{{ Auth::user()->id }}">Profile</a></li>
                 <li><a href="/admin/expeditions">Expeditions</a></li>
                 @role('admin')
-                <li class="dropdown">
-                    <a href="#"
-                       class="dropdown-toggle"
-                       data-toggle="dropdown"
-                       role="button"
-                       aria-haspopup="true"
-                       aria-expanded="false"
-                    >Edit Content <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {{--<li><a href="/admin/content/pages/home">Home Page</a></li>--}}
-                        {{--<li><a href="/admin/content/pages/about">About Page</a></li>--}}
-                        {{--<li><a href="/admin/content/pages/expeditionists">Expeditionists</a></li>--}}
-                        {{--<li><a href="/admin/content/pages/expeditions">Expeditions</a></li>--}}
-                        @foreach($pages as $page)
-                            <li><a href="/admin/content/pages/{{ $page->name }}">{{ $page->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </li>
+                @if($ediblePages->count())
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                        >Site Content <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @foreach($ediblePages as $page)
+                                <li><a href="{{ $page['url'] }}">{{ ucwords($page['name']) }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
                 <li><a href="/admin/sponsors">Sponsors</a></li>
                 <li><a href="/admin/charities">Charities</a></li>
+                <li><a href="/admin/file-resources">Files</a></li>
                 @endif
                 <li><a href="/admin/blog">Blog</a></li>
             </ul>
@@ -57,7 +56,7 @@
                        aria-expanded="false"
                     >{{ Auth::user()->email }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Reset Password</a></li>
+                        <li><a href="/admin/users/password/reset">Reset Password</a></li>
                         <li><a href="/admin/logout">Logout</a></li>
                     </ul>
                 </li>

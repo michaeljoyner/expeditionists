@@ -1,0 +1,28 @@
+.exp-button {
+  display: block;
+  width: 280px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: $primary_red;
+  transition: background-color 350ms ease, all 367ms ease;
+  font-family: Arvo, sans-serif;
+  color: $primary_light;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $primary_dark;
+  }
+
+  &.inverse {
+    background-color: $primary_light;
+    color: $primary_dark;
+
+    &:hover {
+      background-color: $primary_blue;
+    }
+  }
+}

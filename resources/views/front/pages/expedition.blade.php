@@ -12,19 +12,27 @@
                 <div class="w-col w-col-5 profile-column">
                     <ul class="stats-list">
                         <li class="stats-list-item">
-                            <span class="profile-stat-label">Date:</span><br/>
-                            <span class="profile-stat-answer">10/06/1981</span>
-                        </li>
-                        <li class="stats-list-item">
-                            <span class="profile-stat-label">Location:</span><br/>
+                            <span class="profile-stat-label">Location:</span>
                             <span class="profile-stat-answer">{{ $expedition->location }}</span>
                         </li>
                         <li class="stats-list-item">
-                            <span class="profile-stat-label">donation goal:</span><br/>
+                            <span class="profile-stat-label">Total Distance:</span>
+                            <span class="profile-stat-answer">{{ $expedition->distance }}km</span>
+                        </li>
+                        <li class="stats-list-item">
+                            <span class="profile-stat-label">Distance to Date:</span>
+                            <span class="profile-stat-answer">{{ $expedition->distance_to_date }}km</span>
+                        </li>
+                        <li class="stats-list-item">
+                            <span class="profile-stat-label">donation goal:</span>
                             <span class="profile-stat-answer">{{ $expedition->donation_goal }}</span>
                         </li>
                         <li class="stats-list-item">
-                            <span class="profile-stat-label">start date:</span><br/>
+                            <span class="profile-stat-label">donations to date:</span>
+                            <span class="profile-stat-answer">{{ $expedition->donations_to_date }}</span>
+                        </li>
+                        <li class="stats-list-item">
+                            <span class="profile-stat-label">start date:</span>
                             <span class="profile-stat-answer">{{ $expedition->start_date->toFormattedDateString() }}</span>
                         </li>
                     </ul>
@@ -33,24 +41,37 @@
                     <div class="profile-pic-box big">
                         <img src="{{ $expedition->coverPic(false) }}" class="profile-image">
                     </div>
-                    @if($expedition->expeditionists->count() > 0)
-                        <div class="expedition-team">
-                            <p class="stats-list-item">Team:</p>
-                            <div>
-                                @foreach($expedition->expeditionists as $teamMember)
-                                    <a href="/profiles/{{ $teamMember->slug }}">
-                                        <img class="expedition-team-profile-pic"
-                                             src="{{ $teamMember->profilePic() }}"
-                                             alt="profile pic of {{ $teamMember->name }}"/>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
+
                 </div>
             </div>
         </div>
         <div class="w-container bio-container side-padded">
+            @if($expedition->expeditionists->count() > 0)
+                <div class="expedition-team">
+                    <p class="stats-list-item">Expeditionists:</p>
+                    <div>
+                        @foreach($expedition->expeditionists as $teamMember)
+                            <a href="/profiles/{{ $teamMember->slug }}">
+                                <img class="expedition-team-profile-pic"
+                                     src="{{ $teamMember->profilePic() }}"
+                                     alt="profile pic of {{ $teamMember->name }}"/>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
+            @if($expedition->teamMembers->count() > 0)
+                <div class="expedition-team support-team">
+                    <p class="stats-list-item">Team:</p>
+                    <div>
+                        @foreach($expedition->teamMembers as $member)
+                            <img class="expedition-team-profile-pic"
+                                 src="{{ $member->profilePic() }}"
+                                 alt="profile pic of {{ $member->name }}"/>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
             <h1 class="h4 blue">MISSION</h1>
             <p class="p1 white left-aligned bio">{{ $expedition->mission }}</p>
             <h1 class="h4 blue">OBJECTIVES</h1><
@@ -83,7 +104,7 @@
                     <div class="section-intro-text">Would you like to become a sponsor? Why not <a class="red-link" href="/getinvolved">get involved</a>?</div>
             </div>
         </div>
-        <a href="/expeditions" class="w-button button red next">Explore our expeditions</a>
+        <a href="/expeditions" class="w-button exp-button inverse">Explore our expeditions</a>
     </div>
     <div class="divider"></div>
     @include('front.partials.footer')

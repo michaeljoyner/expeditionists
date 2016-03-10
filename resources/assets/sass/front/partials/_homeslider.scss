@@ -45,6 +45,14 @@ a.get-involved-cta-button {
   animation: slideDown .5s ease 1s 1 forwards;
 }
 
+.w-slide .home-slider-img {
+  position: absolute;
+  min-width: 100%;
+  max-width: none;
+  min-height: 100%;
+  top: 0;
+}
+
 @keyframes slideDown {
   0% {opacity: 0; transform: translate3d(0,-200px,0);}
   100% {opacity: 1; transform: translate3d(0,0,0);}

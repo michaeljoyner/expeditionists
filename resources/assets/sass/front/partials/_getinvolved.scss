@@ -1,0 +1,83 @@
+a.get-involved-btn {
+  text-decoration: none;
+  color: inherit;
+
+  .button.red, .button.white {
+    width: 90%;
+    max-width: 280px;
+  }
+}
+
+.involved-container {
+  .donate-heading.get-involved-heading {
+    color: $white;
+  }
+
+  .button.paypal-btn.w-button {
+    width: 280px;
+    margin: 30px auto;
+    background: $white;
+    color: $paypal_blue;
+
+    &:hover {
+      background: $primary_red;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 40px 15px;
+  }
+
+  .get-involved-dark {
+    padding: 40px 15px;
+    background: $primary_dark;
+    color: $white;
+
+    p, h1 {
+      color: $white;
+
+    }
+
+    p {
+      font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+}
+
+.pdf-download-link {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 1em auto;
+  background: $primary_blue;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  font-size: 180%;
+  line-height: 1.1;
+  padding-top: 12px;
+
+  &:hover {
+    border: 2px solid $primary_blue;
+    color: $primary_blue;
+    background: $white;
+  }
+}
+
+.paypal-btn-container {
+  text-align: center;
+  padding-top: 40px;
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

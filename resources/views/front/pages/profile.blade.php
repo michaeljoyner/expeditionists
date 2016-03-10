@@ -59,7 +59,7 @@
                 @endforeach
             </div>
         @endif
-        <a href="/expeditionists" class="w-button button red next">Meet the rest of the team</a>
+        <a href="/expeditionists" class="w-button exp-button inverse">Meet the rest of the team</a>
     </div>
     <div class="divider"></div>
     @include('front.partials.footer')

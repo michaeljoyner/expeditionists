@@ -9,6 +9,10 @@
         {!! Form::text('site_link', null, ['class' => "form-control"]) !!}
     </div>
     <div class="form-group">
+        <label for="description">Description: </label>
+        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
         <button type="submit" class="btn exp-btn">{{ $buttonText }}</button>
     </div>
 {!! Form::close() !!}

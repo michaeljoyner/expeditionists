@@ -1,25 +1,32 @@
 @extends('front.base')
 
+@section('head')
+    <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
+@endsection
+
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section slideshow-section">
         <div data-animation="slide" data-duration="500" data-infinite="1" class="w-slider slider">
             <div class="w-slider-mask">
                 <div class="w-slide slide slide-1">
+                    <img src="{{ $homePage->imagesOf('hero slider')->first()->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
-                        <div class="slide-text">{{ $homePage->present()->area('Banner Text 1') }}</div>
+                        <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
                         <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-2">
+                    <img src="{{ $homePage->imagesOf('hero slider')[1]->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
-                        <div class="slide-text">{{ $homePage->present()->area('Banner Text 2') }}</div>
+                        <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
                         <a href="/getinvolved" class="get-involved-cta-button red">Get Involved</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-3">
+                    <img src="{{ $homePage->imagesOf('hero slider')->last()->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
-                        <div class="slide-text">{{ $homePage->present()->area('Banner Text 3') }}</div>
+                        <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
                         <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
                     </div>
                 </div>
@@ -38,7 +45,7 @@
         <h1 class="section-heading white">EXPEDITIONISTS</h1>
 
         <div class="about-blurb">
-            <div class="p1 intro-white">{{ $homePage->present()->area('Expeditionists intro') }}</div>
+            <div class="p1 intro-white">{{ $homePage->textFor('expeditionists intro') }}</div>
         </div>
         <div class="w-container exiditionists-hp-container">
             <div class="w-row">
@@ -47,12 +54,13 @@
                 @endforeach
             </div>
         </div>
+        <a href="/expeditionists" class="w-button exp-button inverse">SEE ALL EXPEDITIONISTS</a>
     </div>
     <div class="w-section expeditions-section">
         <h1 class="section-heading red">EXPEDITIONS</h1>
 
         <div class="about-blurb">
-            <div class="p1 intro-black">{{ $homePage->present()->area('Expeditions intro') }}</div>
+            <div class="p1 intro-black">{{ $homePage->textFor('expeditions intro') }}</div>
         </div>
         <div class="w-container exiditionists-hp-container">
 
@@ -62,12 +70,12 @@
                 @endforeach
             </div>
         </div>
-        <a href="/expeditions" class="w-button button-big">SEE ALL EXPEDITIONS</a>
+        <a href="/expeditions" class="w-button exp-button">SEE ALL EXPEDITIONS</a>
     </div>
-    {{--<div class="w-section map-section">--}}
-        {{--<h1 class="section-heading black">INTERACTIVE MAP</h1>--}}
-        {{--@include('svg.worldLow')--}}
-    {{--</div>--}}
+    <div class="w-section map-section">
+        <h1 class="section-heading white">EXPLORE OUR WORLD</h1>
+        <div id="mapdiv"></div>
+    </div>
     <div class="w-section blog-section">
         <h1 class="section-heading">BLOG</h1>
 
@@ -75,24 +83,23 @@
             <div class="w-row blog-row">
                 @foreach($articles as $article)
                     <div class="w-col w-col-4 blog-column">
-                        {{--<img width="206" src="build/images/lyf-ohwhatfun-glitter-2.jpg" class="blog-image">--}}
                         <a href="/blog/{{ $article->slug }}" class="blog-title-link"><h4
                                     class="h4">{{ $article->title }}</h4></a>
                         <img src="{{ $article->author->profilePic() }}" alt="author profile"
                              class="blog-author-profile-pic-small">
                         <div class="blog-author grey">{{ $article->published_on->toFormattedDateString() }}</div>
-                        <p class="p1 white">{{ $article->intro }}</p>
+                        <p class="p1 black">{{ $article->intro }}</p>
                     </div>
                 @endforeach
             </div>
         </div>
-        <a href="/blog" class="w-button button-big white">SEE MORE BLOG POSTS</a>
+        <a href="/blog" class="w-button exp-button">SEE MORE BLOG POSTS</a>
     </div>
     <div class="w-section involved-section">
-        <h1 class="section-heading black">CHARITIES</h1>
+        <h1 class="section-heading white">CHARITIES</h1>
 
         <div class="about-blurb">
-            <div class="p1 intro-black">{{ $homePage->present()->area('Charities Intro') }}</div>
+            <div class="p1 intro-white">{{ $homePage->textFor('charities intro') }}</div>
         </div>
         <div class="w-container involved-container">
             <div class="w-row sponsor-charity-box-wrapper">
@@ -104,7 +111,7 @@
                     </a>
                 @endforeach
             </div>
-            <a href="/getinvolved" class="w-button button-big">Learn more about charities</a>
+            <a href="/getinvolved" class="w-button exp-button inverse">more about charities</a>
         </div>
     </div>
     <div class="w-section sponsors-section">
@@ -112,7 +119,7 @@
             <h1 class="section-heading black">SPONSORS</h1>
 
             <div class="about-blurb">
-                <div class="p1 intro-black">{{ $homePage->present()->area('Sponsors intro') }}</div>
+                <div class="p1 intro-black">{{ $homePage->textFor('sponsors intro') }}</div>
             </div>
             <div class="w-row sponsor-charity-box-wrapper">
                 @foreach($sponsors as $sponsor)
@@ -124,12 +131,38 @@
                 @endforeach
             </div>
         </div>
-        <a href="/getinvolved" class="w-button button-big">WANT TO SPONSOR A GOOD CAUSE? GET INVOLVED</a>
+        <a href="/getinvolved" class="w-button exp-button">MORE ABOUT SPONSORS</a>
     </div>
     @include('front.partials.footer')
 @endsection
 
 @section('bodyscripts')
+    <script src="/ammap/ammap.js"></script>
+    <script src="ammap/maps/js/worldLow.js" type="text/javascript"></script>
+    <script>
+        var images = {!! $mapLocations !!};
+        var map = AmCharts.makeChart( "mapdiv", {
+            "type": "map",
+            "dataProvider": {
+                "map": "worldLow",
+                "getAreasFromMap": true,
+                images: images
+            },
+            "areasSettings": {
+                "color": "#dc5744",
+                "autoZoom": true,
+                "selectedColor": "#d7322f",
+                "outlineThickness": 0,
+                "rollOverColor": "#d7322f"
+            },
+
+            "zoomControl": {
+                buttonFillColor: "#2e2e34",
+                buttonIconColor: "#ffffff",
+                buttonColorHover: "#d7322f"
+            }
+        } );
+    </script>
     <script>
         var missionManager = {
             currentSelection: null,
@@ -214,7 +247,7 @@
                 missionManager.slideToView();
             },
 
-            slideToView: function() {
+            slideToView: function () {
                 var offset = $('#about-panel').offset();
                 $('html, body').animate({scrollTop: offset.top}, 700);
             }

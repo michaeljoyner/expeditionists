@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Michaeljoyner\Edible\ContentRepository;
 
 class ContactController extends Controller
 {
@@ -25,7 +26,7 @@ class ContactController extends Controller
 
     public function show()
     {
-        $page = Page::where('name', 'contact us')->firstOrFail();
+        $page = (new ContentRepository())->getPageByName('contact us');
         return view('front.pages.contact')->with(compact('page'));
     }
 

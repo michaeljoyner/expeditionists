@@ -1,4 +1,4 @@
-{!! Form::open() !!}
+{!! Form::open(['url' => $formAction]) !!}
 @include('errors')
 <div class="sync-select-area">
     @foreach($profiles as $profile)

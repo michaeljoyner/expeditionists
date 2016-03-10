@@ -12840,6 +12840,98 @@ var __vueify_style__ = require("vueify-insert-css").insert("\n\n")
 'use strict';
 
 module.exports = {
+    props: ['default', 'url', 'shape', 'size', 'uniqueid'],
+
+    data: function data() {
+        return {
+            imageSource: '',
+            uploadMsg: '',
+            uploading: false,
+            uploadStatus: '',
+            uploadPercentage: 0
+        };
+    },
+
+    computed: {
+        imageSrc: function imageSrc() {
+            return this.imageSource ? this.imageSource : this['default'];
+        }
+    },
+
+    methods: {
+        processFile: function processFile(ev) {
+            var file = ev.target.files[0];
+            this.clearMessage();
+            if (file.type.indexOf('application/pdf') === -1) {
+                this.showInvalidFile(file.name);
+                return;
+            }
+            this.handleFile(file);
+        },
+
+        showInvalidFile: function showInvalidFile(name) {
+            this.uploadMsg = name + ' is not a valid PNG file';
+            this.uploadStatus = 'error';
+        },
+
+        handleFile: function handleFile(file) {
+            this.imageSource = '/images/assets/icons/doc_loading.png';
+            this.uploadFile(file);
+        },
+
+        uploadFile: function uploadFile(file) {
+            var self = this;
+            var fd = new FormData();
+            fd.append('file', file);
+            this.$http.post(this.url, fd, function (res) {
+                this.imageSource = '/images/assets/icons/doc_loaded.png';
+                this.uploadMsg = "Uploaded successfully";
+                this.uploadStatus = 'success';
+                this.uploading = false;
+            }, {
+                beforeSend: function beforeSend(req, options) {
+                    req.upload.addEventListener('progress', function (ev) {
+                        self.showProgress(parseInt(ev.loaded / ev.total * 100));
+                    });
+                }
+            }).error(function () {
+                this.uploadMsg = 'The upload failed';
+                this.uploadStatus = 'error';
+            });
+        },
+
+        showProgress: function showProgress(progress) {
+            console.log(progress + '% complete!');
+            this.uploadPercentage = progress;
+        },
+
+        clearMessage: function clearMessage() {
+            this.uploadMsg = '';
+        }
+    }
+
+};
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n    <p class=\"upload-instruction\">Click below to upload an PDF file.</p>\n    <label for=\"{{ 'profile-upload' + uniqueid}}\" class=\"single-upload-label\">\n        <img :src=\"imageSrc\" alt=\"\" class=\"profile-image\" v-bind:class=\"{'processing' : uploading, 'large': size === 'large', 'round': shape === 'round', 'full': size === 'full' }\">\n        <input v-on:change=\"processFile\" type=\"file\" id=\"{{ 'profile-upload' + uniqueid}}\">\n    </label>\n    <div class=\"upload-progress-container\" v-show=\"uploading\">\n        <span class=\"upload-progress-bar\" v-bind:style=\"{width: uploadPercentage + '%'}\"></span>\n    </div>\n    <p class=\"upload-message\" v-bind:class=\"{'error': uploadStatus === 'error', 'success': uploadStatus === 'success'}\" v-show=\"uploadMsg !== ''\">{{ uploadMsg }}\n    </p>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/mooz/work/expiditionist/resources/assets/js/components/Pdfupload.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],91:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n")
+'use strict';
+
+module.exports = {
     props: ['article', 'initial'],
 
     data: function data() {
@@ -12892,7 +12984,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],91:[function(require,module,exports){
+},{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],92:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("\n\n")
 'use strict';
 
@@ -12989,7 +13081,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],92:[function(require,module,exports){
+},{"vue":85,"vue-hot-reload-api":11,"vueify-insert-css":87}],93:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -13038,7 +13130,7 @@ module.exports = {
     }
 };
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 'use strict';
 
 var Vue = require('vue');
@@ -13052,10 +13144,11 @@ Vue.component('gallery-show', require('./components/Galleryshow.vue'));
 Vue.component('singleupload', require('./components/Singleupload.vue'));
 Vue.component('dropzone', require('./components/Dropzone.vue'));
 Vue.component('publishbutton', require('./components/Publishbutton.vue'));
+Vue.component('pdfupload', require('./components/Pdfupload.vue'));
 
 window.Vue = Vue;
 
 window.swal = require('sweetalert');
 window.formDateValidator = require('./libs/formdatevalidator.js');
 
-},{"./components/Dropzone.vue":88,"./components/Galleryshow.vue":89,"./components/Publishbutton.vue":90,"./components/Singleupload.vue":91,"./libs/formdatevalidator.js":92,"sweetalert":10,"vue":85,"vue-resource":13}]},{},[93]);
+},{"./components/Dropzone.vue":88,"./components/Galleryshow.vue":89,"./components/Pdfupload.vue":90,"./components/Publishbutton.vue":91,"./components/Singleupload.vue":92,"./libs/formdatevalidator.js":93,"sweetalert":10,"vue":85,"vue-resource":13}]},{},[94]);

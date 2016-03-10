@@ -45,11 +45,6 @@ class Gallery extends Model implements HasMediaConversions
                 $image->setCustomProperty('position', $i + 1);
                 $image->save();
             }
-//            } else {
-//                $list = $media->lists('id');
-//                $str = implode(', ', $list->toArray());
-//                throw new \Exception("finding $orderedIds[$i] in $str");
-//            }
         }
     }
 

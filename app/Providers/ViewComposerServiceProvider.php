@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Content\Page;
 use Illuminate\Support\ServiceProvider;
+use Michaeljoyner\Edible\ContentRepository;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -15,8 +16,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('admin.partials.navbar', function($view) {
-            $pages = Page::all();
-            $view->with(compact('pages'));
+            $ediblePages = (new ContentRepository())->getPageListWithUrls();
+            $view->with(compact('ediblePages'));
         });
     }
 

@@ -1,0 +1,11 @@
+.file-resource-item {
+  padding: 1em;
+  margin: 40px auto;
+
+  .empty-resource-alert {
+    background: $primary_red;
+    color: $white;
+    padding: 8px 1em;
+    border-radius: 8px;
+  }
+}

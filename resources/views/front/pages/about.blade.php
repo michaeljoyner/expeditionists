@@ -7,14 +7,14 @@
 
         <div class="w-container about-page-container">
             <article class="about-page-body side-padded">
-                {!! $aboutPage->present()->area('about us')!!}
+                {!! $aboutPage->textFor('about us')!!}
             </article>
         </div>
 
         <h1 id="howitworks" class="section-heading">HOW IT WORKS</h1>
         <div class="w-container about-page-container">
             <article class="about-page-body side-padded">
-                {!! $aboutPage->present()->area('how it works')!!}
+                {!! $aboutPage->textFor('how it works')!!}
             </article>
         </div>
 

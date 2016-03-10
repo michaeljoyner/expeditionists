@@ -50,13 +50,14 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: $primary_blue;
+    background-color: $white;
     transition: .75s;
     transform: translateX(-110%);
 
     p {
-      color: $white;
-      font-size: 120%;
+      color: $primary_dark;
+      font-family: 'Arvo', serif;
+      font-weight: 700;
     }
   }
 
@@ -66,14 +67,18 @@
     #cf-reset {
       position: absolute;
       bottom: 20px;
-      right: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
       cursor: pointer;
     }
 
     #cf-thanks {
       width: 100%;
       text-align: center;
-      padding-top: 50px;
+      padding-top: 150px;
+      font-size: 2.5em;
+
     }
   }
 }

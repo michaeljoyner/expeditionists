@@ -446,9 +446,7 @@
 }
 .button-big:hover {
   background-color: #37373b;
-  -webkit-transform: translate(0px, 5px);
-  -ms-transform: translate(0px, 5px);
-  transform: translate(0px, 5px);
+
   color: #f2eee7;
 }
 .button-big.white {
@@ -471,16 +469,13 @@
   font-size: 16px;
   text-align: center;
 }
-.map-section {
-  min-height: 500px;
-  padding-top: 67px;
-  padding-bottom: 67px;
-  background-color: #85cebf;
-  background-image: none;
-  background-position: 0px 0px;
-  background-size: auto;
-}
+
 .involved-section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+  background: $primary_dark;
+}
+.get-involved-section {
   padding-top: 65px;
   padding-bottom: 65px;
 }
@@ -489,8 +484,16 @@
 }
 .sponsor-charity-box {
   display: inline-block;
+  vertical-align: top;
   margin: 20px;
-  width: 12%;
+  width: 14%;
+
+  p.description {
+    padding-top: 20px;
+    line-height: 1.4;
+    font-size: 100%;
+    font-family: 'Ubuntu', Ariel, sans-serif;
+  }
 
   @include respond-to(phone) {width: 28%;}
   @include respond-to(smalltablet) {width: 28%;}
@@ -624,6 +627,7 @@
 .p1.white {
   width: 80%;
 }
+
 .about-page {
   padding-top: 65px;
   padding-bottom: 65px;
@@ -788,7 +792,7 @@
 .blog-section {
   padding-top: 65px;
   padding-bottom: 65px;
-  background-color: #2e2e34;
+  background-color: #ffffff;
 }
 .blog-section .section-heading {
   margin-bottom: 25px;
@@ -798,7 +802,7 @@
   text-decoration: none;
 }
 .blog-title-link .h4 {
-  color: white;
+  color: $primary_dark;
 }
 .blog-title-link:hover .h4 {
   color: #dc5744;

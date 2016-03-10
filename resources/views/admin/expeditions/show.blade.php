@@ -11,26 +11,38 @@
             <a href="/admin/expeditions/{{ $expedition->id }}/edit">
                 <div class="btn exp-btn">Edit</div>
             </a>
+            <a href="/admin/expeditions/{{ $expedition->id }}/locations">
+                <div class="btn exp-btn">Map Locations</div>
+            </a>
         </div>
         <hr/>
     </div>
     <div class="row">
         <div class="col-md-7 expedition-profile-stats-area expedition-detail">
             <p><strong class="stat-label">Location: </strong>{{ $expedition->location }}</p>
+            <p><strong class="stat-label">Distance: </strong>{{ $expedition->distance_to_date }}km of {{ $expedition->distance }}km</p>
             <p><strong class="stat-label">Start Date: </strong>{{ $expedition->start_date->toFormattedDateString() }}</p>
             <p><strong class="stat-label">About: </strong>{!! nl2br($expedition->about) !!}</p>
             <p><strong class="stat-label">Mission: </strong>{!! nl2br($expedition->mission) !!}</p>
             <p><strong class="stat-label">Objectives: </strong>{!! nl2br($expedition->objectives) !!}</p>
             <p><strong class="stat-label">Donation Goal: </strong>{{ $expedition->donation_goal }}</p>
+            <p><strong class="stat-label">Donations to Date: </strong>{{ $expedition->donation_to_date }}</p>
             <hr/>
             <div class="row">
                 <div class="expedition-show-team col-md-6">
                     <p>
-                        <strong class="stat-label">Team: </strong>
+                        <strong class="stat-label">Expeditionists: </strong>
                         <a href="/admin/expeditions/{{ $expedition->id }}/team" class="btn exp-btn btn-pale btn-small">Edit</a>
                     </p>
                     @foreach($expedition->expeditionists as $expeditionist)
                         <p>{{ $expeditionist->name }}</p>
+                    @endforeach
+                    <p>
+                        <strong class="stat-label">Support Team: </strong>
+                        <a href="/admin/expeditions/{{ $expedition->id }}/teammembers/edit" class="btn exp-btn btn-pale btn-small">Edit</a>
+                    </p>
+                    @foreach($expedition->teamMembers as $member)
+                        <p>{{ $member->name }}</p>
                     @endforeach
                 </div>
                 <div class="expedition-show-sponsors col-md-6">

@@ -9,6 +9,7 @@ Vue.component('gallery-show', require('./components/Galleryshow.vue'));
 Vue.component('singleupload', require('./components/Singleupload.vue'));
 Vue.component('dropzone', require('./components/Dropzone.vue'));
 Vue.component('publishbutton', require('./components/Publishbutton.vue'));
+Vue.component('pdfupload', require('./components/Pdfupload.vue'));
 
 window.Vue = Vue;
 

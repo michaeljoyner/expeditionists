@@ -14,7 +14,8 @@ class Charity extends Model implements HasMediaConversions
 
     protected $fillable = [
         'name',
-        'site_link'
+        'site_link',
+        'description'
     ];
 
     public function registerMediaConversions()
