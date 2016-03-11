@@ -9,6 +9,7 @@
 namespace App\Newsletter;
 
 
+use Illuminate\Support\Facades\Log;
 use Spatie\Newsletter\Exceptions\AlreadySubscribed;
 use Spatie\Newsletter\MailChimp\Newsletter;
 
@@ -40,6 +41,7 @@ class Subscriber
         } catch (\Exception $e) {
             $success = false;
             $message = 'Ooops! An error occurred';
+            Log::info($e->getMessage());
         } finally {
             return [
                 'email'   => $email,
