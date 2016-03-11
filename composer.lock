@@ -1531,16 +1531,16 @@
         },
         {
             "name": "michaeljoyner/edible",
-            "version": "v0.1.15",
+            "version": "v0.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaeljoyner/edible.git",
-                "reference": "c0221f5c0c45eae67306397fd7c21e2e12df8e61"
+                "reference": "3bb84bbdd34006fa1573c5f7b920a2a9b5de407b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/c0221f5c0c45eae67306397fd7c21e2e12df8e61",
-                "reference": "c0221f5c0c45eae67306397fd7c21e2e12df8e61",
+                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/3bb84bbdd34006fa1573c5f7b920a2a9b5de407b",
+                "reference": "3bb84bbdd34006fa1573c5f7b920a2a9b5de407b",
                 "shasum": ""
             },
             "require": {
@@ -1572,7 +1572,7 @@
                 }
             ],
             "description": "Very simple, very opinionated micro editable content management. Note that the end user cannot create new editable areas.",
-            "time": "2016-03-10 00:47:02"
+            "time": "2016-03-11 00:44:37"
         },
         {
             "name": "monolog/monolog",
