@@ -19,14 +19,14 @@
                 <div class="w-slide slide slide-2">
                     <img src="{{ $homePage->imagesOf('hero slider')[1]->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
-                        <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
+                        <div class="slide-text">{{ $homePage->textFor('hero text 2', 'Epic sentence goes here!') }}</div>
                         <a href="/getinvolved" class="get-involved-cta-button red">Get Involved</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-3">
                     <img src="{{ $homePage->imagesOf('hero slider')->last()->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
-                        <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
+                        <div class="slide-text">{{ $homePage->textFor('hero text 3', 'Epic sentence goes here!') }}</div>
                         <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
                     </div>
                 </div>
