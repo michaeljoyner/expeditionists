@@ -12,6 +12,7 @@
     {{--<link rel="stylesheet" type="text/css" href="/css/expeditionist.webflow.css">--}}
     <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    @yield('head')
     <script>
         WebFont.load({
             google: {

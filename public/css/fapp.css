@@ -2430,7 +2430,11 @@ textarea.w-select {
       padding: 0; } }
   @media only screen and (min-width: 721px) and (max-width: 989px) {
     .expeditions-column {
-      padding: 5px; } }
+      padding: 5px;
+      float: none;
+      display: inline-block;
+      width: 49%;
+      vertical-align: top; } }
 
 .expeditions-image {
   display: block;

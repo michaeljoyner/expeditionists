@@ -1,5 +1,13 @@
 @extends('front.base')
 
+@section('head')
+    @include('front.partials.ogmeta', [
+        'ogImage' => asset('images/static/NEW_logo_black.png'),
+        'ogTitle' => $expedition->name . ' | Expeditionist',
+        'ogDescription' => $expedition->mission
+    ])
+@endsection
+
 @section('content')
     @include('front.partials.navbar')
     <div class="divider"></div>

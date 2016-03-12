@@ -1,5 +1,13 @@
 @extends('front.base')
 
+@section('head')
+    @include('front.partials.ogmeta', [
+        'ogImage' => asset('images/static/NEW_logo_black.png'),
+        'ogTitle' => 'Our Expeditionists | Expeditionist',
+        'ogDescription' => 'The brave souls who go forth to discover for themselves, create for others and help those whom they can. We are proud to have them as our Expedtionists.'
+    ])
+@endsection
+
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section expeditions-section">

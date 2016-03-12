@@ -394,7 +394,10 @@
   padding: 40px;
   @include respond-to(phone) {padding: 0;}
   @include respond-to(smalltablet) {padding: 0;}
-  @include respond-to(largetablet) {padding: 5px;}
+  @include respond-to(largetablet) {padding: 5px; float: none;
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;}
 }
 .expeditions-image {
   display: block;

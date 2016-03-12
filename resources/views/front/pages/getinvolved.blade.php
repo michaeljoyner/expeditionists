@@ -1,5 +1,13 @@
 @extends('front.base')
 
+@section('head')
+    @include('front.partials.ogmeta', [
+        'ogImage' => asset('images/static/NEW_logo_black.png'),
+        'ogTitle' => 'Get Involved | Expeditionist',
+        'ogDescription' => 'We strive to make a change, and you can help! Anything from donations to volunteering, here you can find out how. Join the cause.'
+    ])
+@endsection
+
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section get-involved-section">

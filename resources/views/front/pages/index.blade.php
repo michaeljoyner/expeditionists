@@ -2,12 +2,17 @@
 
 @section('head')
     <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
+    @include('front.partials.ogmeta', [
+        'ogImage' => asset('images/static/NEW_logo_black.png'),
+        'ogTitle' => 'Expeditionist',
+        'ogDescription' => 'Expeditionists is an “adventure with an impact” initiative that creates packaged and marketable content of Africa for commercial and educational use by supporting and working with African adventurers on case related expeditions.'
+    ])
 @endsection
 
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section slideshow-section">
-        <div data-animation="slide" data-duration="500" data-infinite="1" class="w-slider slider">
+        <div data-animation="slide" data-duration="500" data-infinite="1" data-autoplay="1" data-delay="3000" class="w-slider slider">
             <div class="w-slider-mask">
                 <div class="w-slide slide slide-1">
                     <img src="{{ $homePage->imagesOf('hero slider')->first()->getUrl('wide') }}" alt="" class="home-slider-img">
