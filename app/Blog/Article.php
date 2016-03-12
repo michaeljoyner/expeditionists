@@ -77,6 +77,11 @@ class Article extends Model implements SluggableInterface, HasMediaConversions
         return ! $pic->isEmpty() ? $pic[0]->getUrl() : null;
     }
 
+    public function hasCoverPic()
+    {
+        return ! $this->getMedia()->isEmpty();
+    }
+
     public function setBodyAttribute($body)
     {
         $this->attributes['body'] = AttributeStripper::strip('style', $body);

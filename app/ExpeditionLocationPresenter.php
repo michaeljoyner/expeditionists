@@ -38,7 +38,7 @@ class ExpeditionLocationPresenter
             "labelColor"             => "#ffffff",
             "labelRollOverColor"     => "#85cebf",
             "labelShiftY"            => 0,
-            "zoomLevel"              => 4,
+            "zoomLevel"              => 18,
             "label"                  => $loc->title,
             "title"                  => $loc->expedition->name,
             "description"            => $this->buildDescriptionFromExpedition($loc->expedition),
