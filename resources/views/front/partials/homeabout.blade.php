@@ -36,5 +36,5 @@
         <h3 class="about-heading white">OBJECTIVES</h3>
         <div class="p1 white">{{ $homePage->textFor('objectives text') }}</div>
     </div>
-    <a href="/about" class="w-button button-big white">READ MORE ABOUT EXPEDITIONIST.ORG</a>
+    <a href="/about" class="w-button button-big white">READ MORE ABOUT EXPEDITIONIST</a>
 </div>

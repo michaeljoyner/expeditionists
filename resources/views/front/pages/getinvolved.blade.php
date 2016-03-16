@@ -44,8 +44,8 @@
             <section id="volunteer" class="side-padded get-involved-dark">
                 <h1 class="h4 involved get-involved-heading">Become a volunteer</h1>
                 <p class="p1">{{ $page->textFor('volunteers') }}</p>
+                <a href="{{ $volunteerPdf->file_path }}" class="pdf-download-link" download>Get the pdf</a>
                 <a href="#application" class="get-involved-btn">
-                    <a href="{{ $volunteerPdf->file_path }}" class="pdf-download-link" download>Get the pdf</a>
                     <div class="w-button exp-button inverse">Become a volunteer</div>
                 </a>
             </section>

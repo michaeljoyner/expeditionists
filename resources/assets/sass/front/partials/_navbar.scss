@@ -20,13 +20,13 @@
   .logo-navbar-image {
     @include respond-to(phone) {width: 60%;}
     @include respond-to(smalltablet) {width: 60%;}
-    @include respond-to(largetablet) {width: 60%;}
+    @include respond-to(largetablet) {width: 30%;}
   }
 
   .w-icon-nav-menu {
     @include respond-to(phone) {display: inline-block; float: right;}
     @include respond-to(smalltablet) {display: inline-block; float: right; font-size: 2em;}
-    @include respond-to(largetablet) {display: inline-block; float: right; font-size: 3em; line-height: 67px;}
+    @include respond-to(largetablet) {display: inline-block; float: right; font-size: 2em; line-height: 34px;}
   }
 }
 

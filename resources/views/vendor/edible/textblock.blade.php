@@ -35,6 +35,7 @@
                 menubar: false,
                 toolbar: 'undo redo | styleselect | bold italic | link bullist numlist | fullscreen',
                 paste_data_images: false,
+                paste_as_text: true,
                 height: 500,
                 content_style: "body {font-size: 16px; max-width: 800px; margin: 0 auto;} * {font-size: 16px;}"
             });

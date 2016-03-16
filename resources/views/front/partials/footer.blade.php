@@ -3,11 +3,19 @@
         <div class="w-row footer-row">
             <div class="w-col w-col-4 footer-column">
                 <h3 class="footer-heading">FOLLOW&nbsp;US</h3>
-                <div class="footer-social-wrapper"><img src="/build/images/email_w.png" class="footer-social-icon"><img
-                            src="/build/images/facebook_w.png" class="footer-social-icon"><img
-                            src="/build/images/instagram_w.png" class="footer-social-icon"><img
-                            src="/build/images/twitter_w.png" class="footer-social-icon"><img
-                            src="/build/images/linkedin_w.png" class="footer-social-icon">
+                <div class="footer-social-wrapper">
+                    <a href="https://www.facebook.com/Expeditionists-736919693106203/">
+                        <img src="/build/images/facebook_w.png" class="footer-social-icon">
+                    </a>
+                    <a href="https://twitter.com/Expeditionists">
+                        <img src="/build/images/twitter_w.png" class="footer-social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/xpeditionists/">
+                        <img src="/build/images/instagram_w.png" class="footer-social-icon">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCGOTp_YTn2HL37F4DFH650A">
+                        <img src="/build/images/email_w.png" class="footer-social-icon">
+                    </a>
                 </div>
                 <div class="newsletter-section">
                     <h3 class="footer-heading">NEWSLETTER</h3>
@@ -21,9 +29,25 @@
             </div>
             <div class="w-col w-col-4 footer-column">
                 <h3 class="footer-heading">CONATCT&nbsp;US</h3>
+                <p class="p1 white subheading">South Africa</p>
                 <div class="p1 white">email@expeditionist.org
-                    <br>+27 83 456 786
+                    <br>+27 766 886 719
                 </div>
+                <p class="p1 white">
+                    40 Ridge Rd<br>
+                    Pietermaritzburg<br>
+                    KwaZulu-Natal<br>
+                    3209
+                </p>
+                <p class="p1 white subheading">Tanzania</p>
+                <div class="p1 white">email@expeditionist.org
+                    <br>+255 768 697 767
+                </div>
+                <p class="p1 white">
+                    PO Box 10278<br>
+                    Arusha<br>
+                    Tanzania<br>
+                </p>
             </div>
             <div class="w-col w-col-4 footer-column">
                 <h3 class="footer-heading">QUICK LINKS</h3>

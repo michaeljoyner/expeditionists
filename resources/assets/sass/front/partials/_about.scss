@@ -1,6 +1,6 @@
 .about-page-body {
 
-  p {
+  p, div {
     text-align: left;
     font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;
     color: $primary_dark;
@@ -28,4 +28,24 @@
 
 .about-page-container {
   padding-bottom: 50px;
+}
+
+.about-page {
+  .dark-section {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    background: $primary_dark;
+
+    .about-page-body {
+      color: $white;
+
+      p, div {
+        color: $white;
+      }
+    }
+
+    #howitworks {
+      color: $white;
+    }
+  }
 }

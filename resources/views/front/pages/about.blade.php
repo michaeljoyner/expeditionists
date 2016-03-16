@@ -18,14 +18,14 @@
                 {!! $aboutPage->textFor('about us')!!}
             </article>
         </div>
-
-        <h1 id="howitworks" class="section-heading">HOW IT WORKS</h1>
-        <div class="w-container about-page-container">
-            <article class="about-page-body side-padded">
-                {!! $aboutPage->textFor('how it works')!!}
-            </article>
-        </div>
-
+        <section class="dark-section">
+            <h1 id="howitworks" class="section-heading">HOW IT WORKS</h1>
+            <div class="w-container about-page-container">
+                <article class="about-page-body side-padded">
+                    {!! $aboutPage->textFor('how it works')!!}
+                </article>
+            </div>
+        </section>
         <h1 id="team" class="section-heading">THE TEAM</h1>
         <div class="w-container about-page-container">
             @foreach($members as $member)
