@@ -14,6 +14,10 @@
             <a href="/admin/expeditions/{{ $expedition->id }}/locations">
                 <div class="btn exp-btn">Map Locations</div>
             </a>
+            @include('admin.partials.deletebutton', [
+                'deleteFormAction' => '/admin/expeditions/'.$expedition->id,
+                'objectName' => $expedition->name
+            ])
         </div>
         <hr/>
     </div>
@@ -85,10 +89,11 @@
             </div>
         @endforeach
     </section>
-
+    @include('admin.partials.deletemodal')
 @endsection
 
 @section('bodyscripts')
+    @include('admin.partials.modalscript')
     <script>
         new Vue({
             el: '#cover-uploader'

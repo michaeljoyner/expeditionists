@@ -16,8 +16,8 @@ elixir(function(mix) {
         .sass('fapp.scss')
         .browserify('main.js')
         .browserify('front.js')
-        //.scripts([
-        //    'vendor/tiny.editor.js'
-        //], 'public/js/app.js')
+        .scripts([
+            'vendor/webflow.js'
+        ], 'public/js/webflow.js')
         .version(['css/app.css', 'js/app.js', 'css/fapp.css']);
 });

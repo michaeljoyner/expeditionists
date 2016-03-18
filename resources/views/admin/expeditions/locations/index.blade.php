@@ -35,6 +35,7 @@
         </div>
         <div class="col-md-6">
             <h2>Add a location</h2>
+            @include('errors')
             @include('admin.forms.location', [
                 'model' => $newLocation,
                 'formAction' => '/admin/expeditions/' . $expedition->id . '/locations',

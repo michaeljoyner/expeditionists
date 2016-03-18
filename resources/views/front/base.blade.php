@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Nov 20 2015 02:36:23 GMT+0000 (UTC) -->
 <html data-wf-site="56298a4d4cda124d7a7e770c" data-wf-page="56298a4d4cda124d7a7e770d">
 <head>
     <meta charset="utf-8">
     <title>Expeditionist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Webflow">
-    {{--<link rel="stylesheet" type="text/css" href="/css/normalize.css">--}}
-    {{--<link rel="stylesheet" type="text/css" href="/css/webflow.css">--}}
-    {{--<link rel="stylesheet" type="text/css" href="/css/expeditionist.webflow.css">--}}
     <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     @yield('head')
@@ -22,8 +17,6 @@
     </script>
     <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
     <script type="text/javascript" src="/js/modernizr.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
-    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
 </head>
 <body>
 @yield('content')

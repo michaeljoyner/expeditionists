@@ -21,6 +21,12 @@ class MapLocationsController extends Controller
 
     public function store(Request $request, $expeditionId)
     {
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'longitude' => 'required|numeric|between:-90,90',
+            'latitude' => 'required|numeric|between:-90,90'
+        ]);
+
         $expedition = Expedition::findOrFail($expeditionId);
         $expedition->addLocation($request->all());
 

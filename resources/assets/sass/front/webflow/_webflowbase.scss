@@ -393,6 +393,10 @@
 }
 .expeditions-column {
   padding: 40px;
+  float: none;
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
   @include respond-to(phone) {padding: 0;}
   @include respond-to(smalltablet) {padding: 0;}
   @include respond-to(largetablet) {padding: 5px; float: none;
