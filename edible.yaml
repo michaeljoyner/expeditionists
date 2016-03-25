@@ -53,10 +53,6 @@ pages:
 #########################################
   gallery:
         description: The gallery page
-        textblocks:
-            gallery intro:
-                description: The introduction shown to the viewer on the gallery page
-                allows_html: false
         galleries:
             gallery:
                 description: Main gallery for site
