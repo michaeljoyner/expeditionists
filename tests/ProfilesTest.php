@@ -86,6 +86,19 @@ class ProfilesTest extends TestCase
     }
 
     /**
+     *@test
+     */
+    public function deleting_a_user_will_also_delete_their_profile()
+    {
+        $user = factory(\App\User::class)->create();
+        $profile = $user->addProfile();
+
+        $user->delete();
+
+        $this->notSeeInDatabase('profiles', ['id' => $profile->id]);
+    }
+
+    /**
      * @test
      */
     public function it_can_only_be_deleted_by_its_owner()

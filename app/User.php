@@ -35,6 +35,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($user) {
+            $user->profile->delete();
+        });
+    }
+
     public function profile()
     {
         return $this->hasOne('App\Profile', 'user_id');
@@ -42,7 +51,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function addProfile()
     {
-        $this->profile()->create(['name' => $this->attributes['name'], 'email' => $this->attributes['email']]);
+        return $this->profile()->create([
+            'name' => $this->attributes['name'],
+            'email' => $this->attributes['email']
+        ]);
     }
 
     public function setPasswordAttribute($password)
