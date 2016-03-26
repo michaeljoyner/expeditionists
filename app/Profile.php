@@ -55,9 +55,7 @@ class Profile extends Model implements HasMediaConversions, SluggableInterface
 
     public static function scopeCompleted($query)
     {
-        return $query->where('name', '!=', 'unknown')
-            ->orWhere('name', '!=', '')
-            ->orwhere('intro', '!=', '')
+        return $query->where('intro', '!=', '')
             ->whereNotNull('intro');
     }
 
