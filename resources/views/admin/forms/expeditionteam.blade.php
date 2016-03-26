@@ -18,6 +18,6 @@
     @endforeach
 </div>
 <div class="form-group">
-    <button type="submit" class="btn exp-btn">Set Team</button>
+    <button type="submit" class="btn exp-btn">{{ $submitText }}</button>
 </div>
 {!! Form::close() !!}

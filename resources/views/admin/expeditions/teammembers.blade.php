@@ -6,6 +6,6 @@
         <hr/>
     </div>
     <section>
-        @include('admin.forms.expeditionteam', ['formAction' => '/admin/expeditions/'.$expedition->id.'/teammembers'])
+        @include('admin.forms.expeditionteam', ['formAction' => '/admin/expeditions/'.$expedition->id.'/teammembers', 'submitText' => 'Set Team'])
     </section>
 @endsection
