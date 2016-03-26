@@ -33,7 +33,7 @@ class PagesController extends Controller
     public function home()
     {
         $homePage = $this->contentRepository->getPageByName('home page');
-        $profiles = $this->getCompletedProfiles();
+        $profiles = $this->getCompletedProfiles(3);
         $expeditions = Expedition::latest()->take(4)->get();
         $sponsors = Sponsor::take(5)->get();
         $charities = Charity::take(5)->get();
@@ -92,12 +92,12 @@ class PagesController extends Controller
     /**
      * @return mixed
      */
-    private function getCompletedProfiles()
+    private function getCompletedProfiles($limit = null)
     {
         $profiles = Profile::completed()->get()->filter(function ($profile) {
             return $profile->hasProfilePic();
         });
-        return $profiles->count() > 3 ? $profiles->random(3) : $profiles;
+        return (!is_null($limit) && $profiles->count() > $limit) ? $profiles->random($limit) : $profiles;
     }
 
     public function gallery()
