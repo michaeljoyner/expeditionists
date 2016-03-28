@@ -7,6 +7,11 @@
 @section('content')
     <div class="exp-page-header">
         <h1>Set a cover image for {{ $article->title }}</h1>
+        <div class="page-actions">
+            <a href="/admin/blog">
+                <div class="btn exp-btn">Back To Blog</div>
+            </a>
+        </div>
         <hr/>
     </div>
     <section class="article-cover-upload row">

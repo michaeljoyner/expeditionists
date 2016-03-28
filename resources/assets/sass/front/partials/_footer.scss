@@ -73,4 +73,13 @@
     text-decoration: underline;
     text-transform: uppercase;
   }
+
+  .address {
+    font-size: 70%;
+    line-height: 1.4;
+  }
+
+  .footer-list-item:hover {
+    color: $primary_red;
+  }
 }

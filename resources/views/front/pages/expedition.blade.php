@@ -73,9 +73,12 @@
                     <p class="stats-list-item">Team:</p>
                     <div>
                         @foreach($expedition->teamMembers as $member)
-                            <img class="expedition-team-profile-pic"
-                                 src="{{ $member->profilePic() }}"
-                                 alt="profile pic of {{ $member->name }}"/>
+                            <a href="/about#team">
+                                <img class="expedition-team-profile-pic"
+                                     src="{{ $member->profilePic() }}"
+                                     alt="profile pic of {{ $member->name }}"
+                                />
+                            </a>
                         @endforeach
                     </div>
                 </div>

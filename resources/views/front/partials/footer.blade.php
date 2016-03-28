@@ -33,7 +33,7 @@
                 <div class="p1 white">email@expeditionist.org
                     <br>+27 766 886 719
                 </div>
-                <p class="p1 white">
+                <p class="p1 white address">
                     40 Ridge Rd<br>
                     Pietermaritzburg<br>
                     KwaZulu-Natal<br>
@@ -43,7 +43,7 @@
                 <div class="p1 white">email@expeditionist.org
                     <br>+255 768 697 767
                 </div>
-                <p class="p1 white">
+                <p class="p1 white address">
                     PO Box 10278<br>
                     Arusha<br>
                     Tanzania<br>
