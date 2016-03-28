@@ -503,11 +503,14 @@
     font-family: 'Ubuntu', Ariel, sans-serif;
   }
 
-  @include respond-to(phone) {width: 28%;}
-  @include respond-to(smalltablet) {width: 28%;}
+  @include respond-to(phone) {width: 100%; margin: 0; margin-top: 20px;}
+  @include respond-to(smalltablet) {width: 100%; margin: 0; margin-top: 20px;}
+  @include respond-to(largetablet) {width: 30%;}
 }
 .sponsor-charity-box img {
   width: 100%;
+  @include respond-to(phone) {width: 75%;}
+  @include respond-to(smalltablet) {width: 75%;}
 }
 .involved-container {
   margin-top: 50px;
