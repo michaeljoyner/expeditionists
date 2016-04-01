@@ -618,10 +618,11 @@
   height: 0;
   max-height: 0;
   overflow: hidden;
+
 }
 .mission-section.show {
   height: auto;
-  max-height: 600px;
+  max-height: 1200px;
   padding-top: 65px;
   padding-bottom: 65px;
 }
@@ -764,6 +765,9 @@
   transition: 1s;
   transform: translate3d(2000px,0,0);
   height: 0;
+  width: 95%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .mission-container.show {
   transform: translate3d(0,0,0);
