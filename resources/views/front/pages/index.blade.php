@@ -121,7 +121,7 @@
     </div>
     <div class="w-section sponsors-section">
         <div class="w-container sponsors-container">
-            <h1 class="section-heading black">SPONSORS</h1>
+            <h1 class="section-heading black">SPONSORS and PARTNERS</h1>
 
             <div class="about-blurb">
                 <div class="p1 intro-black">{{ $homePage->textFor('sponsors intro') }}</div>
