@@ -66,7 +66,7 @@ return [
             'driver' => 's3',
             'key'    => env('AMAZON_KEY'),
             'secret' => env('AMAZON_SECRET'),
-            'region' => 'Singapore',
+            'region' => 'ap-southeast-1',
             'bucket' => 'expeditionists-bkup',
         ],
 
