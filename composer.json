@@ -15,7 +15,10 @@
         "doctrine/dbal": "~2.3",
         "spatie/eloquent-sortable": "^2.0",
         "michaeljoyner/edible": "^0.1.1",
-        "spatie/laravel-newsletter": "^2.2"
+        "spatie/laravel-newsletter": "^2.2",
+        "spatie/laravel-backup": "^3.5",
+        "maknz/slack": "^1.7",
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -143,6 +143,8 @@ return [
         Spatie\EloquentSortable\SortableServiceProvider::class,
         Michaeljoyner\Edible\EdibleServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
+        Maknz\Slack\SlackServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
 
         /*
          * Application Service Providers...
