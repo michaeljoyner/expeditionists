@@ -12,6 +12,12 @@ pages:
           hero text 3:
               description: The text to be shown on the third hero image
               allows_html: false
+          hero text 4:
+              description: The text to be shown on the fourth hero image, links to donate
+              allows_html: false
+          hero text 5:
+              description: The text to be shown on the fifth hero image, links to blog
+              allows_html: false
           about intro:
               description: The introduction for the about section on the home page
               allows_html: false

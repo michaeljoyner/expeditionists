@@ -1707,23 +1707,23 @@
         },
         {
             "name": "michaeljoyner/edible",
-            "version": "v0.1.16",
+            "version": "v0.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaeljoyner/edible.git",
-                "reference": "3bb84bbdd34006fa1573c5f7b920a2a9b5de407b"
+                "reference": "53aa3e295c1929be554cb14846aeeb263583dd60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/3bb84bbdd34006fa1573c5f7b920a2a9b5de407b",
-                "reference": "3bb84bbdd34006fa1573c5f7b920a2a9b5de407b",
+                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/53aa3e295c1929be554cb14846aeeb263583dd60",
+                "reference": "53aa3e295c1929be554cb14846aeeb263583dd60",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^5.1",
                 "php": "^5.5|^7.0",
                 "spatie/laravel-medialibrary": "^3.16",
-                "symfony/yaml": "^3.0"
+                "symfony/yaml": "^2.6 || ^3.0"
             },
             "require-dev": {
                 "illuminate/container": "^5.2",
@@ -1747,8 +1747,8 @@
                     "email": "joyner.michael@gmail.com"
                 }
             ],
-            "description": "Very simple, very opinionated micro editable content management. Note that the end user cannot create new editable areas.",
-            "time": "2016-03-11 00:44:37"
+            "description": "Maps a basic content structure outlined in a yaml file to Eloquent models in your Laravel app.",
+            "time": "2016-06-06 02:36:36"
         },
         {
             "name": "monolog/monolog",

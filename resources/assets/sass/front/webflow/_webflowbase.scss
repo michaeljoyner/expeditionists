@@ -56,43 +56,20 @@
   color: white;
 }
 .slide {
-  padding-top: 70px;
-  padding-bottom: 70px;
-  background-image: url('../images/banner_image2.jpg');
-  //background-position: 50% 56%;
-  background-size: cover;
-  background-repeat: repeat;
   overflow: hidden;
 }
-.slide.slide-2 {
-  @include respond-to(phone) {background-position-x: 45%;}
-  @include respond-to(smalltablet) {background-position-x: 45%;}
 
-}
-.slide.slide-1 {
-
-  background-image: url('../images/blue-desert45.jpg');
-  background-position: 42% 86%;
-  background-size: cover;
-}
-.slide.slide-3 {
-  background-image: url('../images/banner_image3.jpg'), url('../images/banner_image2.jpg');
-  background-position: 50% 40%;
-  background-size: cover, cover;
-  background-repeat: repeat, repeat;
-}
 .slider {
   display: block;
   width: 100%;
-  min-height: 600px;
   margin-right: auto;
   margin-left: auto;
 }
 .slide-text {
   font-family: Arvo, sans-serif;
-  color: #2e2e34;
-  font-size: 56px;
-  line-height: 74px;
+  color: white;
+  font-size: 42px;
+  line-height: 1.5;
   font-weight: 700;
   text-align: left;
   text-transform: uppercase;
@@ -283,12 +260,10 @@
 .slide-text-wrapper {
   display: block;
   width: 60%;
-  margin-top: 60px;
-  margin-right: auto;
-  margin-left: auto;
-  @include respond-to(phone) {width: 90%; margin-top: 0;}
-  @include respond-to(smalltablet) {width: 90%; margin-top: 0;}
-  @include respond-to(largetablet) {width: 90%; margin-top: 25px;}
+  margin: 0 auto;
+  @include respond-to(phone) {width: 90%; }
+  @include respond-to(smalltablet) {width: 90%; }
+  @include respond-to(largetablet) {width: 90%; }
 }
 .nav-container {
   display: block;
@@ -922,10 +897,7 @@
 
 }
 @media (max-width: 767px) {
-  .slide-text {
-    font-size: 39px;
-    line-height: 55px;
-  }
+
   .section-heading.white {
     text-align: center;
   }

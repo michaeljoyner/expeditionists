@@ -7,8 +7,8 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
  * Date: 11/6/15
  * Time: 10:46 AM
  */
-
-class ExpeditionTest extends TestCase {
+class ExpeditionTest extends TestCase
+{
 
     use DatabaseMigrations, TestsImageUploads;
 
@@ -21,16 +21,16 @@ class ExpeditionTest extends TestCase {
         $this->asLoggedInUser();
         $this->visit('/admin/expeditions/create')
             ->submitForm('Create Expedition', [
-                'name' => $expedition->name,
-                'location' => $expedition->location,
-                'start_date' => '1982-05-20',
-                'about' => 'about',
-                'objectives' => 'objectives',
-                'mission' => 'mission',
+                'name'          => $expedition->name,
+                'location'      => $expedition->location,
+                'start_date'    => '1982-05-20',
+                'about'         => 'about',
+                'objectives'    => 'objectives',
+                'mission'       => 'mission',
                 'donation_goal' => 'R1000'
             ])
             ->seeInDatabase('expeditions', [
-                'name' => $expedition->name,
+                'name'     => $expedition->name,
                 'location' => $expedition->location
             ]);
     }
@@ -43,13 +43,13 @@ class ExpeditionTest extends TestCase {
         $expedition = factory(\App\Expedition::class)->create();
         $this->asLoggedInUser();
 
-        $this->visit('/admin/expeditions/'.$expedition->id.'/edit')
+        $this->visit('/admin/expeditions/' . $expedition->id . '/edit')
             ->type('Moozes Adventure', 'name')
             ->type('Kazikstan', 'location')
             ->press('Save Changes')
             ->seeInDatabase('expeditions', [
-                'id' => $expedition->id,
-                'name' => 'Moozes Adventure',
+                'id'       => $expedition->id,
+                'name'     => 'Moozes Adventure',
                 'location' => 'Kazikstan'
             ]);
     }
@@ -63,7 +63,7 @@ class ExpeditionTest extends TestCase {
         $this->asLoggedInUser();
         $this->withoutMiddleware();
 
-        $this->call('DELETE', '/admin/expeditions/'.$expedition->id);
+        $this->call('DELETE', '/admin/expeditions/' . $expedition->id);
         $this->notSeeInDatabase('expeditions', ['id' => $expedition->id]);
     }
 
@@ -76,7 +76,7 @@ class ExpeditionTest extends TestCase {
         $expedition = factory(\App\Expedition::class)->create();
         $this->asLoggedInUser();
 
-        $response = $this->call('POST', '/admin/uploads/expeditions/'.$expedition->id.'/coverpic', [], [], [
+        $response = $this->call('POST', '/admin/uploads/expeditions/' . $expedition->id . '/coverpic', [], [], [
             'file' => $this->prepareFileUpload('tests/testpic1.png'),
         ]);
 
@@ -113,9 +113,11 @@ class ExpeditionTest extends TestCase {
         $this->asLoggedInUser();
 
         $expedition = factory(\App\Expedition::class)->create();
-        $gallery = factory(\App\Gallery::class)->create(['galleryable_id' => $expedition->id, 'galleryable_type' => \App\Expedition::class]);
+        $gallery = factory(\App\Gallery::class)->create(['galleryable_id'   => $expedition->id,
+                                                         'galleryable_type' => \App\Expedition::class
+        ]);
 
-        $response = $this->call('POST', '/admin/uploads/galleries/'.$gallery->galleryable_id.'/images', [], [], [
+        $response = $this->call('POST', '/admin/uploads/galleries/' . $gallery->galleryable_id . '/images', [], [], [
             'file' => $this->prepareFileUpload('tests/testpic1.png'),
         ]);
 
@@ -135,16 +137,16 @@ class ExpeditionTest extends TestCase {
         $this->asAnAdminUser();
         $this->visit('/admin/expeditions/create')
             ->submitForm('Create Expedition', [
-                'name' => $expedition->name,
-                'location' => $expedition->location,
-                'start_date' => '1982-05-20',
-                'about' => 'about',
-                'objectives' => 'objectives',
-                'mission' => 'mission',
+                'name'          => $expedition->name,
+                'location'      => $expedition->location,
+                'start_date'    => '1982-05-20',
+                'about'         => 'about',
+                'objectives'    => 'objectives',
+                'mission'       => 'mission',
                 'donation_goal' => 'R1000'
             ])
             ->seeInDatabase('expeditions', [
-                'name' => $expedition->name,
+                'name'     => $expedition->name,
                 'location' => $expedition->location
             ]);
 
@@ -165,7 +167,7 @@ class ExpeditionTest extends TestCase {
         $sponsor3 = factory(\App\Sponsor::class)->create(['name' => 'Big Sam']);
 
         $this->asAnAdminUser();
-        $this->visit('/admin/expeditions/'.$expedition->id.'/sponsors')
+        $this->visit('/admin/expeditions/' . $expedition->id . '/sponsors')
             ->submitForm('Set Sponsors', [
                 'expedition_sponsors[1]' => 1,
                 'expedition_sponsors[3]' => 3
@@ -175,6 +177,45 @@ class ExpeditionTest extends TestCase {
         $this->assertTrue($expedition->isSponsoredBy($sponsor));
         $this->assertTrue($expedition->isSponsoredBy($sponsor3));
         $this->assertFalse($expedition->isSponsoredBy($sponsor2));
+    }
+
+    /**
+     * @test
+     */
+    public function an_expedition_can_be_associated_with_specific_charities()
+    {
+        $expedition = factory(\App\Expedition::class)->create();
+
+        $sponsor = factory(\App\Charity::class)->create(['name' => 'Big Mooz']);
+        $sponsor2 = factory(\App\Charity::class)->create(['name' => 'Big Carol']);
+        $sponsor3 = factory(\App\Charity::class)->create(['name' => 'Big Sam']);
+
+        $this->asAnAdminUser();
+        $this->visit('/admin/expeditions/'.$expedition->id.'/charities')
+            ->submitForm('Set Charities', [
+                'expedition_charities[1]' => 1,
+                'expedition_charities[3]' => 3
+            ]);
+
+        $this->assertEquals(2, $expedition->charities->count(), 'should be two associated charities');
+        $this->assertTrue($expedition->supportsCharity($sponsor));
+        $this->assertTrue($expedition->supportsCharity($sponsor3));
+        $this->assertFalse($expedition->supportsCharity($sponsor2));
+    }
+
+    /**
+     * @test
+     */
+    public function an_expedition_can_tell_if_it_supports_a_charity()
+    {
+        $expedition = factory(\App\Expedition::class)->create();
+        $sponsor = factory(\App\Charity::class)->create();
+        $sponsor2 = factory(\App\Charity::class)->create();
+
+        $expedition->syncCharitiesById([$sponsor->id]);
+
+        $this->assertTrue($expedition->supportsCharity($sponsor), 'expedition should support charity');
+        $this->assertFalse($expedition->supportsCharity($sponsor2), 'expedition should not support charity');
     }
 
     /**

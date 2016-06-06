@@ -28,9 +28,9 @@
                 </div>
             </div>
             <div class="w-col w-col-4 footer-column">
-                <h3 class="footer-heading">CONATCT&nbsp;US</h3>
+                <h3 class="footer-heading">CONTACT&nbsp;US</h3>
                 <p class="p1 white subheading">South Africa</p>
-                <div class="p1 white">email@expeditionist.org
+                <div class="p1 white">info@expeditionist.org
                     <br>+27 766 886 719
                 </div>
                 <p class="p1 white address">
@@ -40,7 +40,7 @@
                     3209
                 </p>
                 <p class="p1 white subheading">Tanzania</p>
-                <div class="p1 white">email@expeditionist.org
+                <div class="p1 white">info@expeditionist.org
                     <br>+255 768 697 767
                 </div>
                 <p class="p1 white address">

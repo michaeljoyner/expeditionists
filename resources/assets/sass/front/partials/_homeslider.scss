@@ -43,14 +43,22 @@ a.get-involved-cta-button {
   transition: .5s;
   opacity: 0;
   animation: slideDown .5s ease 1s 1 forwards;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 40px;
 }
 
 .w-slide .home-slider-img {
-  position: absolute;
+  //position: absolute;
   min-width: 100%;
-  max-width: none;
-  min-height: 100%;
-  top: 0;
+  min-height: 300px;
+  //max-width: none;
+  //min-height: 100%;
+  //top: 0;
+  @include respond-to(phone) { max-width: none; max-height: 400px;}
+  @include respond-to(smalltablet) { max-width: none; max-height: 400px;}
 }
 
 @keyframes slideDown {

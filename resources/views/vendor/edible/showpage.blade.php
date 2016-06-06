@@ -6,7 +6,7 @@
         <h1 class="pull-left">Manage the content for the {{ $page->name }} page</h1>
         <hr>
     </div>
-    @foreach($page->textblocks as $textblock)
+    @foreach($page->textblocks->sortBy('name') as $textblock)
         <div class="ed-textblock">
             <header class="ed-textblock-header">
                 <h4>{{ $textblock->name }}</h4>

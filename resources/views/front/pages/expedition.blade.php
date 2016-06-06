@@ -115,6 +115,25 @@
                     <div class="section-intro-text">Would you like to become a sponsor? Why not <a class="red-link" href="/getinvolved">get involved</a>?</div>
             </div>
         </div>
+        <div class="w-container charities-container">
+            <h1 class="h4 blue">Supported Charities</h1>
+            <div class="w-row sponsor-charity-box-wrapper">
+                @if($expedition->charities->count() > 0)
+                    <p class="section-into-text">These are the charities we are supporting with this expedition.</p>
+                    @foreach($expedition->charities as $charity)
+                        <a href="{{ $charity->site_link }}" class="sponsor-charity-box">
+                            <div>
+                                <img src="{{ $charity->thumbImage() }}" class="involved-logo">
+                            </div>
+                        </a>
+                    @endforeach
+                @else
+                    <div class="section-intro-text">We are still finalising which charities to support.</div>
+                @endif
+                <div class="section-intro-text">Have a charity that heeds help? Why not <a class="red-link" href="/contact">get in touch</a>?</div>
+            </div>
+
+        </div>
         <a href="/expeditions" class="w-button exp-button inverse">Explore our expeditions</a>
     </div>
     <div class="divider"></div>

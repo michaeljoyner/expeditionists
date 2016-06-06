@@ -18,7 +18,7 @@
                 <p class="p1 intro-black side-padded">{{ $page->textFor('page intro') }}</p>
             {{--donate section--}}
             <section id="donate" class="get-involved-dark">
-                <h1 class="h4 involved side-padded get-involved-heading donate-heading">donate</h1>
+                <h1 class="section-heading involved side-padded get-involved-heading donate-heading">donate</h1>
                 <p class="p1 side-padded">{{ $page->textFor('donate') }}</p>
                 <div class="paypal-btn-container">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -33,7 +33,7 @@
 
             {{--be an expeditionist --}}
             <section id="expeditionist" class="side-padded">
-                <h1 class="h4 involved get-involved-heading">Become an expeditionist</h1>
+                <h1 class="section-heading involved get-involved-heading">Become an expeditionist</h1>
                 <p class="p1 black">{{ $page->textFor('expeditionists') }}</p>
                 <a href="{{ $expeditionistPdf->file_path }}" class="pdf-download-link" download>Get the pdf</a>
                 <a href="#application" class="get-involved-btn">
@@ -42,16 +42,16 @@
             </section>
             {{--be a volunteer -- needs a form--}}
             <section id="volunteer" class="side-padded get-involved-dark">
-                <h1 class="h4 involved get-involved-heading">Become a volunteer</h1>
+                <h1 class="section-heading involved get-involved-heading">Become a volunteer</h1>
                 <p class="p1">{{ $page->textFor('volunteers') }}</p>
-                <a href="{{ $volunteerPdf->file_path }}" class="pdf-download-link" download>Get the pdf</a>
+                {{--<a href="{{ $volunteerPdf->file_path }}" class="pdf-download-link" download>Get the pdf</a>--}}
                 <a href="#application" class="get-involved-btn">
                     <div class="w-button exp-button inverse">Become a volunteer</div>
                 </a>
             </section>
             {{--charities--}}
             <section id="charities" class="side-padded">
-                <h1 class="h4 involved get-involved-heading">ASSOCIATED CHARITIES</h1>
+                <h1 class="section-heading involved get-involved-heading">ASSOCIATED CHARITIES</h1>
                 <p class="p1 black">{{ $page->textFor('charities') }}</p>
                 <div class="w-row sponsor-charity-box-wrapper">
                     @foreach($charities as $charity)
@@ -67,7 +67,7 @@
             </section>
             {{--sponsors--}}
             <section id="sponsors" class="side-padded get-involved-dark">
-                <h1 class="h4 involved get-involved-heading">becoming A sponsor</h1>
+                <h1 class="section-heading involved get-involved-heading">becoming A sponsor</h1>
                 <p class="p1">{{ $page->textFor('sponsors') }}</p>
                 <div class="w-row sponsor-charity-box-wrapper">
                     @foreach($sponsors as $sponsor)
@@ -82,7 +82,7 @@
 
             </section>
             <section id="application">
-                <h1 class="h4 involved get-involved-heading" id="application-heading">Apply</h1>
+                <h1 class="section-heading involved get-involved-heading" id="application-heading">Apply</h1>
                 <p class="p1 black" id="success-message"></p>
                 @include('front.partials.applicationform')
             </section>

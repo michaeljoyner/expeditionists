@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charity;
 use App\Expedition;
 use App\Http\FlashMessaging\Flasher;
 use App\Http\Requests\ExpeditionFormRequest;
@@ -100,6 +101,8 @@ class ExpeditionsController extends Controller
         return view('admin.expeditions.sponsors')->with(compact('expedition', 'sponsors'));
     }
 
+
+
     public function setSponsors($id, Request $request)
     {
         $sponsorIds = collect($request->expedition_sponsors)->map(function($item) {
@@ -110,6 +113,28 @@ class ExpeditionsController extends Controller
         $expedition->syncSponsorsById($sponsorIds);
 
         $this->flasher->success('Sponsors Synced!', 'The sponsors for this expedition have been updated');
+
+        return redirect('admin/expeditions/'.$expedition->id);
+    }
+
+    public function editCharities($id)
+    {
+        $expedition = Expedition::findOrFail($id);
+        $charities = Charity::all();
+
+        return view('admin.expeditions.charities')->with(compact('expedition', 'charities'));
+    }
+
+    public function setCharities(Request $request, $id)
+    {
+        $charityIds = collect($request->expedition_charities)->map(function($item) {
+            return intval($item);
+        })->toArray();
+
+        $expedition = Expedition::findOrFail($id);
+        $expedition->syncCharitiesById($charityIds);
+
+        $this->flasher->success('Charities Synced!', 'You have successfully set the charities for this expedtion');
 
         return redirect('admin/expeditions/'.$expedition->id);
     }

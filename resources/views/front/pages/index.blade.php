@@ -1,4 +1,4 @@
-@extends('front.base')
+{{--@extends('front.base')--}}
 
 @section('head')
     <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
@@ -12,27 +12,41 @@
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section slideshow-section">
-        <div data-animation="slide" data-duration="500" data-infinite="1" data-autoplay="1" data-delay="3000" class="w-slider slider">
+        <div data-animation="slide" data-duration="1000" data-infinite="1" data-autoplay="1" data-delay="5000" class="w-slider slider">
             <div class="w-slider-mask">
                 <div class="w-slide slide slide-1">
                     <img src="{{ $homePage->imagesOf('hero slider')->first()->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
                         <div class="slide-text">{{ $homePage->textFor('hero text 1', 'Epic sentence goes here!') }}</div>
-                        <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
+                        {{--<a href="/getinvolved" class="get-involved-cta-button red">Get Involved</a>--}}
                     </div>
                 </div>
                 <div class="w-slide slide slide-2">
                     <img src="{{ $homePage->imagesOf('hero slider')[1]->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
                         <div class="slide-text">{{ $homePage->textFor('hero text 2', 'Epic sentence goes here!') }}</div>
-                        <a href="/getinvolved" class="get-involved-cta-button red">Get Involved</a>
+                        <a href="/expeditionists" class="get-involved-cta-button red">Expeditionists</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-3">
-                    <img src="{{ $homePage->imagesOf('hero slider')->last()->getUrl('wide') }}" alt="" class="home-slider-img">
+                    <img src="{{ $homePage->imagesOf('hero slider')[2]->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
                         <div class="slide-text">{{ $homePage->textFor('hero text 3', 'Epic sentence goes here!') }}</div>
-                        <a href="/getinvolved" class="get-involved-cta-button">Get Involved</a>
+                        <a href="/getinvolved#volunteer" class="get-involved-cta-button red">Volunteer</a>
+                    </div>
+                </div>
+                <div class="w-slide slide slide-4">
+                    <img src="{{ $homePage->imagesOf('hero slider')[3]->getUrl('wide') }}" alt="" class="home-slider-img">
+                    <div class="slide-text-wrapper">
+                        <div class="slide-text">{{ $homePage->textFor('hero text 4', 'Epic sentence goes here!') }}</div>
+                        <a href="/getinvolved#donate" class="get-involved-cta-button red">Donate</a>
+                    </div>
+                </div>
+                <div class="w-slide slide slide-5">
+                    <img src="{{ $homePage->imagesOf('hero slider')->last()->getUrl('wide') }}" alt="" class="home-slider-img">
+                    <div class="slide-text-wrapper">
+                        <div class="slide-text">{{ $homePage->textFor('hero text 5', 'Epic sentence goes here!') }}</div>
+                        <a href="/blog" class="get-involved-cta-button red">Our News</a>
                     </div>
                 </div>
             </div>

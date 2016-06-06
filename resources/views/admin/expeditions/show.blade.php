@@ -57,6 +57,13 @@
                     @foreach($expedition->sponsors as $sponsor)
                         <p>{{ $sponsor->name }}</p>
                     @endforeach
+                    <p>
+                        <strong class="stat-label">Charities: </strong>
+                        <a href="/admin/expeditions/{{ $expedition->id }}/charities" class="btn exp-btn btn-small btn-pale">Edit</a>
+                    </p>
+                    @foreach($expedition->charities as $charity)
+                        <p>{{ $charity->name }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>

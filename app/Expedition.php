@@ -151,4 +151,19 @@ class Expedition extends Model implements HasMediaConversions, SluggableInterfac
     {
         return $this->locations()->create($attributes);
     }
+
+    public function charities()
+    {
+        return $this->belongsToMany(Charity::class);
+    }
+
+    public function syncCharitiesById(array $ids)
+    {
+        $this->charities()->sync($ids);
+    }
+
+    public function supportsCharity(Charity $charity)
+    {
+        return $this->charities->contains($charity);
+    }
 }

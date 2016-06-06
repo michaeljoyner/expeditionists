@@ -58,6 +58,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('expeditions/{id}', 'ExpeditionsController@delete');
         Route::get('expeditions/{id}/sponsors', 'ExpeditionsController@editSponsors');
         Route::post('expeditions/{id}/sponsors', 'ExpeditionsController@setSponsors');
+        Route::get('expeditions/{id}/charities', 'ExpeditionsController@editCharities');
+        Route::post('expeditions/{id}/charities', 'ExpeditionsController@setCharities');
         Route::get('expeditions/{id}/team', 'ExpeditionsController@editTeam');
         Route::post('expeditions/{id}/team', 'ExpeditionsController@setTeam');
 
