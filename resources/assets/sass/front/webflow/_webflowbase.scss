@@ -76,7 +76,7 @@
 
   @include respond-to(phone) {font-size: 26px;}
   @include respond-to(smalltablet) {font-size: 26px;}
-  @include respond-to(largetablet) {font-size: 40px; line-height: 1.8}
+  @include respond-to(largetablet) {font-size: 32px;}
 }
 .w-slider-arrow-right {
   @include respond-to(phone) {display: none;}

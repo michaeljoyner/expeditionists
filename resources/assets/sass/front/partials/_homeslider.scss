@@ -5,10 +5,10 @@ a.get-involved-cta-button {
   transform: translateX(-50%);
   bottom: 60px;
   margin: 50px auto 10px;
-  padding: 15px 30px;
+  padding: 15px 0;
   background: transparent;
   color: $white;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 700;
   font-family: 'Arvo', Helvetica Neue, Helvetica, Arial;
   width: 10em;
@@ -26,8 +26,9 @@ a.get-involved-cta-button {
     border-color: $primary_red;
   }
 
-  @include respond-to(phone) {font-size: 2em; padding: 5px;}
-  @include respond-to(smalltablet) {font-size: 2em; padding: 5px;}
+  @include respond-to(phone) {font-size: 2em; padding: 5px 0;}
+  @include respond-to(smalltablet) {font-size: 2em; padding: 5px 0;}
+  @include respond-to(largetablet) {font-size: 2em; padding: 5px 0;}
 
   &:visited, &:focus, &:active {
     text-decoration: none;
