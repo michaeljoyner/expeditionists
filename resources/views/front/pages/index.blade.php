@@ -32,7 +32,7 @@
                     <img src="{{ $homePage->imagesOf('hero slider')[2]->getUrl('wide') }}" alt="" class="home-slider-img">
                     <div class="slide-text-wrapper">
                         <div class="slide-text">{{ $homePage->textFor('hero text 3', 'Epic sentence goes here!') }}</div>
-                        <a href="/getinvolved#volunteer" class="get-involved-cta-button red">Volunteer</a>
+                        <a href="/getinvolved#expeditionist" class="get-involved-cta-button red">Apply</a>
                     </div>
                 </div>
                 <div class="w-slide slide slide-4">
