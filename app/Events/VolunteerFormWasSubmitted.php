@@ -34,6 +34,7 @@ class VolunteerFormWasSubmitted extends Event
         $this->phone = $request->get('phone', 'not supplied');
         $this->address = $request->get('address', 'not supplied');
         $this->country = $request->get('country', 'not supplied');
+        $this->date_of_birth = $request->get('date_of_birth', 'not supplied');
         $this->city = $request->get('city', 'not supplied');
         $this->project = $request->get('project', 'not supplied');
         $this->application_type = $request->get('application_type', 'not supplied');
