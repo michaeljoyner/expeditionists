@@ -11,7 +11,7 @@ namespace App\Mailing;
 
 class AdminMailer extends AbstractMailer
 {
-    protected $to = ['thommo.hart@expeditionists.org' => 'Michael Joyner'];
+    protected $to = ['thommo.hart@expeditionists.org' => 'Thommo Hart'];
 
     public function sendContactMessage(array $contact_message)
     {
