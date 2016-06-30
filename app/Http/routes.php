@@ -17,6 +17,7 @@ Route::get('profiles/{slug}', 'PagesController@profile');
 Route::get('expeditions/{slug}', 'PagesController@expedition');
 Route::get('about', 'PagesController@about');
 Route::get('gallery', 'PagesController@gallery');
+Route::get('videos', 'PagesController@videos');
 Route::get('expeditions', 'PagesController@expeditions');
 Route::get('expeditionists', 'PagesController@expeditionists');
 Route::get('contact', 'ContactController@show');
@@ -124,6 +125,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::get('galleries/{id}/order', 'GalleriesController@showOrder');
         Route::post('galleries/{id}/order', 'GalleriesController@postOrder');
+
+        Route::get('videos', 'VideosController@index');
+        Route::get('videos/create', 'VideosController@create');
+        Route::get('videos/{id}', 'VideosController@show');
+        Route::post('videos', 'VideosController@store');
+        Route::get('videos/{id}/edit', 'VideosController@edit');
+        Route::post('videos/{id}', 'VideosController@update');
+        Route::delete('videos/{id}', 'VideosController@delete');
+        Route::post('videos/{id}/poster', 'VideosController@storePoster');
 
     });
 

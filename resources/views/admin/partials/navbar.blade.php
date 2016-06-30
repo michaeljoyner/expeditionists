@@ -32,6 +32,7 @@
                             @foreach($ediblePages as $page)
                                 <li><a href="{{ $page['url'] }}">{{ ucwords($page['name']) }}</a></li>
                             @endforeach
+                                <li><a href="/admin/videos">Videos</a></li>
                         </ul>
                     </li>
                 @endif

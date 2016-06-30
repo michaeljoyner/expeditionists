@@ -1,0 +1,35 @@
+.video-list-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+
+  @include respond-to(phone) {width: 100%;}
+  @include respond-to(smalltablet) {width: 100%;}
+
+  .video-title {
+    font-family: 'Arvo', serif;
+    color: $primary_red;
+    font-size: 22px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .video-description {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.5;
+    color: $white;
+    max-width: 400px;
+    margin: 1em auto;
+  }
+
+  iframe {
+    max-width: 95%;
+    margin: 1em auto;
+    display: block;
+  }
+}

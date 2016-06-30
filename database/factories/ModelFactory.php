@@ -130,3 +130,11 @@ $factory->define(\App\FileResource::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph,
     ];
 });
+
+$factory->define(\App\Videos\Video::class, function (Faker\Generator $faker) {
+    return [
+        'title'        => $faker->sentence,
+        'description' => $faker->paragraph,
+        'source' => 'https://www.youtube.com/watch?v=RTRQSVnkUe8'
+    ];
+});

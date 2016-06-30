@@ -11,6 +11,7 @@ use App\FileResource;
 use App\Profile;
 use App\Sponsor;
 use App\TeamMember;
+use App\Videos\Video;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -105,5 +106,12 @@ class PagesController extends Controller
         $gallery = (new ContentRepository())->getPageByName('gallery')->galleries()->where('name', 'gallery')->first();
 
         return view('front.pages.gallery')->with(compact('gallery'));
+    }
+
+    public function videos()
+    {
+        $videos = Video::latest()->get();
+
+        return view('front.pages.videos')->with(compact('videos'));
     }
 }
