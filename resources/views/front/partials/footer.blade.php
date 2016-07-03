@@ -4,7 +4,7 @@
             <div class="w-col w-col-4 footer-column">
                 <h3 class="footer-heading">FOLLOW&nbsp;US</h3>
                 <div class="footer-social-wrapper">
-                    <a href="https://www.facebook.com/xpeditionists//">
+                    <a href="https://www.facebook.com/xpeditionists/">
                         <img src="/build/images/facebook_w.png" class="footer-social-icon">
                     </a>
                     <a href="https://twitter.com/Expeditionists">
