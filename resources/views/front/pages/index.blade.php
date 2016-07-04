@@ -123,7 +123,7 @@
         <div class="w-container involved-container">
             <div class="w-row sponsor-charity-box-wrapper">
                 @foreach($charities as $charity)
-                    <a href="{{ $charity->site_link }}" class="sponsor-charity-box">
+                    <a href="{{ $charity->site_link }}" class="sponsor-charity-box" target="_blank">
                         <div>
                             <img src="{{ $charity->thumbImage() }}" class="involved-logo">
                         </div>
@@ -142,7 +142,7 @@
             </div>
             <div class="w-row sponsor-charity-box-wrapper">
                 @foreach($sponsors as $sponsor)
-                    <a href="{{ $sponsor->site_link }}" class="sponsor-charity-box">
+                    <a href="{{ $sponsor->site_link }}" class="sponsor-charity-box" target="_blank">
                         <div>
                             <img src="{{ $sponsor->thumbImage() }}" class="involved-logo">
                         </div>
