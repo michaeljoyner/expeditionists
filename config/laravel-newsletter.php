@@ -36,8 +36,8 @@ return [
                  * These values will be used when creating a new campaign.
                  */
                 'createCampaign' => [
-                    'fromEmail' => 'news@dymanticdesign.com',
-                    'fromName' => 'Dymantic Design',
+                    'fromEmail' => 'info@expeditionists.org',
+                    'fromName' => 'Expeditionists.org',
                     'toName' => '',
                 ],
 

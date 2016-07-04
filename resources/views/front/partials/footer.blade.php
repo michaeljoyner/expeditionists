@@ -14,7 +14,7 @@
                         <img src="/build/images/instagram_w.png" class="footer-social-icon">
                     </a>
                     <a href="https://www.youtube.com/channel/UCGOTp_YTn2HL37F4DFH650A">
-                        <img src="/build/images/email_w.png" class="footer-social-icon">
+                        <img src="/images/assets/icons/youtube.png" class="footer-social-icon">
                     </a>
                 </div>
                 <div class="newsletter-section">

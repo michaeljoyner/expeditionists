@@ -52,15 +52,7 @@ class Video extends Model implements HasMediaConversions, SluggableInterface
 
     protected function normaliseSource($source)
     {
-        $last = collect(explode('/', $source))->last();
-
-        if(str_contains($last, '=')) {
-            $matches = [];
-            preg_match('/v=([a-zA-Z\-0-9]+)/', $last, $matches);
-            return 'https://www.youtube.com/embed/' . $matches[1];
-        }
-
-        return 'https://www.youtube.com/embed/' . $last;
+        return (new YoutubeLink($source))->embeddable();
     }
 
     public function poster()
