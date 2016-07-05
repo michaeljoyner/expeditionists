@@ -30,7 +30,7 @@ return [
                  * how to get this value:
                  * http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id
                  */
-                'id' => '29e86926f3',
+                'id' => '5348fdf277',
 
                 /*
                  * These values will be used when creating a new campaign.
