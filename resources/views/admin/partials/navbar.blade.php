@@ -16,7 +16,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/admin/profiles/{{ Auth::user()->id }}">Profile</a></li>
+                @if(Auth::user()->profile)
+                <li><a href="/admin/profiles/{{ Auth::user()->profile->id }}">Profile</a></li>
+                @endif
                 <li><a href="/admin/expeditions">Expeditions</a></li>
                 @role('admin')
                 @if($ediblePages->count())
