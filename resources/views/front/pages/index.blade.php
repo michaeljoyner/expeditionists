@@ -7,6 +7,7 @@
         'ogTitle' => 'Expeditionist',
         'ogDescription' => 'Expeditionists is an “adventure with an impact” initiative that creates packaged and marketable content of Africa for commercial and educational use by supporting and working with African adventurers on case related expeditions.'
     ])
+    <meta name="google-site-verification" content="S9zkUCplGt21xzY-e5PbxtMrBYzw7thvmWba4gHz-Bw" />
 @endsection
 
 @section('content')
