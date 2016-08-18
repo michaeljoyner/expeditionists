@@ -1,7 +1,6 @@
 {{--@extends('front.base')--}}
 
 @section('head')
-    <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
     @include('front.partials.ogmeta', [
         'ogImage' => asset('images/static/NEW_logo_black.png'),
         'ogTitle' => 'Expeditionist',
