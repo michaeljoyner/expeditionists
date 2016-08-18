@@ -5,7 +5,27 @@
     <title>Expeditionist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}"/>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" onload="loadFonts"></script>
+    {{--<script defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" onload="loadFonts"></script>--}}
+    <script type="text/javascript">
+        webFontLoadObj = {
+            google: {
+                families: ["Ubuntu:300,400,700","Arvo:regular,italic,700,700italic"]
+            }
+        };
+        (function() {
+            var tk = document.createElement('script');
+            tk.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+            tk.type = 'text/javascript';
+            tk.async = 'true';
+            tk.onload = tk.onreadystatechange = function() {
+                var rs = this.readyState;
+                if (rs && rs != 'complete' && rs != 'loaded') return;
+                try { WebFont.load(webFontLoadObj); } catch (e) {}
+            };
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tk, s);
+        })();
+    </script>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -25,7 +45,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#dc5744">
     @yield('head')
-    
+
     <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
     <script type="text/javascript">
 
