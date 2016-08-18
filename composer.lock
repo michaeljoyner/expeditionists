@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "92df129b43f7342bf36352bd79478cbd",
-    "content-hash": "1bdaa2dc15ce3f37fa80b7d4c896dbb7",
+    "hash": "4575541459e0ab32ba6b0e981a782e8b",
+    "content-hash": "6c1b97670f4e93913d0b1a55e534b50b",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1239,6 +1239,57 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "krisawzm/critical-css",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kalfheim/critical-css.git",
+                "reference": "f56485dd28b121b950c29fc9cb9afb1ec1056347"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kalfheim/critical-css/zipball/f56485dd28b121b950c29fc9cb9afb1ec1056347",
+                "reference": "f56485dd28b121b950c29fc9cb9afb1ec1056347",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.0.*|5.1.*|5.2.*",
+                "illuminate/contracts": "5.0.*|5.1.*|5.2.*",
+                "illuminate/http": "5.0.*|5.1.*|5.2.*",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*",
+                "illuminate/view": "5.0.*|5.1.*|5.2.*",
+                "php": ">=5.5.9",
+                "symfony/process": "^2.6"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~4.8|~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alfheim\\CriticalCss\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristoffer Alfheim",
+                    "email": "kristoffer.alfh@gmail.com"
+                }
+            ],
+            "description": "A Laravel package for generating and using inline critical-path CSS.",
+            "keywords": [
+                "css",
+                "laravel",
+                "performance"
+            ],
+            "time": "2016-05-20 08:24:13"
         },
         {
             "name": "laravel/framework",

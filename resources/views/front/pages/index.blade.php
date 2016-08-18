@@ -51,10 +51,14 @@
                 </div>
             </div>
             <div class="w-slider-arrow-left">
-                <div class="w-icon-slider-left"></div>
+                <div class="w-icon-slider-left">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.31 32.2"><defs><style>.cls-1{fill:none;stroke:#f16060;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style></defs><title>next_arrow_left</title><polyline class="cls-1" points="23.31 29.2 3 14.64 23.31 3"/></svg>
+                </div>
             </div>
             <div class="w-slider-arrow-right">
-                <div class="w-icon-slider-right"></div>
+                <div class="w-icon-slider-right">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.31 32.2"><defs><style>.cls-1{fill:none;stroke:#f16060;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style></defs><title>next_arrow</title><polyline class="cls-1" points="3 3 23.31 17.55 3 29.2"/></svg>
+                </div>
             </div>
             <div class="w-slider-nav w-round"></div>
         </div>

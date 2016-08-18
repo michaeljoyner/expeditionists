@@ -12,7 +12,8 @@
     "vueify-insert-css": "^1.0.0"
   },
   "dependencies": {
-    "laravel-elixir": "^3.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "bootstrap-sass": "^3.0.0",
+    "critical": "^0.7.3",
+    "laravel-elixir": "^3.0.0"
   }
 }

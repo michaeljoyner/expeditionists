@@ -18,7 +18,8 @@
         "spatie/laravel-newsletter": "^2.2",
         "spatie/laravel-backup": "^3.5",
         "maknz/slack": "^1.7",
-        "league/flysystem-aws-s3-v3": "~1.0"
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "krisawzm/critical-css": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use Alfheim\CriticalCss\Console\CriticalCssClear;
+use Alfheim\CriticalCss\Console\CriticalCssMake;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,6 +16,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
+        CriticalCssMake::class,
+        CriticalCssClear::class
     ];
 
     /**

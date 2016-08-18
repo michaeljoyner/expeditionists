@@ -145,6 +145,7 @@ return [
         Spatie\Newsletter\NewsletterServiceProvider::class,
         Maknz\Slack\SlackServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Alfheim\CriticalCss\CriticalCssServiceProvider::class,
 
         /*
          * Application Service Providers...
