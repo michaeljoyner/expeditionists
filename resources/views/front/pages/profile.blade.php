@@ -1,5 +1,9 @@
 @extends('front.base')
 
+@section('css')
+    <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}">
+@stop
+
 @section('head')
     @include('front.partials.ogmeta', [
         'ogImage' => asset('images/static/NEW_logo_black.png'),
