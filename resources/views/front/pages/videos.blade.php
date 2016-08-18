@@ -8,7 +8,7 @@
     @include('front.partials.ogmeta', [
         'ogImage' => asset('images/static/NEW_logo_black.png'),
         'ogTitle' => 'Videos | Expeditionist',
-        'ogDescription' => 'Videos about Expedtionists and some of our experiences.'
+        'ogDescription' => 'Videos about Expeditionists and some of our experiences.'
     ])
 @endsection
 
