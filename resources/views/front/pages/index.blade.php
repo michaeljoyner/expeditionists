@@ -131,7 +131,11 @@
             <div class="w-row sponsor-charity-box-wrapper">
                 <div class="sponsor-slideshow">
                     @foreach($charities as $charity)
-                        <div><img src="{{ $charity->thumbImage() }}" alt="{{ $charity->name }}"></div>
+                        <div>
+                            <a href="{{ $charity->site_link }}" target="_blank">
+                                <img src="{{ $charity->thumbImage() }}" alt="{{ $charity->name }}">
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -148,7 +152,11 @@
             <div class="w-row sponsor-charity-box-wrapper">
                 <div class="sponsor-slideshow">
                     @foreach($sponsors as $sponsor)
-                        <div><img src="{{ $sponsor->thumbImage() }}" alt="{{ $sponsor->name }}"></div>
+                        <div>
+                            <a href="{{ $sponsor->site_link }}" target="_blank">
+                                <img src="{{ $sponsor->thumbImage() }}" alt="{{ $sponsor->name }}">
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
