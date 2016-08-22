@@ -129,13 +129,11 @@
         </div>
         <div class="w-container involved-container">
             <div class="w-row sponsor-charity-box-wrapper">
-                @foreach($charities as $charity)
-                    <a href="{{ $charity->site_link }}" class="sponsor-charity-box" target="_blank">
-                        <div>
-                            <img src="{{ $charity->thumbImage() }}" class="involved-logo">
-                        </div>
-                    </a>
-                @endforeach
+                <div class="sponsor-slideshow">
+                    @foreach($charities as $charity)
+                        <div><img src="{{ $charity->thumbImage() }}" alt="{{ $charity->name }}"></div>
+                    @endforeach
+                </div>
             </div>
             <a href="/getinvolved" class="w-button exp-button inverse">more about charities</a>
         </div>
@@ -148,13 +146,11 @@
                 <div class="p1 intro-black">{{ $homePage->textFor('sponsors intro') }}</div>
             </div>
             <div class="w-row sponsor-charity-box-wrapper">
-                @foreach($sponsors as $sponsor)
-                    <a href="{{ $sponsor->site_link }}" class="sponsor-charity-box" target="_blank">
-                        <div>
-                            <img src="{{ $sponsor->thumbImage() }}" class="involved-logo">
-                        </div>
-                    </a>
-                @endforeach
+                <div class="sponsor-slideshow">
+                    @foreach($sponsors as $sponsor)
+                        <div><img src="{{ $sponsor->thumbImage() }}" alt="{{ $sponsor->name }}"></div>
+                    @endforeach
+                </div>
             </div>
         </div>
         <a href="/getinvolved" class="w-button exp-button">MORE ABOUT SPONSORS</a>

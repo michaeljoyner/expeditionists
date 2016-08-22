@@ -36,8 +36,8 @@ class PagesController extends Controller
         $homePage = $this->contentRepository->getPageByName('home page');
         $profiles = $this->getCompletedProfiles(3);
         $expeditions = Expedition::latest()->take(4)->get();
-        $sponsors = Sponsor::take(5)->get();
-        $charities = Charity::take(5)->get();
+        $sponsors = Sponsor::latest()->get();
+        $charities = Charity::latest()->get();
         $articles = Article::where('published', 1)->latest()->take(3)->get();
         $mapLocations = (new ExpeditionLocationPresenter())->jsonForAllLocations();
 
