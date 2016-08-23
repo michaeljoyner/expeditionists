@@ -1,5 +1,9 @@
 @extends('front.base')
 
+@section('css')
+    <link rel="stylesheet" href="{{ elixir('css/fapp.css') }}">
+@stop
+
 @section('content')
     @include('front.partials.navbar')
     <div class="w-section blog-section white">
