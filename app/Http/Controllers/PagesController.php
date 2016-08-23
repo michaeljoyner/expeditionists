@@ -34,14 +34,6 @@ class PagesController extends Controller
 
     public function home(HomeViewDataGatherer $dataGatherer)
     {
-//        $homePage = $this->contentRepository->getPageByName('home page');
-//        $profiles = $this->getCompletedProfiles(3);
-//        $expeditions = Expedition::latest()->take(4)->get();
-//        $sponsors = Sponsor::latest()->get();
-//        $charities = Charity::latest()->get();
-//        $articles = Article::where('published', 1)->latest()->take(3)->get();
-//        $mapLocations = (new ExpeditionLocationPresenter())->jsonForAllLocations();
-
         return view('front.pages.index')->with($dataGatherer->getHomeData());
     }
 

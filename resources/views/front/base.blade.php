@@ -51,7 +51,6 @@
     @yield('head')
 
     <meta id="x-token" property="CSRF-token" content="{{ Session::token() }}"/>
-    @include('front.partials.headscripts')
 </head>
 <body>
 @yield('content')
