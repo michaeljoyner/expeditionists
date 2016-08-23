@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Charity extends Model implements HasMediaConversions
 {
-    use HasMediaTrait;
+    use HasMediaTrait, HasIntegerPositions;
 
     protected $table = 'charities';
 

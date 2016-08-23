@@ -83,6 +83,7 @@ $factory->define(App\Content\EditableArea::class, function (Faker\Generator $fak
 $factory->define(App\Sponsor::class, function (Faker\Generator $faker) {
     return [
         'name'      => $faker->company,
+        'description' => $faker->paragraph,
         'site_link' => $faker->url
     ];
 });
@@ -90,6 +91,7 @@ $factory->define(App\Sponsor::class, function (Faker\Generator $faker) {
 $factory->define(App\Charity::class, function (Faker\Generator $faker) {
     return [
         'name'      => $faker->company,
+        'description' => $faker->paragraph,
         'site_link' => $faker->url
     ];
 });

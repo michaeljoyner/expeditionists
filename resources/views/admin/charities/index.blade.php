@@ -7,6 +7,9 @@
             <a href="/admin/charities/create">
                 <div class="btn exp-btn">Add Charity</div>
             </a>
+            <a href="/admin/charities/order">
+                <div class="btn exp-btn btn-ghost-dark">Set Order</div>
+            </a>
         </div>
         <hr/>
     </div>

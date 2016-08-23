@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Sponsor extends Model implements HasMediaConversions
 {
-    use HasMediaTrait;
+    use HasMediaTrait, HasIntegerPositions;
 
     protected $table = 'sponsors';
 
@@ -43,4 +43,6 @@ class Sponsor extends Model implements HasMediaConversions
 
         return $this->addMedia($file)->preservingOriginal()->toMediaLibrary();
     }
+
+
 }

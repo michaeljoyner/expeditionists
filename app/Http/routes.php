@@ -92,6 +92,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('uploads/galleries/{galleryId}/images/{imageId}', 'GalleriesController@deleteImage');
 
         Route::get('sponsors', 'SponsorsController@index');
+        Route::get('sponsors/order', 'SponsorsOrderController@show');
+        Route::post('sponsors/order', 'SponsorsOrderController@update');
+        Route::post('patrons/order', 'SponsorsOrderController@update');
         Route::get('sponsors/create', 'SponsorsController@createNewDefaultSponsor');
         Route::get('sponsors/{id}', 'SponsorsController@show');
         Route::get('sponsors/{id}/edit', 'SponsorsController@edit');
@@ -99,6 +102,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('sponsors/{id}', 'SponsorsController@delete');
 
         Route::get('charities', 'CharitiesController@index');
+        Route::get('charities/order', 'CharitiesOrderController@show');
+        Route::post('charities/order', 'CharitiesOrderController@update');
         Route::get('charities/create', 'CharitiesController@createNewDefaultCharity');
         Route::get('charities/{id}', 'CharitiesController@show');
         Route::get('charities/{id}/edit', 'CharitiesController@edit');

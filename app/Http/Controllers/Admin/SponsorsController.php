@@ -26,7 +26,7 @@ class SponsorsController extends Controller
 
     public function index()
     {
-        $sponsors = Sponsor::all();
+        $sponsors = Sponsor::ordered()->get();
         return view('admin.sponsors.index')->with(compact('sponsors'));
     }
 

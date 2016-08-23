@@ -7,6 +7,9 @@
             <a href="/admin/sponsors/create">
                 <div class="btn exp-btn">Add Sponsor</div>
             </a>
+            <a href="/admin/sponsors/order">
+                <div class="btn exp-btn btn-ghost-dark">Set Order</div>
+            </a>
         </div>
         <hr/>
     </div>

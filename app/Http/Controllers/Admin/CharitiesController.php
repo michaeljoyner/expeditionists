@@ -25,7 +25,7 @@ class CharitiesController extends Controller
 
     public function index()
     {
-        $charities = Charity::all();
+        $charities = Charity::ordered()->get();
 
         return view('admin.charities.index')->with(compact('charities'));
     }
