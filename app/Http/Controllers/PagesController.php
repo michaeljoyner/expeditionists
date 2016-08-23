@@ -9,6 +9,7 @@ use App\Expedition;
 use App\ExpeditionLocationPresenter;
 use App\FileResource;
 use App\Profile;
+use App\Services\HomeViewDataGatherer;
 use App\Sponsor;
 use App\TeamMember;
 use App\Videos\Video;
@@ -31,17 +32,17 @@ class PagesController extends Controller
         $this->contentRepository = $contentRepository;
     }
 
-    public function home()
+    public function home(HomeViewDataGatherer $dataGatherer)
     {
-        $homePage = $this->contentRepository->getPageByName('home page');
-        $profiles = $this->getCompletedProfiles(3);
-        $expeditions = Expedition::latest()->take(4)->get();
-        $sponsors = Sponsor::latest()->get();
-        $charities = Charity::latest()->get();
-        $articles = Article::where('published', 1)->latest()->take(3)->get();
-        $mapLocations = (new ExpeditionLocationPresenter())->jsonForAllLocations();
+//        $homePage = $this->contentRepository->getPageByName('home page');
+//        $profiles = $this->getCompletedProfiles(3);
+//        $expeditions = Expedition::latest()->take(4)->get();
+//        $sponsors = Sponsor::latest()->get();
+//        $charities = Charity::latest()->get();
+//        $articles = Article::where('published', 1)->latest()->take(3)->get();
+//        $mapLocations = (new ExpeditionLocationPresenter())->jsonForAllLocations();
 
-        return view('front.pages.index')->with(compact('homePage', 'profiles', 'expeditions', 'sponsors', 'charities', 'articles', 'mapLocations'));
+        return view('front.pages.index')->with($dataGatherer->getHomeData());
     }
 
     public function getInvolved()

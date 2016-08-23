@@ -1758,16 +1758,16 @@
         },
         {
             "name": "michaeljoyner/edible",
-            "version": "v0.1.18",
+            "version": "v0.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaeljoyner/edible.git",
-                "reference": "53aa3e295c1929be554cb14846aeeb263583dd60"
+                "reference": "889764202214ff5db1d8de633c2f23ade4d11674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/53aa3e295c1929be554cb14846aeeb263583dd60",
-                "reference": "53aa3e295c1929be554cb14846aeeb263583dd60",
+                "url": "https://api.github.com/repos/michaeljoyner/edible/zipball/889764202214ff5db1d8de633c2f23ade4d11674",
+                "reference": "889764202214ff5db1d8de633c2f23ade4d11674",
                 "shasum": ""
             },
             "require": {
@@ -1799,7 +1799,7 @@
                 }
             ],
             "description": "Maps a basic content structure outlined in a yaml file to Eloquent models in your Laravel app.",
-            "time": "2016-06-06 02:36:36"
+            "time": "2016-08-23 03:34:32"
         },
         {
             "name": "monolog/monolog",
