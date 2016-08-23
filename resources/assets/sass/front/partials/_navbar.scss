@@ -58,6 +58,16 @@ nav.w--nav-menu-open {
   font-size: 70%;
 }
 
+.nav-section {
+
+  .w-dropdown:hover {
+    .w-dropdown-list {
+      display: block;
+      height: 100%;
+    }
+  }
+}
+
 
 
 

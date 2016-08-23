@@ -52,12 +52,8 @@ a.get-involved-cta-button {
 }
 
 .w-slide .home-slider-img {
-  //position: absolute;
   min-width: 100%;
   min-height: 300px;
-  //max-width: none;
-  //min-height: 100%;
-  //top: 0;
   @include respond-to(phone) { max-width: none; max-height: 400px;}
   @include respond-to(smalltablet) { max-width: none; max-height: 400px;}
 }
@@ -70,4 +66,71 @@ a.get-involved-cta-button {
 @keyframes slideUp {
   0% {opacity: 0; transform: translate3d(-50%,250px,0);}
   100% {opacity: 1; transform: translate3d(-50%,0,0);}
+}
+
+.hero-slideshow {
+  .slick-arrow {
+    max-height: 40px;
+    max-width: 40px;
+    display: inline-block;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    z-index: 99999;
+
+    path {
+      fill: $primary_red;
+    }
+
+    &.slick-prev {
+      left: 40px;
+      @include respond-to(phone) {left: 10px;}
+      @include respond-to(smalltablet) {left: 10px;}
+      @include respond-to(largetablet) {left: 10px;}
+    }
+
+    &.slick-next {
+      right: 40px;
+      @include respond-to(phone) {right: 10px;}
+      @include respond-to(smalltablet) {right: 10px;}
+      @include respond-to(largetablet) {right: 10px;}
+    }
+  }
+
+  .slick-slide {
+    img {
+      width: 90%;
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .slick-dots {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    li {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      font-size: 0;
+      color: transparent;
+      background: $mid_grey;
+      margin: 10px;
+
+      button {
+        display: none;
+      }
+
+      &.slick-active {
+        background: $primary_red;
+      }
+    }
+  }
 }
