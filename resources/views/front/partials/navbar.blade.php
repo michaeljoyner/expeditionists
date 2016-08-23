@@ -3,7 +3,20 @@
         <a href="/"><img src="/build/images/NEW_logo_white.png" class="logo-banner-image"></a>
     </div>
     <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav nav-bar-section">
+
         <div class="w-clearfix nav-container main-nav-box">
+            <label for="nav-checkbox">
+                <div class="w-nav-button">
+                    <a href="/"><img src="/build/images/NEW_logo_white.png" class="logo-navbar-image"></a>
+                    <div class="w-icon-nav-menu">
+                        <svg fill="#ffffff" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                    </div>
+                </div>
+            </label>
+            <input type="checkbox" style="display: none;" id="nav-checkbox">
             <nav role="navigation" class="w-nav-menu nav-bar-menu">
                 <div data-delay="0" data-hover="1" class="w-dropdown nav-link">
                     <div class="w-dropdown-toggle nav-link">
@@ -21,9 +34,6 @@
                 <a href="/expeditions"
                    class="w-nav-link nav-link @if(! (Request::path() == 'expeditions')) w-active @endif"
                 >EXPEDITIONS</a>
-                {{--<a href="/gallery"--}}
-                   {{--class="w-nav-link nav-link @if(! (Request::path() == 'gallery')) w-active @endif"--}}
-                {{-->GALLERY</a>--}}
                 <div data-delay="0" data-hover="1" class="w-dropdown nav-link">
                     <div class="w-dropdown-toggle nav-link">
                         <div class="nav-link @if(starts_with(Request::path(), 'media'))  w--current @endif">MEDIA</div>
@@ -33,11 +43,9 @@
                         <a href="/videos" class="w-dropdown-link sublink">VIDEOS</a>
                     </nav>
                 </div>
-
                 <div data-delay="0" data-hover="1" class="w-dropdown nav-link">
                     <div class="w-dropdown-toggle nav-link">
                         <a href="/getinvolved"><div class="nav-link @if(starts_with(Request::path(), 'getinvolved'))  w--current @endif">GET INVOLVED</div></a>
-                        {{--<div class="w-icon-dropdown-toggle"></div>--}}
                     </div>
                     <nav class="w-dropdown-list">
                         <a href="/getinvolved#donate" class="w-dropdown-link sublink">DONATE</a>
@@ -54,15 +62,7 @@
                    class="w-nav-link nav-link @if(! (Request::path() == 'contact')) w-active @endif"
                 >CONTACT</a>
             </nav>
-            <div class="w-nav-button">
-                <a href="/"><img src="/build/images/NEW_logo_white.png" class="logo-navbar-image"></a>
-                <div class="w-icon-nav-menu">
-                    <svg fill="#ffffff" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

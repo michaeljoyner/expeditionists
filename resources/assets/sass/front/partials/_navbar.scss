@@ -68,6 +68,10 @@ nav.w--nav-menu-open {
   }
 }
 
+#nav-checkbox:checked + .w-nav-menu {
+  display: block;
+}
+
 
 
 
