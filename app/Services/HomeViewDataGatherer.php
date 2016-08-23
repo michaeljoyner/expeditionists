@@ -20,6 +20,7 @@ use Michaeljoyner\Edible\ContentRepository;
 
 class HomeViewDataGatherer
 {
+    const CACHE_DURATION = 1440;
     /**
      * @var ContentRepository
      */
@@ -45,22 +46,20 @@ class HomeViewDataGatherer
 
     protected function getHomePage()
     {
-        return Cache::remember('ediblehome', 60, function() {
-           return $this->contentRepository->getPageByName('home page');
-        });
+       return $this->contentRepository->getPageByName('home page');
     }
 
     protected function getProfiles()
     {
 
-        return Cache::remember('profiles', 60, function() {
+        return Cache::remember('home:profiles', static::CACHE_DURATION, function() {
             return $this->getCompletedProfiles(3);
         });
     }
 
     protected function getExpeditions()
     {
-        return Cache::remember('expeditions', 60, function() {
+        return Cache::remember('home:expeditions', static::CACHE_DURATION, function() {
             return Expedition::latest()->take(4)->get();
         });
 
@@ -68,14 +67,14 @@ class HomeViewDataGatherer
 
     protected function getSponsors()
     {
-        return Cache::remember('sponsors', 60, function() {
+        return Cache::remember('home:sponsors', static::CACHE_DURATION, function() {
             return Sponsor::ordered()->get();
         });
     }
 
     protected function getCharities()
     {
-        return Cache::remember('charities', 60, function() {
+        return Cache::remember('home:charities', static::CACHE_DURATION, function() {
             return Charity::ordered()->get();
         });
 
@@ -83,15 +82,15 @@ class HomeViewDataGatherer
 
     protected function getArticles()
     {
-        return Cache::remember('articles', 60, function() {
-            return Article::where('published', 1)->latest()->take(3)->get();
+        return Cache::remember('home:articles', static::CACHE_DURATION, function() {
+            return Article::with('author')->where('published', 1)->latest()->take(3)->get();
         });
 
     }
 
     protected function getMapLocations()
     {
-        return Cache::remember('maplocations', 60, function() {
+        return Cache::remember('maplocations', static::CACHE_DURATION, function() {
             return (new ExpeditionLocationPresenter())->jsonForAllLocations();
         });
 

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class MapLocation extends Model
 {
+    use ClearsHomeCache;
+
+    const HOME_CACHE_KEY = 'maplocations';
+
     protected $table = 'map_locations';
 
     protected $fillable = [

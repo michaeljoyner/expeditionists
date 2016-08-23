@@ -10,7 +10,9 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Expedition extends Model implements HasMediaConversions, SluggableInterface
 {
-    use HasMediaTrait, SluggableTrait;
+    use HasMediaTrait, SluggableTrait, ClearsHomeCache;
+
+    const HOME_CACHE_KEY = 'home:expeditions';
 
     protected $table = 'expeditions';
 

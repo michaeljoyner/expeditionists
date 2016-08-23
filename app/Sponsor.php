@@ -3,12 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Sponsor extends Model implements HasMediaConversions
 {
-    use HasMediaTrait, HasIntegerPositions;
+    use HasMediaTrait, HasIntegerPositions, ClearsHomeCache;
+
+    const HOME_CACHE_KEY = 'home:sponsors';
 
     protected $table = 'sponsors';
 

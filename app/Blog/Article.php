@@ -2,6 +2,7 @@
 
 namespace App\Blog;
 
+use App\ClearsHomeCache;
 use App\Formatters\AttributeStripper;
 use App\User;
 use Carbon\Carbon;
@@ -13,7 +14,9 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Article extends Model implements SluggableInterface, HasMediaConversions
 {
-    use SluggableTrait, HasMediaTrait;
+    use SluggableTrait, HasMediaTrait, ClearsHomeCache;
+
+    const HOME_CACHE_KEY = 'home:articles';
 
     protected $table = 'articles';
 

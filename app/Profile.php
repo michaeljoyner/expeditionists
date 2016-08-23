@@ -11,7 +11,9 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Profile extends Model implements HasMediaConversions, SluggableInterface
 {
-    use HasMediaTrait, SluggableTrait, HasProfilePicTrait;
+    use HasMediaTrait, SluggableTrait, HasProfilePicTrait, ClearsHomeCache;
+
+    const HOME_CACHE_KEY = 'home:profiles';
 
     protected $table = 'profiles';
 
