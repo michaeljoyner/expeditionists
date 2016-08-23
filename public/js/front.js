@@ -14453,6 +14453,7 @@ module.exports = AjaxContactForm;
 },{}],7:[function(require,module,exports){
 'use strict';
 
+window.$ = window.jQuery = require('jquery');
 var ContactForm = require('./contactform.js');
 window.lightgallery = require('lightgallery');
 
@@ -14467,7 +14468,6 @@ var NewsletterSubscriber = require('./components/newslettersubscriber.js');
 var subscriber = new NewsletterSubscriber();
 subscriber.init();
 
-window.$ = window.jQuery = require('jquery');
 var slick = require('slick-carousel');
 
 if (document.querySelector('.sponsor-slideshow')) {
