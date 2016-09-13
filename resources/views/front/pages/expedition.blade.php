@@ -107,7 +107,7 @@
 
             <div class="w-row sponsor-charity-box-wrapper">
                 @foreach($expedition->sponsors as $sponsor)
-                    <a href="{{ $sponsor->site_link }}" class="sponsor-charity-box">
+                    <a href="{{ $sponsor->site_link }}" class="sponsor-charity-box sponsor-image-only">
                         <div>
                             <img src="{{ $sponsor->thumbImage() }}" class="involved-logo">
                         </div>
@@ -125,7 +125,7 @@
                 @if($expedition->charities->count() > 0)
                     <p class="section-into-text">These are the charities we are supporting with this expedition.</p>
                     @foreach($expedition->charities as $charity)
-                        <a href="{{ $charity->site_link }}" class="sponsor-charity-box">
+                        <a href="{{ $charity->site_link }}" class="sponsor-charity-box sponsor-image-only">
                             <div>
                                 <img src="{{ $charity->thumbImage() }}" class="involved-logo">
                             </div>

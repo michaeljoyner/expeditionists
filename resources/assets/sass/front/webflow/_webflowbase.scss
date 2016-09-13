@@ -465,6 +465,8 @@
 .sponsor-charity-box-wrapper {
   text-align: center;
 }
+
+
 .sponsor-charity-box {
   display: inline-block;
   vertical-align: top;
@@ -476,6 +478,11 @@
     line-height: 1.4;
     font-size: 100%;
     font-family: 'Ubuntu', Ariel, sans-serif;
+  }
+
+  &.sponsor-image-only {
+    @include respond-to(phone) {width: 49%; margin: 0; margin-top: 20px;}
+    @include respond-to(smalltablet) {width: 49%; margin: 0; margin-top: 20px;}
   }
 
   @include respond-to(phone) {width: 100%; margin: 0; margin-top: 20px;}
@@ -726,7 +733,8 @@
 
 .image-gallery-wrapper .gallery-thumb {
   display: inline-block;
-  width: 200px;
+  width: 40%;
+  max-width: 200px;
   margin: 10px;
 }
 

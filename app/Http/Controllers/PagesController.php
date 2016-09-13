@@ -40,8 +40,8 @@ class PagesController extends Controller
     public function getInvolved()
     {
         $page = $this->contentRepository->getPageByName('get involved');
-        $sponsors = Sponsor::take(5)->get();
-        $charities = Charity::take(5)->get();
+        $sponsors = Sponsor::ordered()->get();
+        $charities = Charity::ordered()->get();
         $expeditionistPdf = FileResource::where('name', 'Become an expeditionist')->first();
         $volunteerPdf = FileResource::where('name', 'Become a volunteer')->first();
         return view('front.pages.getinvolved')->with(compact('page', 'sponsors', 'charities', 'expeditionistPdf', 'volunteerPdf'));
