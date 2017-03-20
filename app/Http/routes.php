@@ -110,6 +110,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('charities/{id}', 'CharitiesController@update');
         Route::delete('charities/{id}', 'CharitiesController@delete');
 
+        Route::post('blog/images/upload', 'BlogImagesController@store');
+
         Route::get('blog', 'BlogController@index');
         Route::get('blog/create', 'BlogController@create');
         Route::get('blog/{id}/setimage', 'BlogController@editCoverImage');
@@ -118,6 +120,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('blog/{id}/publish', 'BlogController@togglePublished');
         Route::post('blog/{id}', 'BlogController@update');
         Route::delete('blog/{id}', 'BlogController@delete');
+
+
 
         Route::get('team', 'TeamMembersController@index');
         Route::post('team/order', 'TeamMembersController@setTeamOrder');

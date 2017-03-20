@@ -1,4 +1,4 @@
-{!! Form::model($model, ['url' => $formAction, 'class' => 'exp-form form-horizontal']) !!}
+{!! Form::model($model, ['id' => 'blog-editor-form', 'url' => $formAction, 'class' => 'exp-form form-horizontal']) !!}
     @include('errors')
     <div class="form-group">
         <label for="title">Title: </label>
@@ -16,3 +16,6 @@
         <button type="submit" class="btn exp-btn">{{ $buttonText }}</button>
     </div>
 {!! Form::close() !!}
+<div class="hidden-image-upload">
+    <input type="file" id="post-file-input">
+</div>
