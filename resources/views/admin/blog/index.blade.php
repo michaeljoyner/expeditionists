@@ -28,7 +28,7 @@
                 <p class="article-index-car-intro">{{ $article->intro }}</p>
                 <p>By: <span class="article-index-card-author">{{ $article->author->name }}</span></p>
                 <hr class="clearfix"/>
-                @can('manage-article', $article)
+                {{--@can('manage-article', $article)--}}
                 <div class="article-actions pull-right">
                     <a href="/admin/blog/{{ $article->id }}/setimage">
                         <div class="btn exp-btn btn-ghost-dark">Set Image</div>
@@ -42,7 +42,7 @@
                     ])
                     <publishbutton article="{{ $article->id }}" initial="{{ $article->published }}"></publishbutton>
                 </div>
-                @endcan
+                {{--@endcan--}}
             </div>
         @endforeach
     </section>
