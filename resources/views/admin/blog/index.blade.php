@@ -26,7 +26,7 @@
                 </p>
                 <h2 class="article-index-card-title">{{ $article->title }}</h2>
                 <p class="article-index-car-intro">{{ $article->intro }}</p>
-                <p>By: <span class="article-index-card-author">{{ $article->author->name }}</span></p>
+                <p>By: <span class="article-index-card-author">{{ $article->authorName() }}</span></p>
                 <hr class="clearfix"/>
                 @can('manage-article', $article)
                 <div class="article-actions pull-right">

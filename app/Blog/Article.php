@@ -51,6 +51,11 @@ class Article extends Model implements SluggableInterface, HasMediaConversions
         return $this->belongsTo('App\Profile', 'profile_id');
     }
 
+    public function authorName()
+    {
+        return $this->author ? $this->author->name : '';
+    }
+
     public static function createForUser(User $user, array $input)
     {
         return $user->profile->articles()->create($input);
