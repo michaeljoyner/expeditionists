@@ -95,8 +95,10 @@
                     <div class="w-col w-col-4 blog-column">
                         <a href="/blog/{{ $article->slug }}" class="blog-title-link"><h4
                                     class="h4">{{ $article->title }}</h4></a>
+                        @if($article->author)
                         <img src="{{ $article->author->profilePic() }}" alt="author profile"
                              class="blog-author-profile-pic-small">
+                        @endif
                         <div class="blog-author grey">{{ $article->published_on->toFormattedDateString() }}</div>
                         <p class="p1 black">{{ $article->intro }}</p>
                     </div>
