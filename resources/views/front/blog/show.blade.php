@@ -18,9 +18,11 @@
     <div class="w-section blog-section white">
         <article class="w-container blog-article-container">
             <h1 class="h4 black">{{ $article->title }}</h1>
-            <img src="{{ $article->author->profilePic() }}" alt="{{ $article->author->name }} profile picture"
+            @if($article->author)
+            <img src="{{ $article->author->profilePic() }}" alt="{{ $article->authorName() }} profile picture"
                  class="blog-author-profile-pic-small">
             <div class="blog-author">{{ $article->author->name }}</div>
+            @endif
             <div class="blog-author grey">{{ $article->published_on->toFormattedDateString() }}</div>
             @if($article->hasCoverPic())
             <img src="{{ $article->coverPic() }}" class="blog-article-image">
