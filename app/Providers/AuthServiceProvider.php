@@ -28,12 +28,7 @@ class AuthServiceProvider extends ServiceProvider {
         });
 
         $gate->define('manage-article', function ($user, $article) {
-            try {
-                return ($user->profile->id == $article->profile_id) || $user->hasRole('admin');
-            } catch(\Exception $e) {
-                dd($user, $article);
-            }
-
+            return ($user->profile->id == $article->profile_id) || $user->hasRole('admin');
         });
     }
 
