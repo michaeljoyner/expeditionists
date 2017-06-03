@@ -28,9 +28,7 @@ class AuthServiceProvider extends ServiceProvider {
         });
 
         $gate->define('manage-article', function ($user, $article) {
-//            return ($user->profile->id == $article->profile_id) || $user->hasRole('admin');
-//            return $user->hasRole('admin');
-            return true;
+            return ($user->profile->id == $article->profile_id) || $user->hasRole('admin');
         });
     }
 
